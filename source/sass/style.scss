@@ -1,4 +1,12 @@
-// Vendor
-// ---------------------------------
+// Global
+@import "global/variables";
+@import "global/fonts";
+@import "global/conatainer";
+@import "global/visually-hidden";
+@import "global/global";
 
+
+// Blocks
+
+// Vendor
 @import "vendor/normalize";

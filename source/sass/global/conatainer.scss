@@ -1,0 +1,21 @@
+@use "./variables";
+
+.container {
+  margin: 0 auto;
+  min-width: $phone-width;
+  max-width: $phone-width;
+  padding-left: $phone-padding-x;
+  padding-right: $phone-padding-x;
+
+  @media (min-width: $tablet-width) {
+    min-width: $tablet-width;
+    max-width: $tablet-width;
+    padding-left: $tablet-padding-x;
+    padding-right: $tablet-padding-x;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: $desktop-width-container;
+    max-width: $desktop-width-container;
+  }
+}

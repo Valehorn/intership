@@ -1,21 +1,101 @@
 <!DOCTYPE html>
 <html lang="ru" data-validate="html">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internship</title>
-    <link rel="stylesheet" href="sass/style.scss">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship</title>
+  <meta name="description" content="Организация стажировки за рубежом Internship.">
+  <link rel="preload" href="fonts/manrope/manrope-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/manrope/manrope-light.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/manrope/Manrope-semibold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/manrope/manrope-bold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/manrope/manrope-medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/manrope/manrope-extrabold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/manrope/manrope-extralight.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="manifest.webmanifest">
+  <link rel="stylesheet" href="sass/style.scss">
+</head>
 
-  <body class="page-body">
-    <!-- пример использования спрайта -->
-    <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
+<body class="page-body">
+  <section class="hero" data-test="hero">
+    <h1 class="visually-hidden">Организация стажировки за рубежом Internship.</h1>
+    <div class="hero__swiper swiper">
+      <header class="hero__header">
+        <img class="header__logo logo" src="#" alt="Логотип Internship" width="52" height="52">
+        <button class="button header__button-menu button--secondary" type="button">Меню</button>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#about">О проекте</a>
+            </li>
+            <li class="header__nav-item header__nav-item--special">
+              <span class="hero__nav-item-title">Программы</span>
+              <ul class="header__nav-sub-list">
+                <li class="header__nav-sub-item">
+                  <a class="header__nav-sub-link" href="#">Стажировка</a>
+                </li>
+                <li class="header__nav-sub-item">
+                  <a class="header__nav-sub-link" href="#">Волонтёрство</a>
+                </li>
+                <li class="header__nav-sub-item">
+                  <a class="header__nav-sub-link" href="#">Учёба</a>
+                </li>
+                <li class="header__nav-sub-item">
+                  <a class="header__nav-sub-link" href="#">Религия</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#grant">Как поехать</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#reviews">Отзывы</a>
+            </li>
+            <li class="header__nav-item header__nav-item--special">
+              <span class="hero__nav-item-title">Новости</span>
+              <ul class="header__nav-sub-list">
+                <li class="header__nav-sub-item">
+                  <a class="header__nav-sub-link" href="#">Общее</a>
+                </li>
+                <li class="header__nav-sub-item">
+                  <a class="header__nav-sub-link" href="#">Волонтёрство</a>
+                </li>
+                <li class="header__nav-sub-item">
+                  <a class="header__nav-sub-link" href="#">Стажировки</a>
+                </li>
+                <li class="header__nav-sub-item">
+                  <a class="header__nav-sub-link" href="#">Карьера</a>
+                </li>
+                <li class="header__nav-sub-item">
+                  <a class="header__nav-sub-link" href="#">Путешествия</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#contacts">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="hero__pagination swiper-pagination"></div>
+      <div class="hero__swiper-wrapper swiper-wrapper">
+        <div class="hero__slide swiper-slide">
+          <picture>
+            <img src="#" alt="Превью hero" width="320" height="528">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- пример использования спрайта -->
+  <!-- <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
     <svg>
       <use href="/__spritemap#sprite-user"></use>
-    </svg>
-    <!-- примеры требуемых атрибутов data-test="*" -->
-    <div data-test="hero">hero</div>
+    </svg> -->
+  <!-- примеры требуемых атрибутов data-test="*" -->
+  <!-- <div data-test="hero">hero</div>
     <div data-test="about">about</div>
     <div data-test="programs">programs</div>
     <div data-test="grant">grant</div>
@@ -24,8 +104,8 @@
     <div data-test="reviews">reviews</div>
     <div data-test="contacts">contacts</div>
     <div data-test="form">form</div>
-    <div data-test="footer">footer</div>
-    <script type="module" src="js/main.js"></script>
-  </body>
+    <div data-test="footer">footer</div> -->
+  <script type="module" src="js/main.js"></script>
+</body>
 
 </html>
