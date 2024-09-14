@@ -1,0 +1,27 @@
+@use "../global/variables";
+
+.header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: $primary-color;
+}
+
+.header__nav-list ul {
+  text-transform: none;
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+.header__nav a {
+  text-decoration: none;
+  color: #ffffff;
+}
