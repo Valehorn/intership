@@ -1,0 +1,31 @@
+@use "../global/variables";
+
+.grant {
+  color: #ffffff;
+  background-color: $primary-color;
+
+  p {
+    margin: 0;
+  }
+}
+
+.grant__steps {
+  font-size: 18px;
+  line-height: 22px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+.grant__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
