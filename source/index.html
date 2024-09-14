@@ -1199,8 +1199,8 @@
       <div class="contacts__map-container">
         <picture>
           <source type="image/webp" media="(min-width: 1440px)"
-            srcset="img/hero/hero-card-desktop-1@1x.webp 1x, img/hero/hero-card-desktop-1@2x.webp 2x"
-            width="1240" height="486">
+            srcset="img/hero/hero-card-desktop-1@1x.webp 1x, img/hero/hero-card-desktop-1@2x.webp 2x" width="1240"
+            height="486">
           <source type="image/webp" media="(min-width: 768px)"
             srcset="img/hero/hero-card-tablet-1@1x.webp 1x, img/hero/hero-card-tablet-1@2x.webp 2x" width="678"
             height="500">
@@ -1218,6 +1218,38 @@
         </picture>
       </div>
     </section>
+    <section class="form" data-test="form">
+      <form class="form__inner" action="https://echo.htmlacademy.ru/" method="post">
+        <h2 class="form__title">Напишите нам.</h2>
+        <p class="form__description">Оставьте ваши контакты, если у вас остались вопросы – мы на них ответим!</p>
+        <div class="input-group">
+          <label class="form__label" for="form-name">Имя</label>
+          <input class="form__input form-input" type="text" name="form-name" id="form-name">
+        </div>
+        <div class="input-group">
+          <label class="form__label" for="form-phone">Телефон</label>
+          <input class="form__input form-input" type="tel" name="form-phone" id="form-phone">
+          <p class="form__phone-mask">+7</p>
+        </div>
+        <div class="input-group">
+          <label class="form__label" for="comment">Ваше сообщение</label>
+          <textarea class="form__input form__textarea" name="comment" id="comment"></textarea>
+        </div>
+        <div class="input-group">
+          <label class="form__label" for="city">Выберите город</label>
+          <select class="form__select form-select" name="city" id="city">
+            <option class="form__select-item" value="empty" selected>&nbsp;</option>
+            <option class="form__select-item" value="Moscow">Москва</option>
+            <option class="form__select-item" value="Saint-Petersburg">Санкт-Петербург</option>
+            <option class="form__select-item" value="Novosibirsk">Новосибирск</option>
+          </select>
+        </div>
+        <input class="form__checkbox" type="checkbox" name="confidentiality" id="confidentiality" required>
+        <label class="form__checkbox-label" for="confidentiality">Я согласен на обработку моих персональных
+          данных</label>
+        <button class="button form__submit-button button--primary" type="submit">Отправить</button>
+      </form>
+    </section>
   </main>
   <dialog class="modal">
     <form class="modal__form" action="https://echo.htmlacademy.ru/" method="post">
@@ -1226,18 +1258,24 @@
       </button>
       <h2 class="modal__title">Напишите нам</h2>
       <p class="modal__description">Оставьте ваши контакты, если у вас остались вопросы – мы на них ответим!</p>
-      <label class="modal__label" for="name">Имя</label>
-      <input class="modal__input form-input" type="text" name="name" id="name">
-      <label class="modal__label" for="phone">Телефон</label>
-      <input class="modal__input form-input" type="tel" name="phone" id="phone">
-      <p class="modal__phone-mask">+7</p>
-      <label class="modal__label" for="city">Выбиерите город</label>
-      <select class="modal__select form-select" name="city" id="city">
-        <option class="modal__select-item" value="empty" selected>&nbsp;</option>
-        <option class="modal__select-item" value="Moscow">Москва</option>
-        <option class="modal__select-item" value="Saint-Petersburg">Санкт-Петербург</option>
-        <option class="modal__select-item" value="Novosibirsk">Новосибирск</option>
-      </select>
+      <div class="input-group">
+        <label class="modal__label" for="modal-name">Имя</label>
+        <input class="modal__input form-input" type="text" name="modal-name" id="modal-name">
+      </div>
+      <div class="input-group">
+        <label class="modal__label" for="modal-phone">Телефон</label>
+        <input class="modal__input form-input" type="tel" name="modal-phone" id="modal-phone">
+        <p class="modal__phone-mask">+7</p>
+      </div>
+      <div class="input-group">
+        <label class="modal__label" for="city">Выберите город</label>
+        <select class="modal__select form-select" name="city" id="city">
+          <option class="modal__select-item" value="empty" selected>&nbsp;</option>
+          <option class="modal__select-item" value="Moscow">Москва</option>
+          <option class="modal__select-item" value="Saint-Petersburg">Санкт-Петербург</option>
+          <option class="modal__select-item" value="Novosibirsk">Новосибирск</option>
+        </select>
+      </div>
       <input class="modal__checkbox" type="checkbox" name="confidentiality" id="confidentiality" required>
       <label class="modal__checkbox-label" for="confidentiality">Я согласен на обработку моих персональных
         данных</label>
