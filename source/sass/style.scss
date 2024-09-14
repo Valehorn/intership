@@ -5,11 +5,13 @@
 @import "global/visually-hidden";
 @import "global/global";
 @import "global/button";
+@import "global/title";
 
 
 // Blocks
 @import "blocks/header";
 @import "blocks/hero";
+@import "blocks/about";
 
 // Vendor
 @import "vendor/normalize";

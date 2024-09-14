@@ -1,0 +1,48 @@
+@use "../global/variables";
+
+.about__title {
+  color: $primary-color;
+}
+
+.about__content {
+  p {
+    margin: 0;
+  }
+
+  p:first-of-type {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    color: $primary-color;
+    margin: 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    p:first-of-type {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    h3 {
+      font-size: 28px;
+      line-height: 28px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    p:first-of-type {
+      font-size: 22px;
+      line-height: 32px;
+    }
+
+    h3 {
+      font-size: 32px;
+      line-height: 36px;
+    }
+  }
+}
