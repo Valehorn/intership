@@ -1,0 +1,45 @@
+@use "../global/variables";
+
+.faq__title {
+  color: $primary-color;
+}
+
+.faq__details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.faq__item {
+  color: $primary-color;
+
+  p {
+    margin: 0;
+  }
+
+  &:has(.faq__details-list-marker--active) {
+    color: #ffffff;
+    background-color: $primary-color;
+
+    p {
+      color: $secondary-text-color;
+    }
+  }
+}
+
+.faq__details-item-title {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
