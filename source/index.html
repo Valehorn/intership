@@ -1298,7 +1298,7 @@
       </li>
     </ul>
   </footer>
-  <dialog class="modal">
+  <dialog class="modal" open>
     <form class="modal__form" action="https://echo.htmlacademy.ru/" method="post">
       <button class="modal__button-close" type="button">
         <span class="visually-hidden">Закрыть модальное окно.</span>
@@ -1307,16 +1307,16 @@
       <p class="modal__description">Оставьте ваши контакты, если у вас остались вопросы – мы на них ответим!</p>
       <div class="input-group">
         <label class="modal__label" for="modal-name">Имя</label>
-        <input class="modal__input form-input" type="text" name="modal-name" id="modal-name">
+        <input class="modal__input modal__element form-input" type="text" name="modal-name" id="modal-name">
       </div>
       <div class="input-group">
         <label class="modal__label" for="modal-phone">Телефон</label>
-        <input class="modal__input form-input" type="tel" name="modal-phone" id="modal-phone">
+        <input class="modal__input modal__element form-input form-input--phone" type="tel" name="modal-phone" id="modal-phone">
         <p class="modal__phone-mask">+7</p>
       </div>
       <div class="input-group">
         <label class="modal__label" for="modal-city">Выберите город</label>
-        <select class="modal__select form-select" name="modal-city" id="modal-city">
+        <select class="modal__select modal__element form-input" name="modal-city" id="modal-city">
           <option class="modal__select-item" value="empty" selected>&nbsp;</option>
           <option class="modal__select-item" value="Moscow">Москва</option>
           <option class="modal__select-item" value="Saint-Petersburg">Санкт-Петербург</option>

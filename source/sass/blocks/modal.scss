@@ -1,1 +1,93 @@
 @use "../global/variables";
+
+.modal__title {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 400;
+  color: $primary-color;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+.modal__description {
+  margin: 0;
+}
+
+.modal__label {
+  font-size: 14px;
+  line-height: 14px;
+  opacity: 0.8;
+
+  @media (min-width: $tablet-width) {
+    line-height: 18px;
+  }
+
+  @media (min-width: $desktop-width) {
+    line-height: 20px;
+  }
+}
+
+.modal__element {
+  color: $primary-text-color;
+  caret-color: $primary-text-color;
+  height: 44px;
+  border: 1px solid rgba(72, 72, 72, 0.3);
+
+  @media (min-width: $tablet-width) {
+    height: 50px;
+  }
+}
+
+.modal__checkbox {
+  position: relative;
+  appearance: none;
+  border-radius: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: $primary-color;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  &:checked::after {
+    opacity: 1;
+  }
+}
+
+.modal__checkbox-label {
+  font-size: 12px;
+  line-height: 14px;
+  opacity: 0.9;
+
+  @media (min-width: $tablet-width) {
+    line-height: 12px;
+  }
+}
+
+.modal__submit-button {
+  color: $primary-color;
+}
+
+.modal__phone-mask {
+  margin: 0;
+}
