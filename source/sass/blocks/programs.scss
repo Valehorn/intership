@@ -1,5 +1,11 @@
 @use "../global/variables";
 
+.programs {
+  a {
+    display: block;
+  }
+}
+
 .programs__title {
   color: $primary-color;
 }

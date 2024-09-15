@@ -1,0 +1,62 @@
+@use "../global/variables";
+
+.footer {
+  a {
+    display: block;
+  }
+}
+
+.footer__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__nav-link {
+  text-decoration: none;
+  color: $primary-text-color;
+}
+
+.footer__confidential-link {
+  position: relative;
+  font-size: 12px;
+  line-height: 14px;
+  color: $primary-text-color;
+  text-decoration: none;
+
+  &::after {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $primary-text-color;
+  }
+
+  @media (min-width: $tablet-width) {
+    line-height: 12px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.footer__rights {
+  font-size: 12px;
+  line-height: 14px;
+  opacity: 0.6;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    line-height: 12px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 14px;
+    line-height: 18px;
+    opacity: 1;
+  }
+}

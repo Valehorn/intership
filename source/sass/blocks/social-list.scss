@@ -1,0 +1,19 @@
+@use "../global/variables";
+
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-list__link {
+  width: 26px;
+  height: 26px;
+  background-color: $primary-color;
+  border-radius: 100%;
+
+  @media (min-width: $tablet-width) {
+    width: 36px;
+    height: 36px;
+  }
+}
