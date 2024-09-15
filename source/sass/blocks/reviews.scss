@@ -1,0 +1,68 @@
+@use "../global/variables";
+
+.reviews {
+  h2,
+  h3 {
+    font-weight: 400;
+    color: $primary-color;
+  }
+}
+
+.reviews__card {
+  p {
+    margin: 0;
+  }
+}
+
+.reviews__title {
+  font-size: 16px;
+  line-height: 18px;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 24px;
+    line-height: 26px;
+  }
+}
+
+.reviews__name {
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+  }
+}
+
+.reviews__group-title {
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.12px;
+  margin: 0;
+}
+
+.reviews__group-description {
+  font-size: 12px;
+  line-height: 14px;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    line-height: 18px;
+  }
+}
