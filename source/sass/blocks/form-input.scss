@@ -1,0 +1,14 @@
+@use "../global/variables";
+
+.form-input {
+  font-family: $font;
+  font-weight: 400;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.form-input--phone {
+  padding-left: 25px;
+}
