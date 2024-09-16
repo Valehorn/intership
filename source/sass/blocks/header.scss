@@ -75,6 +75,14 @@
   visibility: visible;
 }
 
+.header__nav-button {
+  display: inline-block;
+  color: #ffffff;
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 0;
+}
+
 .header__nav-list ul {
   text-transform: none;
   font-weight: 400;
@@ -85,6 +93,14 @@
   display: block;
   text-decoration: none;
   color: #ffffff;
+  width: fit-content;
+}
+
+.header__nav-sub-list {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: height 0.3s ease;
 }
 
 .header:has(.header__nav--open) {
