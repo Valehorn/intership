@@ -11,13 +11,15 @@ const openMenu = () => {
 };
 
 const closeMenu = () => {
-  body.classList.remove('page-body--menu-open');
-  nav.classList.remove('header__nav--open');
-  document.removeEventListener('keydown', onDocumentEscKeyDown);
+  if (body.classList.contains('page-body--menu-open')) {
+    body.classList.remove('page-body--menu-open');
+    nav.classList.remove('header__nav--open');
+    document.removeEventListener('keydown', onDocumentEscKeyDown);
+  }
 };
 
 const toggleMenu = () => {
-  const isMenuOpen = body.classList.contains('page-body--menu-open') && nav.classList.contains('header__nav--open');
+  const isMenuOpen = body.classList.contains('page-body--menu-open');
   if (isMenuOpen) {
     closeMenu();
   } else {
@@ -29,31 +31,23 @@ const onBurgerButtonClick = () => {
   toggleMenu();
 };
 
-function onDocumentEscKeyDown (evt) {
+function onDocumentEscKeyDown(evt) {
   if (isEscapeKey(evt)) {
     evt.preventDefault();
     closeMenu();
   }
 }
 
-function onDocumentEnterKeyDown (evt) {
-  if (isEnterKey(evt)) {
-    evt.preventDefault();
-    openMenu();
+document.addEventListener('click', (evt) => {
+  const isClickNav = evt.target.closest('.header__nav');
+  const isClickBurgerButton = evt.target.closest('.header__button-menu');
+  if (!isClickNav && !isClickBurgerButton) {
+    closeMenu();
   }
-}
-
-nav.addEventListener('click', (evt) => {
-  const navLink = evt.target.closest('.header__nav-link');
-  if (!navLink) {
-    return;
-  }
-  closeMenu();
 });
-
 
 const burgerMenuToggle = () => {
   burgerButton.addEventListener('click', onBurgerButtonClick);
 };
 
-export {burgerMenuToggle};
+export { burgerMenuToggle };
