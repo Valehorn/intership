@@ -27,3 +27,31 @@
     line-height: 26px;
   }
 }
+
+// Swiper
+
+.hero__pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  height: 28px;
+  background-color: #ffffff;
+  border-radius: 12px 12px 0 0;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.hero__pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border: 2px solid $primary-color;
+  border-radius: 100%;
+  background-color: transparent;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+.hero__pagination-bullet--active {
+  background-color: $primary-color;
+}

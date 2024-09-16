@@ -7,6 +7,19 @@
   --burger-menu-size: var(--burger-menu-width) var(--burger-menu-width);
   --burger-menu-overall: 136px;
   --burger-menu-after-x: 20.8px;
+
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 32px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 30px;
+  }
 }
 
 .header__logo-container {
