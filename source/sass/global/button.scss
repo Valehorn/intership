@@ -1,19 +1,47 @@
 @use "./variables";
 
 .button {
+  position: relative;
   display: inline-block;
   font-size: 14px;
   line-height: 14px;
   font-weight: 500;
+  color: $primary-color;
   letter-spacing: 0.28px;
   text-transform: uppercase;
   background-color: transparent;
-  border: 1px solid transparent;
+  border: 1px solid $primary-color;
+  border-radius: 30px;
   text-decoration: none;
-  text-align: center;
+  text-align: start;
+  padding-left: 21px;
   user-select: none;
   padding-top: 5px;
   padding-bottom: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in, color 0.3s ease-in, border 0.3s ease-in;
+
+  &::before {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    content: "";
+    border-radius: 44px;
+    background-color: $primary-color;
+    transition: background-color 0.3s ease;
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "";
+    mask-repeat: no-repeat;
+    transition: background-color 0.3s ease, mask-image 0.3s ease;
+  }
+}
+
+.button--secondary {
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }

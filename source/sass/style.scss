@@ -5,11 +5,13 @@
 @import "global/visually-hidden";
 @import "global/global";
 @import "global/button";
+@import "global/logo";
 @import "global/title";
 @import "global/form-input";
 
 
 // Blocks
+@import "blocks/page-body";
 @import "blocks/header";
 @import "blocks/hero";
 @import "blocks/about";

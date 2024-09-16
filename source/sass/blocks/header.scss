@@ -1,5 +1,52 @@
 @use "../global/variables";
 
+.header {
+  --burger-menu-icon: url("/__spritemap#sprite-burger-button-view");
+  --burger-menu-width: 16px;
+  --burger-menu-height: 8px;
+  --burger-menu-size: var(--burger-menu-width) var(--burger-menu-width);
+  --burger-menu-overall: 136px;
+  --burger-menu-after-x: 20.8px;
+}
+
+.header__logo-container {
+  width: 52px;
+  height: 52px;
+}
+
+.header__nav-group {
+  position: relative;
+  z-index: 2;
+}
+
+.header__button-menu {
+  width: var(--burger-menu-overall);
+  min-height: 54px;
+  background-color: #ffffff;
+  padding-right: 51px;
+  transition: width 0.3s ease;
+
+  &::before {
+    width: 46px;
+    height: 46px;
+  }
+
+  &::after {
+    right: var(--burger-menu-after-x);
+    width: var(--burger-menu-width);
+    height: var(--burger-menu-height);
+    mask-image: var(--burger-menu-icon);
+    mask-size: var(--burger-menu-size);
+    mask-position: center;
+    background-color: #ffffff;
+    transition: right 0.3s ease;
+  }
+
+  @media (min-width: $tablet-width) {
+    min-height: 56px;
+  }
+}
+
 .header ul {
   list-style: none;
   margin: 0;
@@ -7,12 +54,25 @@
 }
 
 .header__nav {
+  position: absolute;
+  top: 58px;
   font-size: 16px;
   line-height: 16px;
   font-weight: 500;
   text-transform: uppercase;
   color: #ffffff;
   background-color: $primary-color;
+  border-radius: 16px;
+  padding: 35px 25px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.header__nav--open {
+  opacity: 1;
+  visibility: visible;
 }
 
 .header__nav-list ul {
@@ -25,4 +85,33 @@
   display: block;
   text-decoration: none;
   color: #ffffff;
+}
+
+.header:has(.header__nav--open) {
+  --burger-menu-icon: url("/__spritemap#sprite-cross-view");
+  --burger-menu-width: 18px;
+  --burger-menu-height: 18px;
+  --burger-menu-overall: 290px;
+  --burger-menu-after-x: 18px;
+
+  .header__nav {
+    width: var(--burger-menu-overall);
+  }
+
+  .header__button-menu {
+    background-color: $primary-color;
+    color: #ffffff;
+  }
+
+  .header__button-menu::before {
+    background-color: #ffffff;
+  }
+
+  .header__button-menu::after {
+    background-color: $primary-color;
+  }
+
+  @media (min-width: $tablet-width) {
+    --burger-menu-overall: 286px;
+  }
 }

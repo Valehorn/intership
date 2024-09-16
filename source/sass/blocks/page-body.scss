@@ -1,0 +1,32 @@
+@use "../global/variables";
+
+.page-body {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $pre-desktop-width) {
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background-color: rgba(13, 29, 51, 0.4);
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+  }
+}
+
+.page-body--menu-open {
+  @media (max-width: $pre-desktop-width) {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      visibility: visible;
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+}
