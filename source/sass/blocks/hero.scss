@@ -119,9 +119,10 @@
   background-color: #ffffff;
   border-radius: 0 0 14px 14px;
   width: fit-content;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 10px;
 
   @media (min-width: $tablet-width) {
     display: contents;
@@ -129,6 +130,9 @@
 }
 
 .hero__button {
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.24px;
   width: 154px;
   height: 44px;
 
@@ -207,7 +211,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  width: fit-content;
+  width: 80px;
   height: 28px;
   background-color: #ffffff;
   border-radius: 12px 12px 0 0;
@@ -235,8 +239,8 @@
 }
 
 .hero__pagination-bullet {
-  width: 6.4px;
-  height: 6.4px;
+  width: 8px;
+  height: 8px;
   border: 2px solid $primary-color;
   border-radius: 100%;
   background-color: transparent;
