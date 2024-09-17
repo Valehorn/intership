@@ -3,8 +3,8 @@
 .button {
   position: relative;
   display: inline-block;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 12px;
+  line-height: 12px;
   font-weight: 500;
   color: $primary-color;
   letter-spacing: 0.28px;
@@ -39,6 +39,12 @@
     content: "";
     mask-repeat: no-repeat;
     transition: background-color 0.3s ease, mask-image 0.3s ease;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    padding-left: 31px;
+    padding-right: 52px;
   }
 }
 

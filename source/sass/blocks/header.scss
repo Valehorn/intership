@@ -45,6 +45,7 @@
 }
 
 .header__button-menu {
+  font-size: 14px;
   width: var(--burger-menu-overall);
   min-height: 54px;
   background-color: #ffffff;
@@ -69,6 +70,8 @@
 
   @media (min-width: $tablet-width) {
     min-height: 56px;
+    padding-top: 0;
+    padding-left: 20px;
   }
 }
 
