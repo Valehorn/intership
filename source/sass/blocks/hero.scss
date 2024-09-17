@@ -84,6 +84,7 @@
   }
 
   @media (min-width: $desktop-width) {
+    align-items: center;
     padding-left: 50px;
     padding-right: 50px;
   }
@@ -229,12 +230,8 @@
   }
 
   @media (min-width: $desktop-width) {
-    left: calc(8% + 5px);
+    left: calc(7% - 1px);
   }
-}
-
-.hero__pagination--hidden {
-  opacity: 0;
 }
 
 .hero__pagination-bullet {

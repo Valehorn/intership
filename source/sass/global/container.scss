@@ -19,3 +19,9 @@
     max-width: $desktop-width-container;
   }
 }
+
+.container--hero-desktop {
+  @media (min-width: $desktop-width) {
+    padding-left: 25px;
+  }
+}
