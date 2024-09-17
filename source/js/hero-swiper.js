@@ -12,6 +12,7 @@ const initSwiperHero = () => {
     slidesPerView: 1,
     loop: true,
     autoHeight: true,
+    /* effect: 'fade', */
     pagination: {
       el: '.hero__pagination',
       clickable: true,
