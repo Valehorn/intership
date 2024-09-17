@@ -12,7 +12,6 @@ const initSwiperHero = () => {
     slidesPerView: 1,
     loop: true,
     autoHeight: true,
-    /* effect: 'fade', */
     pagination: {
       el: '.hero__pagination',
       clickable: true,
@@ -29,12 +28,15 @@ const initSwiperHero = () => {
       },
     }
   });
+
   heroSwiper.on('init', () => {
     updateTabIndex(heroSwiper);
+    updatePaginationPosition(heroSwiper);
   });
 
   heroSwiper.on('slideChange', () => {
     updateTabIndex(heroSwiper);
+    updatePaginationPosition(heroSwiper);
   });
 
   function updateTabIndex(swiperSlide) {
@@ -57,8 +59,17 @@ const initSwiperHero = () => {
     });
   }
 
+  function updatePaginationPosition(swiperInstance) {
+    const pagination = document.querySelector('.hero__pagination');
+    const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+    const slideInner = activeSlide.querySelector('.hero__slide-inner');
+    const position = slideInner.offsetHeight;
+    pagination.style.bottom = `calc(${position}px + 20px)`;
+  }
+
   heroSwiper.init();
   updateTabIndex(heroSwiper);
+  updatePaginationPosition(heroSwiper);
 };
 
 export { initSwiperHero };
