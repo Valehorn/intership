@@ -64,7 +64,11 @@ const initSwiperHero = () => {
     const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
     const slideInner = activeSlide.querySelector('.hero__slide-inner');
     const position = slideInner.offsetHeight;
-    pagination.style.bottom = `calc(${position}px + 20px)`;
+    if (window.innerWidth >= 768) {
+      pagination.style.bottom = `calc(${position}px + 60px)`;
+    } else {
+      pagination.style.bottom = `calc(${position}px + 20px)`;
+    }
   }
 
   heroSwiper.init();

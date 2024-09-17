@@ -16,10 +16,11 @@
   @media (min-width: $tablet-width) {
     padding-top: 92px;
     height: 1024px;
+    padding-bottom: 60px;
   }
 
   @media (min-width: $desktop-width) {
-    height: 800;
+    height: 800px;
   }
 }
 
@@ -48,11 +49,32 @@
   @media (min-width: $tablet-width) {
     font-size: 36px;
     line-height: 44px;
+    border-radius: 0 30px 30px 0;
+    padding-top: 30px;
+    padding-bottom: 24px;
+    padding-left: 40px;
+    padding-right: 69px;
   }
 
   @media (min-width: $desktop-width) {
     font-size: 54px;
     line-height: 62px;
+  }
+}
+
+.hero__group-tablet-plus {
+  display: contents;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: #ffffff;
+    border-radius: 0 0 30px 30px;
+    width: fit-content;
+    padding-bottom: 35px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 
@@ -70,6 +92,13 @@
   padding: 0 14px 15px;
   margin: 0;
 
+  @media (min-width: $tablet-width) {
+    width: 285px;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
   @media (min-width: $desktop-width) {
     line-height: 26px;
   }
@@ -82,6 +111,10 @@
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 10px;
+
+  @media (min-width: $tablet-width) {
+    display: contents;
+  }
 }
 
 .hero__button {
@@ -101,6 +134,23 @@
     mask-position: center;
     mask-size: 6.4px 6.4px;
     background-color: #ffffff;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 198px;
+    height: 56px;
+
+    &::before {
+      width: 46px;
+      height: 46px;
+    }
+
+    &::after {
+      right: 24px;
+      width: 8px;
+      height: 8px;
+      mask-size: 8px 8px;
+    }
   }
 }
 
@@ -124,7 +174,7 @@
 .hero__pagination {
   position: absolute;
 
-  // вертикальная позиция регулируется через js в hero-swiper.js
+  // вертикальная позиция регулируется через js в hero-swiper.js updatePaginationPosition.
   left: calc(4% + 2px);
   display: flex;
   align-items: center;
@@ -137,6 +187,19 @@
   padding-right: 16px;
   z-index: 2;
   transition: bottom 0.3s ease, opacity 0.3s ease;
+
+  @media (min-width: $tablet-width) {
+    width: 100px;
+    left: calc(5% + 7px);
+    height: 40px;
+    border-radius: 20px 20px 0 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.hero__pagination--hidden {
+  opacity: 0;
 }
 
 .hero__pagination-bullet {
@@ -147,6 +210,11 @@
   background-color: transparent;
   padding: 0;
   transition: background-color 0.3s ease;
+
+  @media (min-width: $tablet-width) {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .hero__pagination-bullet--active {
