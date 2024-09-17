@@ -8,8 +8,7 @@
   --burger-menu-overall: 136px;
   --burger-menu-after-x: 20.8px;
 
-  display: flex;
-  justify-content: space-between;
+  position: absolute;
   padding-top: 20px;
   padding-bottom: 20px;
 
@@ -22,9 +21,22 @@
   }
 }
 
+.header__container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .header__logo-container {
+  position: absolute;
+  left: $phone-padding-x;
   width: 52px;
   height: 52px;
+  z-index: 2;
+
+  @media (min-width: $tablet-width) {
+    left: $tablet-padding-x;
+  }
 }
 
 .header__nav-group {
