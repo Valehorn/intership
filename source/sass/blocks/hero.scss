@@ -59,6 +59,11 @@
   @media (min-width: $desktop-width) {
     font-size: 54px;
     line-height: 62px;
+    width: 968px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 }
 
@@ -75,6 +80,11 @@
     padding-bottom: 35px;
     padding-left: 40px;
     padding-right: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-left: 50px;
+    padding-right: 50px;
   }
 }
 
@@ -101,6 +111,7 @@
 
   @media (min-width: $desktop-width) {
     line-height: 26px;
+    width: 446px;
   }
 }
 
@@ -152,6 +163,11 @@
       mask-size: 8px 8px;
     }
   }
+
+  @media (min-width: $desktop-width) {
+    width: 199px;
+    height: 58px;
+  }
 }
 
 // Swiper
@@ -168,6 +184,18 @@
   @media (min-width: $desktop-width) {
     width: 1440px;
     height: 800px;
+  }
+}
+
+.hero__slide:first-of-type {
+  br {
+    display: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    br {
+      display: block;
+    }
   }
 }
 
@@ -196,6 +224,10 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  @media (min-width: $desktop-width) {
+    left: calc(8% + 5px);
+  }
 }
 
 .hero__pagination--hidden {
@@ -203,8 +235,8 @@
 }
 
 .hero__pagination-bullet {
-  width: 10px;
-  height: 10px;
+  width: 6.4px;
+  height: 6.4px;
   border: 2px solid $primary-color;
   border-radius: 100%;
   background-color: transparent;
