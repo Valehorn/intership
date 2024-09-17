@@ -84,6 +84,7 @@
 .header__nav {
   position: absolute;
   top: 58px;
+  left: -100%;
   font-size: 16px;
   line-height: 16px;
   font-weight: 500;
@@ -167,6 +168,7 @@
 
   .header__nav {
     width: var(--burger-menu-overall);
+    left: auto;
   }
 
   .header__button-menu {
