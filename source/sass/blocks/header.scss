@@ -52,7 +52,7 @@
 
 .header__button-menu {
   font-size: 14px;
-  width: var(--burger-menu-overall);
+  min-width: var(--burger-menu-overall);
   min-height: 54px;
   background-color: #ffffff;
   padding-right: 51px;

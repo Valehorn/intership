@@ -75,9 +75,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    width: 593px;
     background-color: #ffffff;
     border-radius: 0 0 30px 30px;
-    width: fit-content;
     padding-bottom: 35px;
     padding-left: 40px;
     padding-right: 40px;
@@ -85,6 +85,7 @@
 
   @media (min-width: $desktop-width) {
     align-items: center;
+    width: 775px;
     padding-left: 50px;
     padding-right: 50px;
   }
@@ -133,8 +134,8 @@
 
 .hero__button {
   letter-spacing: 0.24px;
-  width: 154px;
-  height: 44px;
+  min-width: 154px;
+  min-height: 44px;
 
   &::before {
     width: 34px;
@@ -153,7 +154,7 @@
 
   @media (min-width: $tablet-width) {
     min-width: 198px;
-    min-height: 56px;
+    height: 56px;
 
     &::before {
       width: 46px;
@@ -169,8 +170,8 @@
   }
 
   @media (min-width: $desktop-width) {
-    width: 199px;
-    height: 58px;
+    min-width: 199px;
+    min-height: 58px;
   }
 }
 
