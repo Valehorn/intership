@@ -231,7 +231,9 @@
   @media (min-width: $desktop-width) {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
+    width: 484px;
     min-height: 162px;
     padding-left: 41px;
     padding-right: 41px;
