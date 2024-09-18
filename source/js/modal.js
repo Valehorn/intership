@@ -3,11 +3,11 @@ const modalButton = document.querySelector('.about__button');
 const modalCloseButton = document.querySelector('.modal__button-close');
 
 const openModal = () => {
-  modal.setAttribute('open', '');
+  modal.showModal();
 };
 
 const closeModal = () => {
-  modal.removeAttribute('open');
+  modal.closeModal();
 };
 
 const onModalButtonClick = () => {
