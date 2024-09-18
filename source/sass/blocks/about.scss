@@ -3,6 +3,11 @@
 .about {
   padding-top: 50px;
   padding-bottom: 50px;
+
+  @media (min-width: $desktop-width) {
+    padding-top: 70px;
+    padding-bottom: 60px;
+  }
 }
 
 .about__description-container {
@@ -32,6 +37,8 @@
   }
 
   @media (min-width: $tablet-width) {
+    margin-bottom: 60px;
+
     p:first-of-type {
       font-size: 20px;
       line-height: 26px;
@@ -40,6 +47,11 @@
     h3 {
       font-size: 28px;
       line-height: 28px;
+      margin-bottom: 30px;
+    }
+
+    p:nth-of-type(2) {
+      margin-bottom: 40px;
     }
   }
 
@@ -62,51 +74,11 @@
 .about__title {
   color: $primary-color;
   margin-bottom: 15px;
-}
-
-/* .about__content {
-  p {
-    margin: 0;
-  }
-
-  p:first-of-type {
-    font-size: 16px;
-    line-height: 22px;
-    margin-bottom: 40px;
-  }
-
-  h3 {
-    font-size: 18px;
-    line-height: 22px;
-    font-weight: 400;
-    color: $primary-color;
-    margin: 0;
-  }
 
   @media (min-width: $tablet-width) {
-    p:first-of-type {
-      font-size: 20px;
-      line-height: 26px;
-    }
-
-    h3 {
-      font-size: 28px;
-      line-height: 28px;
-    }
+    margin-bottom: 30px;
   }
-
-  @media (min-width: $desktop-width) {
-    p:first-of-type {
-      font-size: 22px;
-      line-height: 32px;
-    }
-
-    h3 {
-      font-size: 32px;
-      line-height: 36px;
-    }
-  }
-} */
+}
 
 .about__button {
   min-width: 223px;
@@ -126,6 +98,21 @@
     mask-size: 8px 8px;
     background-color: #ffffff;
   }
+
+  @media (min-width: $tablet-width) {
+    line-height: 14px;
+    min-width: 279px;
+    min-height: 56px;
+
+    &::before {
+      width: 46px;
+      height: 46px;
+    }
+
+    &::after {
+      right: 24px;
+    }
+  }
 }
 
 .about__advantages {
@@ -135,6 +122,13 @@
   padding-bottom: 40px;
   padding-left: 20px;
   padding-right: 20px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 72px;
+    padding-bottom: 50px;
+    padding-left: 70px;
+    padding-right: 50px;
+  }
 }
 
 .about__advantages-list {
@@ -144,6 +138,12 @@
   list-style: none;
   padding: 0;
   margin: 0;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 52px;
+  }
 }
 
 .about__advantages-item {
