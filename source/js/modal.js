@@ -1,9 +1,12 @@
+import { scrollToStart } from './utils';
+
 const modal = document.querySelector('.modal');
 const modalForm = document.querySelector('.modal__form');
 const modalButton = document.querySelector('.about__button');
 const modalCloseButton = document.querySelector('.modal__button-close');
 
 const openModal = () => {
+  scrollToStart();
   modal.showModal();
 };
 

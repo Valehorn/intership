@@ -1,3 +1,7 @@
 const isEscapeKey = (evt) => evt.key === 'Escape';
 
-export { isEscapeKey };
+const scrollToStart = () => {
+  window.scrollTo(0, 0);
+};
+
+export { isEscapeKey, scrollToStart };
