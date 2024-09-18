@@ -65,6 +65,7 @@
       grid-column: 1 / 1;
       font-size: 22px;
       line-height: 32px;
+      padding-top: 4px;
     }
 
     h3 {
@@ -87,6 +88,10 @@
 
   @media (min-width: $tablet-width) {
     margin-bottom: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
   }
 }
 
@@ -147,6 +152,8 @@
 
   @media (min-width: $desktop-width) {
     width: 100%;
+    padding-left: 120px;
+    padding-right: 100px;
   }
 }
 
@@ -236,7 +243,12 @@
     width: 484px;
     min-height: 162px;
     padding-left: 41px;
-    padding-right: 41px;
+    padding-right: 49px;
+
+    &:nth-of-type(3),
+    &:nth-of-type(4) {
+      min-height: 142px;
+    }
 
     br {
       display: block;
