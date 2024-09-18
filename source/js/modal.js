@@ -20,5 +20,12 @@ const onModalCloseButtonClick = () => {
   closeModal();
 };
 
+const onDocumentClick = (evt) => {
+  if (modal.open && evt.target === modal) {
+    closeModal();
+  }
+};
+
+document.addEventListener('click', onDocumentClick);
 modalButton.addEventListener('click', onModalButtonClick);
 modalCloseButton.addEventListener('click', onModalCloseButtonClick);
