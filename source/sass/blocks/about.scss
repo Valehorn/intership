@@ -1,10 +1,13 @@
 @use "../global/variables";
 
-.about__title {
-  color: $primary-color;
+.about {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-.about__content {
+.about__description-container {
+  margin-bottom: 40px;
+
   p {
     margin: 0;
   }
@@ -12,6 +15,64 @@
   p:first-of-type {
     font-size: 16px;
     line-height: 22px;
+    margin-bottom: 40px;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    color: $primary-color;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  p:nth-of-type(2) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $tablet-width) {
+    p:first-of-type {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    h3 {
+      font-size: 28px;
+      line-height: 28px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 70px;
+    padding-bottom: 60px;
+
+    p:first-of-type {
+      font-size: 22px;
+      line-height: 32px;
+    }
+
+    h3 {
+      font-size: 32px;
+      line-height: 36px;
+    }
+  }
+}
+
+.about__title {
+  color: $primary-color;
+  margin-bottom: 15px;
+}
+
+/* .about__content {
+  p {
+    margin: 0;
+  }
+
+  p:first-of-type {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 40px;
   }
 
   h3 {
@@ -45,30 +106,84 @@
       line-height: 36px;
     }
   }
+} */
+
+.about__button {
+  min-width: 223px;
+  min-height: 44px;
+
+  &::before {
+    width: 34px;
+    height: 34px;
+  }
+
+  &::after {
+    right: 18px;
+    width: 8px;
+    height: 8px;
+    mask-image: url("/__spritemap#sprite-arrow-button-view");
+    mask-position: center;
+    mask-size: 8px 8px;
+    background-color: #ffffff;
+  }
 }
 
 .about__advantages {
-  color: #ffffff;
   background-color: $primary-color;
+  border-radius: 20px;
+  padding-top: 42px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .about__advantages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .about__advantages-item {
+  position: relative;
+  border: 1px solid $secondary-text-color;
+  border-radius: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 21px;
+  padding-right: 21px;
+
+  &::before {
+    position: absolute;
+    top: -11px;
+    left: -9px;
+    content: "";
+    width: 18px;
+    height: 22px;
+    background-image: url("/__spritemap#sprite-advantages-star-view");
+    background-repeat: no-repeat;
+    background-size: 18px 22px;
+    background-position: center;
+    background-color: $primary-color;
+    box-shadow: 5px 0 0 0 $primary-color, 0 5px 0 0 $primary-color;
+  }
+
   h3 {
     font-size: 16px;
     line-height: 20px;
     font-weight: 400;
     letter-spacing: 0.16px;
+    color: #ffffff;
     text-transform: uppercase;
     margin: 0;
+    margin-bottom: 15px;
   }
 
   p {
+    font-size: 14px;
+    line-height: 20px;
     font-weight: 300;
     color: $secondary-text-color;
     margin: 0;
@@ -79,6 +194,10 @@
       font-size: 20px;
       line-height: 22px;
       letter-spacing: 0.2px;
+    }
+
+    p {
+      font-size: 16px;
     }
   }
 

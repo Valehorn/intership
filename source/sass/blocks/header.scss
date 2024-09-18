@@ -56,7 +56,7 @@
   min-height: 54px;
   background-color: #ffffff;
   padding-right: 51px;
-  transition: width 0.3s ease;
+  transition: min-width 0.3s ease;
 
   &::before {
     width: 46px;
