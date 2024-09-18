@@ -1,5 +1,9 @@
 @use "../global/variables";
 
+.modal {
+  z-index: 10;
+}
+
 .modal__title {
   font-size: 18px;
   line-height: 18px;
