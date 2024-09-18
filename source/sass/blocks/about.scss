@@ -51,22 +51,32 @@
     }
 
     p:nth-of-type(2) {
+      width: 498px;
       margin-bottom: 40px;
     }
   }
 
   @media (min-width: $desktop-width) {
-    padding-top: 70px;
-    padding-bottom: 60px;
+    display: grid;
+    grid-template-columns: 702px 498px;
+    gap: 0 40px;
 
     p:first-of-type {
+      grid-column: 1 / 1;
       font-size: 22px;
       line-height: 32px;
     }
 
     h3 {
+      grid-column: 2 / -1;
+      grid-row: 1 / 2;
       font-size: 32px;
       line-height: 36px;
+      margin-bottom: 40px;
+    }
+
+    p:nth-of-type(2) {
+      margin-bottom: 50px;
     }
   }
 }
@@ -113,6 +123,11 @@
       right: 24px;
     }
   }
+
+  @media (min-width: $desktop-width) {
+    grid-column: 2 / -1;
+    max-width: 279px;
+  }
 }
 
 .about__advantages {
@@ -129,6 +144,10 @@
     padding-left: 70px;
     padding-right: 50px;
   }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+  }
 }
 
 .about__advantages-list {
@@ -142,7 +161,7 @@
   @media (min-width: $tablet-width) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px 52px;
+    gap: 54px 52px;
   }
 }
 
@@ -168,6 +187,14 @@
     background-position: center;
     background-color: $primary-color;
     box-shadow: 5px 0 0 0 $primary-color, 0 5px 0 0 $primary-color;
+  }
+
+  br {
+    display: none;
+  }
+
+  &:last-of-type br {
+    display: block;
   }
 
   h3 {
@@ -202,14 +229,28 @@
   }
 
   @media (min-width: $desktop-width) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 162px;
+    padding-left: 41px;
+    padding-right: 41px;
+
+    br {
+      display: block;
+    }
+
     h3 {
       font-size: 26px;
       line-height: 30px;
       letter-spacing: 0.26px;
+      width: fit-content;
+      margin-bottom: 0;
     }
 
     p {
       line-height: 20px;
+      width: 192px;
     }
   }
 }

@@ -17,6 +17,8 @@
   @media (min-width: $desktop-width) {
     min-width: $desktop-width-container;
     max-width: $desktop-width-container;
+    padding-left: $desktop-padding-x;
+    padding-right: $desktop-padding-x;
   }
 }
 
