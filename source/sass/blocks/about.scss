@@ -169,14 +169,14 @@
   position: relative;
   border: 1px solid $secondary-text-color;
   border-radius: 16px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 21px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
   padding-right: 21px;
 
   &::before {
     position: absolute;
-    top: -11px;
+    top: -13px;
     left: -9px;
     content: "";
     width: 18px;
@@ -186,7 +186,7 @@
     background-size: 18px 22px;
     background-position: center;
     background-color: $primary-color;
-    box-shadow: 5px 0 0 0 $primary-color, 0 5px 0 0 $primary-color;
+    box-shadow: 12px 0 0 0 $primary-color, 0 10px 0 0 $primary-color;
   }
 
   br {
