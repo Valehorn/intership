@@ -1,5 +1,4 @@
 import { scrollToStart } from './utils';
-
 const modal = document.querySelector('.modal');
 const modalForm = document.querySelector('.modal__form');
 const modalButton = document.querySelector('.about__button');

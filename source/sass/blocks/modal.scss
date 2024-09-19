@@ -124,29 +124,15 @@
 }
 
 .modal__checkbox {
-  position: relative;
-  appearance: none;
-  border-radius: 2px;
-  width: 20px;
-  height: 20px;
+  border: 1px solid $primary-color;
   background-color: $primary-color;
-  cursor: pointer;
 
-  &::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "";
+  &:checked::before {
     background-color: #ffffff;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
   }
 
   &:checked::after {
-    opacity: 1;
+    background-color: $primary-color;
   }
 }
 

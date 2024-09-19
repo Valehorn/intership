@@ -1,0 +1,81 @@
+@use "./variables";
+
+.form-group__input {
+  font-family: $font;
+  font-weight: 400;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.form-group__input--phone {
+  padding-left: 27px;
+  padding-bottom: 6px;
+}
+
+.form-group__input-mask {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px 0 0 8px;
+  padding-left: 5px;
+  padding-right: 3px;
+  pointer-events: none;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+// Прорисовка маски.
+
+.form-group__input--phone:focus-visible ~ .form-group__input-mask,
+.form-group__input--phone:not(:placeholder-shown) ~ .form-group__input-mask {
+  opacity: 1;
+}
+
+.form-group__input-checkbox {
+  position: relative;
+  appearance: none;
+  border-radius: 2px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 10px;
+    height: 8px;
+    mask-image: url("/__spritemap#sprite-check-mark-view");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 10px 8px;
+    transition: background-color 0.3s ease;
+  }
+
+  &:checked::before {
+    opacity: 1;
+  }
+
+  &:checked::after {
+    opacity: 1;
+  }
+}
+

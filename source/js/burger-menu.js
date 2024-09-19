@@ -5,21 +5,21 @@ const nav = document.querySelector('.header__nav');
 const burgerButton = document.querySelector('.header__button-menu');
 
 const openMenu = () => {
-  body.classList.add('page-body--menu-open');
+  body.classList.add('page-body--burger-menu-open');
   nav.classList.add('header__nav--open');
   document.addEventListener('keydown', onDocumentKeyDown);
 };
 
 const closeMenu = () => {
-  if (body.classList.contains('page-body--menu-open')) {
-    body.classList.remove('page-body--menu-open');
+  if (body.classList.contains('page-body--burger-menu-open')) {
+    body.classList.remove('page-body--burger-menu-open');
     nav.classList.remove('header__nav--open');
     document.removeEventListener('keydown', onDocumentKeyDown);
   }
 };
 
 const toggleMenu = () => {
-  const isMenuOpen = body.classList.contains('page-body--menu-open');
+  const isMenuOpen = body.classList.contains('page-body--burger-menu-open');
   if (isMenuOpen) {
     closeMenu();
   } else {
