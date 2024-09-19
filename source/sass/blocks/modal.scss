@@ -1,7 +1,55 @@
 @use "../global/variables";
 
 .modal {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
   z-index: 10;
+
+  &::backdrop {
+    background-color: rgba(13, 29, 51, 0.4);
+  }
+}
+
+.modal__button-container {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+
+.modal__button-close {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 12px;
+    height: 12px;
+    mask-image: url("/__spritemap#sprite-cross-view");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 12px 12px;
+    background-color: $primary-color;
+  }
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .modal__title {
@@ -10,6 +58,7 @@
   font-weight: 400;
   color: $primary-color;
   margin: 0;
+  margin-bottom: 15px;
 
   @media (min-width: $tablet-width) {
     font-size: 28px;
@@ -23,7 +72,30 @@
 }
 
 .modal__description {
+  text-align: center;
+  width: 220px;
   margin: 0;
+  margin-bottom: 25px;
+}
+
+.modal__group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 15px;
+
+  &:last-of-type {
+    margin-bottom: 25px;
+  }
+}
+
+.modal__checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
 }
 
 .modal__label {
@@ -81,6 +153,8 @@
 .modal__checkbox-label {
   font-size: 12px;
   line-height: 14px;
+  width: 230px;
+  cursor: pointer;
   opacity: 0.9;
 
   @media (min-width: $tablet-width) {
@@ -89,9 +163,43 @@
 }
 
 .modal__submit-button {
+  width: 100%;
+  min-height: 42px;
   color: $primary-color;
+
+  &::before {
+    width: 34px;
+    height: 34px;
+  }
+
+  &::after {
+    right: 18px;
+    width: 8px;
+    height: 8px;
+    mask-image: url("/__spritemap#sprite-arrow-button-view");
+    mask-position: center;
+    mask-size: 8px 8px;
+    background-color: #ffffff;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 194px;
+    min-height: 54px;
+
+    &::before {
+      width: 46px;
+      height: 46px;
+    }
+
+    &::after {
+      right: 24px;
+    }
+  }
 }
 
 .modal__phone-mask {
-  margin: 0;
+  top: calc(50% - 10px);
+  left: 1px;
+  height: 41.5px;
+  background-color: #f1f1f1;
 }

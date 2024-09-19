@@ -1233,21 +1233,21 @@
       <form class="form__inner" action="https://echo.htmlacademy.ru/" method="post">
         <h2 class="form__title">Напишите нам.</h2>
         <p class="form__description">Оставьте ваши контакты, если у вас остались вопросы – мы на них ответим!</p>
-        <div class="input-group">
+        <div class="form__group">
           <label class="form__label" for="form-name">Имя</label>
           <input class="form__input form__element form-input" type="text" name="form-name" id="form-name">
         </div>
-        <div class="input-group">
+        <div class="form__group">
           <label class="form__label" for="form-phone">Телефон</label>
           <input class="form__input form__element form-input form-input--phone" type="tel" name="form-phone"
             id="form-phone">
-          <p class="form__phone-mask">+7</p>
+          <p class="form__phone-mask form-input__mask">+7</p>
         </div>
-        <div class="input-group">
+        <div class="form__group">
           <label class="form__label" for="comment">Ваше сообщение</label>
           <textarea class="form__textarea form__element form-input" name="comment" id="comment"></textarea>
         </div>
-        <div class="input-group">
+        <div class="form__group">
           <label class="form__label" for="form-city">Выберите город</label>
           <select class="form__select form__element form-input" name="form-city" id="form-city">
             <option class="form__select-item" value="empty" selected>&nbsp;</option>
@@ -1315,23 +1315,25 @@
     </ul>
   </footer>
   <dialog class="modal">
-    <form class="modal__form" action="https://echo.htmlacademy.ru/" method="post">
-      <button class="modal__button-close" type="button">
+    <div class="modal__button-container">
+    <button class="modal__button-close" type="button">
         <span class="visually-hidden">Закрыть модальное окно.</span>
       </button>
+    </div>
+    <form class="modal__form" action="https://echo.htmlacademy.ru/" method="post">
       <h2 class="modal__title">Напишите нам</h2>
       <p class="modal__description">Оставьте ваши контакты, если у вас остались вопросы – мы на них ответим!</p>
-      <div class="input-group">
+      <div class="modal__group">
         <label class="modal__label" for="modal-name">Имя</label>
-        <input class="modal__input modal__element form-input" type="text" name="modal-name" id="modal-name">
+        <input class="modal__input modal__element form-input" type="text" name="modal-name" id="modal-name" required>
       </div>
-      <div class="input-group">
+      <div class="modal__group">
         <label class="modal__label" for="modal-phone">Телефон</label>
         <input class="modal__input modal__element form-input form-input--phone" type="tel" name="modal-phone"
-          id="modal-phone">
-        <p class="modal__phone-mask">+7</p>
+          id="modal-phone" required placeholder=" ">
+        <p class="modal__phone-mask form-input__mask">+7</p>
       </div>
-      <div class="input-group">
+      <div class="modal__group">
         <label class="modal__label" for="modal-city">Выберите город</label>
         <select class="modal__select modal__element form-input" name="modal-city" id="modal-city">
           <option class="modal__select-item" value="empty" selected>&nbsp;</option>
@@ -1340,10 +1342,14 @@
           <option class="modal__select-item" value="Novosibirsk">Новосибирск</option>
         </select>
       </div>
-      <input class="modal__checkbox" type="checkbox" name="modal-confidentiality" id="modal-confidentiality" required>
-      <label class="modal__checkbox-label" for="modal-confidentiality">Я согласен на обработку моих персональных
-        данных</label>
-      <button class="button modal__submit-button button--primary" type="submit">Отправить</button>
+      <div class="modal__checkbox-group">
+        <input class="modal__checkbox" type="checkbox" name="modal-confidentiality" id="modal-confidentiality" required>
+        <label class="modal__checkbox-label" for="modal-confidentiality">Я согласен на обработку моих персональных
+          данных</label>
+      </div>
+      <button class="button modal__submit-button button--primary" type="submit">
+        <span>Отправить</span>
+      </button>
     </form>
   </dialog>
   <!-- пример использования спрайта -->
