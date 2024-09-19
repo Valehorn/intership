@@ -200,10 +200,6 @@
     display: none;
   }
 
-  &:last-of-type br {
-    display: block;
-  }
-
   h3 {
     font-size: 16px;
     line-height: 20px;
@@ -267,4 +263,8 @@
       width: 192px;
     }
   }
+}
+
+.about__advantages-item:last-of-type br {
+  display: block;
 }
