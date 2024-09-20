@@ -1,5 +1,9 @@
 @use "../global/variables";
 
+.form-group {
+  --select-width: 260px;
+}
+
 .form-group__input {
   font-family: $font;
   font-weight: 400;
@@ -86,10 +90,37 @@
 
 .form-group__fields {
   position: relative;
+}
+
+.form-group__fields--open {
+  .form-group__select-item-container {
+    visibility: visible;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-left: 20px;
+    padding-right: 5px;
+  }
+
+  .form-group__select-item {
+    min-height: 48px;
+    overflow: visible;
+    line-height: 14px;
+  }
+
+
+  .form-group__select::after {
+    transform: translateY(-5px) rotate(180deg);
+  }
+}
+
+.form-group__select {
+  width: var(--select-width);
+  position: relative;
+  cursor: pointer;
 
   &::after {
     position: absolute;
-    top: 69%;
+    top: 50%;
     right: 15px;
     transform: translateY(-50%);
     content: "";
@@ -105,12 +136,27 @@
   }
 }
 
-.form-group__select {
-  appearance: none;
-  cursor: pointer;
+.form-group__select-item-container {
+  position: absolute;
+  top: 46px;
+  left: 50%;
+  width: var(--select-width);
+  transform: translateX(-50%);
+  border: 1px solid $primary-text-color;
+  border-radius: 8px;
+  background-color: #ffffff;
+  visibility: hidden;
+  z-index: 10;
+  transition: padding 0.3s ease;
 }
 
-.form-group__fields--open::after {
-  transform: translateY(-5px) rotate(180deg);
-}
 
+.form-group__select-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 0;
+  line-height: 0;
+  overflow: hidden;
+  transition: min-height 0.3s ease, line-height 0.3s ease, overflow 0.3s ease;
+}

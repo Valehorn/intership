@@ -2,13 +2,16 @@
 
 .button-decoration {
   position: absolute;
+  display: block;
   top: 50%;
   right: 4px;
   transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .button-decoration__inner {
   position: relative;
+  display: block;
   border-radius: 44px;
   background-color: $primary-color;
   width: 34px;

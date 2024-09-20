@@ -122,9 +122,9 @@
                     настоящий студенческий стиль жизни!</p>
                   <div class="hero__button-wrapper">
                     <button class="button hero__button" type="button"><span>Подробнее</span>
-                      <div class="button-decoration">
-                        <div class="button-decoration__inner"></div>
-                      </div>
+                      <span class="button-decoration">
+                        <span class="button-decoration__inner"></span>
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -161,9 +161,9 @@
                   </p>
                   <div class="hero__button-wrapper">
                     <button class="button hero__button" type="button"><span>Подробнее</span>
-                      <div class="button-decoration">
-                        <div class="button-decoration__inner"></div>
-                      </div>
+                      <span class="button-decoration">
+                        <span class="button-decoration__inner"></span>
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -200,9 +200,9 @@
                   <p>Получите незаменимый опыт работы в ведущих мировых компаниях и государственных организациях.</p>
                   <div class="hero__button-wrapper">
                     <button class="button hero__button" type="button"><span>Подробнее</span>
-                      <div class="button-decoration">
-                        <div class="button-decoration__inner"></div>
-                      </div>
+                      <span class="button-decoration">
+                        <span class="button-decoration__inner"></span>
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -231,9 +231,9 @@
             способностью инициировать значимые
             изменения.</p>
           <button class="button about__button" type="button">Подробнее о проекте
-            <div class="button-decoration">
-              <div class="button-decoration__inner"></div>
-            </div>
+            <span class="button-decoration">
+              <span class="button-decoration__inner"></span>
+            </span>
           </button>
         </div>
         <div class="about__advantages">
@@ -1265,7 +1265,7 @@
           <label class="form__label" for="comment">Ваше сообщение</label>
           <textarea class="form__textarea form__element form-group__input" name="comment" id="comment"></textarea>
         </div>
-        <div class="form__group">
+        <div class="form__group form__group-fields form-group__fields">
           <label class="form__label" for="form-city">Выберите город</label>
           <select class="form__select form__element form-group__input form-group__select" name="form-city"
             id="form-city">
@@ -1354,15 +1354,18 @@
           name="modal-phone" id="modal-phone" required placeholder=" ">
         <p class="modal__phone-mask form-group__input-mask">+7</p>
       </div>
-      <div class="modal__group form-group__fields">
-        <label class="modal__label" for="modal-city">Выберите город</label>
-        <select class="modal__select modal__element form-group__input form-group__select" name="modal-city"
-          id="modal-city" size="1">
-          <option class="modal__select-item" value="empty" selected>&nbsp;</option>
-          <option class="modal__select-item" value="Moscow">Москва</option>
-          <option class="modal__select-item" value="Saint-Petersburg">Санкт-Петербург</option>
-          <option class="modal__select-item" value="Novosibirsk">Новосибирск</option>
-        </select>
+      <div class="modal__group modal__group-fields form-group__fields">
+        <p class="modal__label">Выберите город</p>
+        <div class="modal__select modal__element form-group__input form-group__select">
+          <span class="modal__select-value">111</span>
+          <div class="modal__select-item-container form-group__select-item-container">
+            <div class="modal__select-item form-group__select-item" data-city-modal=" ">&nbsp;</div>
+            <div class="modal__select-item form-group__select-item" data-city-modal="Москва">Москва</div>
+            <div class="modal__select-item form-group__select-item" data-city-modal="Санкт-Петербург">Санкт-Петербург
+            </div>
+            <div class="modal__select-item form-group__select-item" data-city-modal="Новосибирск">Новосибирск</div>
+          </div>
+        </div>
       </div>
       <div class="modal__checkbox-group">
         <input class="modal__checkbox form-group__input-checkbox" type="checkbox" name="modal-confidentiality"
@@ -1372,9 +1375,9 @@
       </div>
       <button class="button modal__submit-button" type="submit">
         <span>Отправить</span>
-        <div class="button-decoration">
-          <div class="button-decoration__inner"></div>
-        </div>
+        <span class="button-decoration">
+          <span class="button-decoration__inner"></span>
+        </span>
       </button>
     </form>
   </dialog>
