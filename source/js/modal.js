@@ -6,7 +6,10 @@ const modalForm = document.querySelector('.modal__form');
 const modalButton = document.querySelector('.about__button');
 const modalCloseButton = document.querySelector('.modal__button-close');
 
-const openModal = () => {
+const openModal = (evt) => {
+  if (!evt.target.closest('.about__button')) {
+    return;
+  }
   scrollToStart();
   body.classList.add('page-body--modal-open');
   modal.showModal();
@@ -20,8 +23,8 @@ const closeModal = () => {
   document.removeEventListener('click', onDocumentClick);
 };
 
-const onModalButtonClick = () => {
-  openModal();
+const onModalButtonClick = (evt) => {
+  openModal(evt);
 };
 
 const onModalCloseButtonClick = () => {
