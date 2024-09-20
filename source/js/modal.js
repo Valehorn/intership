@@ -8,11 +8,13 @@ const modalCloseButton = document.querySelector('.modal__button-close');
 const openModal = () => {
   scrollToStart();
   modal.showModal();
+  document.addEventListener('click', onDocumentClick);
 };
 
 const closeModal = () => {
   modalForm.reset();
   modal.close();
+  document.removeEventListener('click', onDocumentClick);
 };
 
 const onModalButtonClick = () => {
@@ -23,12 +25,11 @@ const onModalCloseButtonClick = () => {
   closeModal();
 };
 
-const onDocumentClick = (evt) => {
+function onDocumentClick(evt) {
   if (modal.open && evt.target === modal) {
     closeModal();
   }
-};
+}
 
-document.addEventListener('click', onDocumentClick);
 modalButton.addEventListener('click', onModalButtonClick);
 modalCloseButton.addEventListener('click', onModalCloseButtonClick);

@@ -8,6 +8,7 @@ const openMenu = () => {
   body.classList.add('page-body--burger-menu-open');
   nav.classList.add('header__nav--open');
   document.addEventListener('keydown', onDocumentKeyDown);
+  document.addEventListener('click', onDocumentClick);
 };
 
 const closeMenu = () => {
@@ -15,6 +16,7 @@ const closeMenu = () => {
     body.classList.remove('page-body--burger-menu-open');
     nav.classList.remove('header__nav--open');
     document.removeEventListener('keydown', onDocumentKeyDown);
+    document.removeEventListener('click', onDocumentClick);
   }
 };
 
@@ -38,13 +40,13 @@ function onDocumentKeyDown(evt) {
   }
 }
 
-const onDocumentClick = (evt) => {
+function onDocumentClick(evt) {
   const isClickNav = evt.target.closest('.header__nav');
   const isClickBurgerButton = evt.target.closest('.header__button-menu');
   if (!isClickNav && !isClickBurgerButton) {
     closeMenu();
   }
-};
+}
 
 const onNavButtonClick = (evt) => {
   const button = evt.target.closest('.header__nav-button');
@@ -70,8 +72,6 @@ const onNavButtonClick = (evt) => {
 };
 
 nav.addEventListener('click', onNavButtonClick);
-
-document.addEventListener('click', onDocumentClick);
 
 const burgerMenuToggle = () => {
   burgerButton.addEventListener('click', onBurgerButtonClick);
