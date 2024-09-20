@@ -150,37 +150,13 @@
 }
 
 .modal__submit-button {
-  width: 100%;
+  width: 290px;
   min-height: 42px;
   color: $primary-color;
-
-  &::before {
-    width: 34px;
-    height: 34px;
-  }
-
-  &::after {
-    right: 18px;
-    width: 8px;
-    height: 8px;
-    mask-image: url("/__spritemap#sprite-arrow-button-view");
-    mask-position: center;
-    mask-size: 8px 8px;
-    background-color: #ffffff;
-  }
 
   @media (min-width: $tablet-width) {
     width: 194px;
     min-height: 54px;
-
-    &::before {
-      width: 46px;
-      height: 46px;
-    }
-
-    &::after {
-      right: 24px;
-    }
   }
 }
 

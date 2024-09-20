@@ -61,11 +61,24 @@
   transition: min-width 0.3s ease;
 
   &::before {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    content: "";
+    border-radius: 44px;
     width: 46px;
     height: 46px;
+    background-color: $primary-color;
+    transition: background-color 0.3s ease;
   }
 
   &::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "";
+    mask-repeat: no-repeat;
     right: var(--burger-menu-after-x);
     width: var(--burger-menu-width);
     height: var(--burger-menu-height);
@@ -73,7 +86,7 @@
     mask-size: var(--burger-menu-size);
     mask-position: center;
     background-color: #ffffff;
-    transition: right 0.3s ease;
+    transition: right 0.3s ease, background-color 0.3s ease, mask-image 0.3s ease;
   }
 
   @media (min-width: $tablet-width) {

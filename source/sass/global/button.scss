@@ -24,7 +24,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease-in, color 0.3s ease-in, border 0.3s ease-in;
 
-  &::before {
+  /* &::before {
     position: absolute;
     top: 50%;
     right: 4px;
@@ -33,16 +33,16 @@
     border-radius: 44px;
     background-color: $primary-color;
     transition: background-color 0.3s ease;
-  }
+  } */
 
-  &::after {
+  /* &::after {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     content: "";
     mask-repeat: no-repeat;
     transition: background-color 0.3s ease, mask-image 0.3s ease;
-  }
+  } */
 
   @media (min-width: $tablet-width) {
     font-size: 14px;

@@ -24,7 +24,8 @@
             draggable="false">
         </div>
         <div class="header__nav-group">
-          <button class="button header__button-menu" type="button">Меню</button>
+          <button class="button header__button-menu" type="button"><span>Меню</span>
+          </button>
           <nav class="header__nav" aria-label="header navigation">
             <ul class="header__nav-list">
               <li class="header__nav-item">
@@ -120,7 +121,11 @@
                     в разных городах, ощущая
                     настоящий студенческий стиль жизни!</p>
                   <div class="hero__button-wrapper">
-                    <button class="button hero__button" type="button">Подробнее</button>
+                    <button class="button hero__button" type="button"><span>Подробнее</span>
+                      <div class="button-decoration">
+                        <div class="button-decoration__inner"></div>
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -155,7 +160,11 @@
                   <p>Возможности для преподавания, органического сельского хозяйства, устойчивого образа жизни и другое.
                   </p>
                   <div class="hero__button-wrapper">
-                    <button class="button hero__button" type="button">Подробнее</button>
+                    <button class="button hero__button" type="button"><span>Подробнее</span>
+                      <div class="button-decoration">
+                        <div class="button-decoration__inner"></div>
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -190,7 +199,11 @@
                 <div class="hero__group-tablet-plus">
                   <p>Получите незаменимый опыт работы в ведущих мировых компаниях и государственных организациях.</p>
                   <div class="hero__button-wrapper">
-                    <button class="button hero__button" type="button">Подробнее</button>
+                    <button class="button hero__button" type="button"><span>Подробнее</span>
+                      <div class="button-decoration">
+                        <div class="button-decoration__inner"></div>
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -217,7 +230,11 @@
             Цель центра — наделить этих людей
             способностью инициировать значимые
             изменения.</p>
-          <button class="button about__button" type="button">Подробнее о проекте</button>
+          <button class="button about__button" type="button"><span>Подробнее о проекте</span>
+            <div class="button-decoration">
+              <div class="button-decoration__inner"></div>
+            </div>
+          </button>
         </div>
         <div class="about__advantages">
           <ul class="about__advantages-list">
@@ -1239,8 +1256,8 @@
         </div>
         <div class="form__group">
           <label class="form__label" for="form-phone">Телефон</label>
-          <input class="form__input form__element form-group__input form-group__input--phone" type="tel" name="form-phone"
-            id="form-phone">
+          <input class="form__input form__element form-group__input form-group__input--phone" type="tel"
+            name="form-phone" id="form-phone">
           <p class="form__phone-mask form-group__input-mask">+7</p>
         </div>
         <div class="form__group">
@@ -1249,14 +1266,16 @@
         </div>
         <div class="form__group">
           <label class="form__label" for="form-city">Выберите город</label>
-          <select class="form__select form__element form-group__input form-group__select" name="form-city" id="form-city">
+          <select class="form__select form__element form-group__input form-group__select" name="form-city"
+            id="form-city">
             <option class="form__select-item" value="empty" selected>&nbsp;</option>
             <option class="form__select-item" value="Moscow">Москва</option>
             <option class="form__select-item" value="Saint-Petersburg">Санкт-Петербург</option>
             <option class="form__select-item" value="Novosibirsk">Новосибирск</option>
           </select>
         </div>
-        <input class="form__checkbox form-group__input-checkbox" type="checkbox" name="form-confidentiality" id="form-confidentiality" required>
+        <input class="form__checkbox form-group__input-checkbox" type="checkbox" name="form-confidentiality"
+          id="form-confidentiality" required>
         <label class="form__checkbox-label" for="form-confidentiality">Я согласен на обработку моих персональных
           данных</label>
         <button class="button form__submit-button button--secondary" type="submit">Отправить</button>
@@ -1314,48 +1333,50 @@
       </li>
     </ul>
   </footer>
-    <dialog class="modal">
-      <div class="modal__button-container">
-        <button class="modal__button-close" type="button">
-          <span class="visually-hidden">Закрыть модальное окно.</span>
-        </button>
+  <dialog class="modal">
+    <div class="modal__button-container">
+      <button class="modal__button-close" type="button">
+        <span class="visually-hidden">Закрыть модальное окно.</span>
+      </button>
+    </div>
+    <form class="modal__form form-group" action="https://echo.htmlacademy.ru/" method="post">
+      <h2 class="modal__title">Напишите нам</h2>
+      <p class="modal__description">Оставьте ваши контакты, если у вас остались вопросы – мы на них ответим!</p>
+      <div class="modal__group">
+        <label class="modal__label" for="modal-name">Имя</label>
+        <input class="modal__input modal__element form-group__input" type="text" name="modal-name" id="modal-name"
+          required>
       </div>
-      <form class="modal__form form-group" action="https://echo.htmlacademy.ru/" method="post">
-        <h2 class="modal__title">Напишите нам</h2>
-        <p class="modal__description">Оставьте ваши контакты, если у вас остались вопросы – мы на них ответим!</p>
-        <div class="modal__group">
-          <label class="modal__label" for="modal-name">Имя</label>
-          <input class="modal__input modal__element form-group__input" type="text" name="modal-name" id="modal-name" required>
+      <div class="modal__group">
+        <label class="modal__label" for="modal-phone">Телефон</label>
+        <input class="modal__input modal__element form-group__input form-group__input--phone" type="tel"
+          name="modal-phone" id="modal-phone" required placeholder=" ">
+        <p class="modal__phone-mask form-group__input-mask">+7</p>
+      </div>
+      <div class="modal__group form-group__fields">
+        <label class="modal__label" for="modal-city">Выберите город</label>
+        <select class="modal__select modal__element form-group__input form-group__select" name="modal-city"
+          id="modal-city" size="1">
+          <option class="modal__select-item" value="empty" selected>&nbsp;</option>
+          <option class="modal__select-item" value="Moscow">Москва</option>
+          <option class="modal__select-item" value="Saint-Petersburg">Санкт-Петербург</option>
+          <option class="modal__select-item" value="Novosibirsk">Новосибирск</option>
+        </select>
+      </div>
+      <div class="modal__checkbox-group">
+        <input class="modal__checkbox form-group__input-checkbox" type="checkbox" name="modal-confidentiality"
+          id="modal-confidentiality" required>
+        <label class="modal__checkbox-label" for="modal-confidentiality">Я согласен на обработку моих персональных
+          данных</label>
+      </div>
+      <button class="button modal__submit-button" type="submit">
+        <span>Отправить</span>
+        <div class="button-decoration">
+          <div class="button-decoration__inner"></div>
         </div>
-        <div class="modal__group">
-          <label class="modal__label" for="modal-phone">Телефон</label>
-          <input class="modal__input modal__element form-group__input form-group__input--phone" type="tel" name="modal-phone"
-            id="modal-phone" required placeholder=" ">
-          <p class="modal__phone-mask form-group__input-mask">+7</p>
-        </div>
-        <div class="modal__group form-group__fields">
-          <label class="modal__label" for="modal-city">Выберите город</label>
-          <select class="modal__select modal__element form-group__input form-group__select" name="modal-city" id="modal-city" size="1">
-            <option class="modal__select-item" value="empty" selected>&nbsp;</option>
-            <option class="modal__select-item" value="Moscow">Москва</option>
-            <option class="modal__select-item" value="Saint-Petersburg">Санкт-Петербург</option>
-            <option class="modal__select-item" value="Novosibirsk">Новосибирск</option>
-          </select>
-        </div>
-        <div class="modal__checkbox-group">
-          <input class="modal__checkbox form-group__input-checkbox" type="checkbox" name="modal-confidentiality" id="modal-confidentiality"
-            required>
-          <label class="modal__checkbox-label" for="modal-confidentiality">Я согласен на обработку моих персональных
-            данных</label>
-        </div>
-        <button class="button modal__submit-button" type="submit">
-          <span>Отправить</span>
-          <div class="button-decoration">
-            <div class="button-decoration__inner"></div>
-          </div>
-        </button>
-      </form>
-    </dialog>
+      </button>
+    </form>
+  </dialog>
   <!-- пример использования спрайта -->
   <!-- <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
     <svg>
