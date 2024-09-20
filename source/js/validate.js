@@ -1,59 +1,78 @@
-const form = document.querySelector('.form__free');
-const nameError = form.querySelector('.form__name-error');
-const phoneError = form.querySelector('.form__phone-error');
-const nameInput = form.querySelector('.form__name');
-const phoneInput = form.querySelector('.form__phone');
-let isValid = true;
+const forms = document.querySelectorAll('.form-group');
+let isValid;
 
-const validateName = () => {
-  const nameValue = form.querySelector('.form__name').value;
+const validateName = (nameInput) => {
+  const nameValue = nameInput.value;
   const nameValidate = /^[А-ЯA-Z][А-Яа-яA-Za-z\s]*$/;
 
-  if (!nameValidate.test(nameValue)) {
-    nameError.textContent = 'Имя должно содержать только буквы и пробелы, а также начинаться с большой буквы.';
-    nameError.style.display = 'block';
-    nameError.style.height = `${nameError.scrollHeight}px`;
-    nameError.style.marginTop = '11px';
-    nameInput.classList.add('form__input--error');
-    isValid = false;
+  if (!nameValidate.test(nameValue) && nameValue.trim() !== '') {
+    nameInput.classList.add('form__group-input--error');
+    return false;
   } else {
-    nameError.textContent = '';
-    nameError.style.display = 'none';
-    nameError.style.height = '0';
-    nameError.style.marginTop = '0';
-    nameInput.classList.remove('form__input--error');
+    nameInput.classList.remove('form__group-input--error');
+    return true;
   }
 };
 
-const validatePhone = () => {
-  const phoneValue = form.querySelector('.form__phone').value;
+const validatePhone = (phoneInput) => {
+  const phoneValue = phoneInput.value;
   const phoneValidate = /^(?:\d[-\d]*){11}$/;
-  if (!phoneValidate.test(phoneValue)) {
-    phoneError.textContent = 'Телефон не должен содержать буквы или символы отличные от "-" и быть не меньше 11 цифр';
-    phoneError.style.display = 'block';
-    phoneError.style.height = `${phoneError.scrollHeight}px`;
-    phoneError.style.marginTop = '11px';
-    phoneInput.classList.add('form__input--error');
-    isValid = false;
+
+  if (!phoneValidate.test(phoneValue) && phoneValue.trim() !== '') {
+    phoneInput.classList.add('form__group-input--error');
+    return false;
   } else {
-    phoneError.textContent = '';
-    phoneError.style.display = 'none';
-    phoneError.style.height = '0';
-    phoneError.style.marginTop = '0';
-    phoneInput.classList.remove('form__input--error');
+    phoneInput.classList.remove('form__group-input--error');
+    return true;
+  }
+};
+
+const onInputChange = (input) => {
+  if (input.value.trim() === '') {
+    input.classList.remove('form__group-input--error');
+  } else {
+    if (input.classList.contains('form__group-input--error')) {
+      if (input.type === 'text') {
+        validateName(input);
+      } else if (input.type === 'tel') {
+        validatePhone(input);
+      }
+    }
   }
 };
 
 const onFormSubmit = (evt) => {
   evt.preventDefault();
   isValid = true;
-  validateName();
-  validatePhone();
+
+  forms.forEach((form) => {
+    const nameInput = form.querySelector('.form-group__input--name');
+    const phoneInput = form.querySelector('.form-group__input--phone');
+
+    if (nameInput) {
+      isValid = validateName(nameInput) && isValid;
+    }
+    if (phoneInput) {
+      isValid = validatePhone(phoneInput) && isValid;
+    }
+  });
 
   if (isValid) {
-    form.submit();
-    form.reset();
+    forms.forEach((form) => form.submit());
+    forms.forEach((form) => form.reset());
   }
 };
 
-form.addEventListener('submit', onFormSubmit);
+forms.forEach((form) => {
+  form.addEventListener('submit', onFormSubmit);
+
+  const nameInput = form.querySelector('.form-group__input--name');
+  const phoneInput = form.querySelector('.form-group__input--phone');
+
+  if (nameInput) {
+    nameInput.addEventListener('input', () => onInputChange(nameInput));
+  }
+  if (phoneInput) {
+    phoneInput.addEventListener('input', () => onInputChange(phoneInput));
+  }
+});

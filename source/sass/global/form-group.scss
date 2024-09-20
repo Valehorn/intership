@@ -14,6 +14,11 @@
   padding-bottom: 6px;
 }
 
+.form__group-input--error {
+  border: 1px solid $form-error;
+  background-color: $form-error-bg;
+}
+
 .form-group__input-mask {
   position: absolute;
   display: flex;
