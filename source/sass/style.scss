@@ -6,14 +6,13 @@
 @import "global/global";
 @import "global/button";
 @import "global/button-decoration";
-@import "global/logo";
 @import "global/title";
-@import "global/form-group";
 
 
 // Blocks
 @import "blocks/page-body";
 @import "blocks/header";
+@import "blocks/logo";
 @import "blocks/hero";
 @import "blocks/about";
 @import "blocks/programs";
@@ -26,6 +25,7 @@
 @import "blocks/footer";
 @import "blocks/social-list";
 @import "blocks/modal";
+@import "blocks/form-group";
 
 // Vendor
 @import "vendor/normalize";
