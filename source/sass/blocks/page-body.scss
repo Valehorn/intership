@@ -25,3 +25,13 @@
     z-index: 1;
   }
 }
+
+.page-body--modal-open {
+  position: relative;
+
+  &::after {
+    visibility: visible;
+    opacity: 1;
+    z-index: 10;
+  }
+}
