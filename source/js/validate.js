@@ -7,9 +7,12 @@ const validateName = (nameInput) => {
 
   if (!nameValidate.test(nameValue) && nameValue.trim() !== '') {
     nameInput.classList.add('form__group-input--error');
+    nameInput.setCustomValidity('Введите корректное имя, начинающееся с заглавной буквы.');
+    nameInput.reportValidity();
     return false;
   } else {
     nameInput.classList.remove('form__group-input--error');
+    nameInput.setCustomValidity('');
     return true;
   }
 };
@@ -20,16 +23,21 @@ const validatePhone = (phoneInput) => {
 
   if (!phoneValidate.test(phoneValue) && phoneValue.trim() !== '') {
     phoneInput.classList.add('form__group-input--error');
+    phoneInput.setCustomValidity('Введите корректный номер телефона из 11 цифр.');
+    phoneInput.reportValidity();
     return false;
   } else {
     phoneInput.classList.remove('form__group-input--error');
+    phoneInput.setCustomValidity('');
     return true;
   }
 };
 
+
 const onInputChange = (input) => {
   if (input.value.trim() === '') {
     input.classList.remove('form__group-input--error');
+    input.setCustomValidity('');
   } else {
     if (input.classList.contains('form__group-input--error')) {
       if (input.type === 'text') {
