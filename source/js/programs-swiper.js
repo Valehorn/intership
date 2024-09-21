@@ -15,6 +15,10 @@ const initSwiperPrograms = () => {
       el: '.programs__swiper-pagination',
       clickable: true,
     },
+    navigation: {
+      nextEl: '.programs__swiper-button-next',
+      prevEl: '.programs__swiper-button-prev',
+    },
     breakpoints: {
       768: {
         slidesPerView: 2.2,
