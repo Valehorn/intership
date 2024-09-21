@@ -1,3 +1,6 @@
+// Vendor
+@import "vendor/normalize";
+
 // Global
 @import "global/variables";
 @import "global/fonts";
@@ -26,6 +29,5 @@
 @import "blocks/social-list";
 @import "blocks/modal";
 @import "blocks/form-group";
-
-// Vendor
-@import "vendor/normalize";
+@import "blocks/swiper-overflow";
+@import "blocks/swiper-button";
