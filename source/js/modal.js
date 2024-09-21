@@ -13,6 +13,8 @@ const openModal = (evt) => {
   scrollToStart();
   body.classList.add('page-body--modal-open');
   modal.showModal();
+  modal.style.display = 'flex';
+  modal.style.position = 'relative';
   document.addEventListener('click', onDocumentClick);
 };
 
@@ -20,6 +22,8 @@ const closeModal = () => {
   modalForm.reset();
   body.classList.remove('page-body--modal-open');
   modal.close();
+  modal.style.display = 'none';
+  modal.style.position = 'absolute';
   document.removeEventListener('click', onDocumentClick);
 };
 
