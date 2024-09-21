@@ -1,7 +1,12 @@
 @use "../global/variables";
 
 .modal {
+  --select-width: 260px;
+
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid transparent;
   border-radius: 16px;
   min-width: 290px;
@@ -14,7 +19,15 @@
 
   &::backdrop {
     display: none;
-    background-color: rgba(13, 29, 51, 0.4);
+  }
+
+  @media (min-width: $tablet-width) {
+    --select-width: 350px;
+
+    min-width: 510px;
+    max-width: 640px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
 
@@ -22,6 +35,11 @@
   position: absolute;
   top: 7px;
   right: 7px;
+
+  @media (min-width: $tablet-width) {
+    top: 22px;
+    right: 22px;
+  }
 }
 
 .modal__button-close {
@@ -46,6 +64,14 @@
     mask-size: 12px 12px;
     background-color: $primary-color;
   }
+
+  @media (min-width: $tablet-width) {
+    &::after {
+      width: 22px;
+      height: 22px;
+      mask-size: 22px 22px;
+    }
+  }
 }
 
 .modal__form {
@@ -66,6 +92,7 @@
   @media (min-width: $tablet-width) {
     font-size: 28px;
     line-height: 28px;
+    margin-bottom: 20px;
   }
 
   @media (min-width: $desktop-width) {
@@ -79,6 +106,11 @@
   width: 220px;
   margin: 0;
   margin-bottom: 25px;
+
+  @media (min-width: $tablet-width) {
+    width: 350px;
+    margin-bottom: 30px;
+  }
 }
 
 .modal__group {
@@ -92,6 +124,23 @@
   &:last-of-type {
     margin-bottom: 25px;
   }
+
+  @media (min-width: $tablet-width) {
+    gap: 12px;
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.modal__select {
+  width: var(--select-width);
+}
+
+.modal__select-item-container {
+  width: var(--select-width);
 }
 
 .modal__checkbox-group {
@@ -99,6 +148,11 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 25px;
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
 
 .modal__label {
@@ -149,6 +203,7 @@
 
   @media (min-width: $tablet-width) {
     line-height: 12px;
+    width: 304px;
   }
 }
 

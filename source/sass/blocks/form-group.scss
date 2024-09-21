@@ -1,16 +1,16 @@
 @use "../global/variables";
 
-.form-group {
-  --select-width: 260px;
-}
-
 .form-group__input {
   font-family: $font;
   font-weight: 400;
-  width: 100%;
   background-color: transparent;
   border-radius: 8px;
   padding: 5px;
+}
+
+.form-group__input[type="text"],
+.form-group__input[type="tel"] {
+  width: 100%;
 }
 
 .form-group__input--phone {
@@ -119,7 +119,6 @@
 
 .form-group__select {
   position: relative;
-  width: var(--select-width);
   cursor: pointer;
 
   &::after {
@@ -151,7 +150,6 @@
   position: absolute;
   top: 46px;
   left: 50%;
-  width: var(--select-width);
   transform: translateX(-50%);
   border: 1px solid $primary-text-color;
   border-radius: 8px;
@@ -161,6 +159,10 @@
   overflow-y: auto;
   z-index: 10;
   transition: padding 0.3s ease;
+
+  @media (min-width: $tablet-width) {
+    top: 54px;
+  }
 }
 
 
