@@ -107,6 +107,10 @@
     line-height: 14px;
   }
 
+  .form-group__select-item:first-of-type {
+    min-height: 10px;
+  }
+
 
   .form-group__select::after {
     transform: translateY(-5px) rotate(180deg);
@@ -153,6 +157,8 @@
   border-radius: 8px;
   background-color: #ffffff;
   visibility: hidden;
+  max-height: 130px;
+  overflow-y: auto;
   z-index: 10;
   transition: padding 0.3s ease;
 }
