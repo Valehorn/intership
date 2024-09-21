@@ -3,6 +3,12 @@
 .programs {
   padding-top: 55px;
   padding-bottom: 50px;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 
@@ -13,12 +19,26 @@
 
 .programs__swiper-overflow {
   margin-bottom: 30px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 0;
+  }
 }
 
 .programs__swiper-buttons-container {
   position: absolute;
+  display: flex;
+  gap: 10px;
   top: -54px;
   right: 0;
+
+  @media (min-width: $tablet-width) {
+    top: auto;
+    bottom: -12px;
+    right: 45px;
+  }
 }
 
 .programs__swiper-pagination {
@@ -34,6 +54,11 @@
   display: flex;
   align-items: flex-end;
   min-height: 400px;
+
+  @media (min-width: $tablet-width) {
+    min-width: 324px;
+    min-height: 420px;
+  }
 }
 
 .programs__image-container {
@@ -42,7 +67,6 @@
 
 .programs__image {
   display: block;
-  border: 1px solid $primary-bg-color;
   border-radius: 12px;
   object-fit: cover;
 }
@@ -143,10 +167,36 @@
   display: inline-flex;
   width: 205px;
   min-height: 44px;
+
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    top: 60px;
+    right: 45px;
+    width: 234px;
+    min-height: 56px;
+  }
 }
 
 // Swiper
 
 .programs__swiper {
   width: 100%;
+}
+
+.programs__swiper-wrapper {
+  @media (min-width: $tablet-width) {
+    margin-bottom: 50px;
+  }
+}
+
+.programs__swiper-scrollbar {
+  width: 562px;
+  height: 2px;
+  background-color: rgba(49, 109, 194, 0.2);
+
+  div {
+    width: 326px;
+    height: 2px;
+    background-color: $primary-color;
+  }
 }

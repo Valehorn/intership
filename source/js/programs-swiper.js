@@ -10,8 +10,8 @@ const initSwiperPrograms = () => {
     speed: 600,
     spaceBetween: 10,
     slidesPerView: 1,
-    pagination: {
-      el: '.programs__swiper-pagination',
+    scrollbar: {
+      el: '.programs__swiper-scrollbar',
       clickable: true,
     },
     navigation: {
@@ -21,6 +21,7 @@ const initSwiperPrograms = () => {
     breakpoints: {
       768: {
         slidesPerView: 2.2,
+        spaceBetween: 30,
       },
       1440: {
         slidesPerView: 3,
