@@ -12,7 +12,7 @@
     padding-bottom: 60px;
   }
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $desktop-width) {
     padding-top: 60px;
     padding-bottom: 70px;
   }
@@ -218,7 +218,7 @@
 
   @media (min-width: $tablet-width) {
     position: absolute;
-    top: 60px;
+    top: 50px;
     right: 45px;
     width: 234px;
     min-height: 56px;
@@ -255,7 +255,7 @@
     background-color: rgba(49, 109, 194, 0.2);
 
     div {
-      width: 326px;
+      /* width: 326px; */
       height: 2px;
       background-color: $primary-color;
     }

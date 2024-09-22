@@ -20,7 +20,7 @@ const initSwiperPrograms = () => {
     },
     breakpoints: {
       768: {
-        slidesPerView: 2.14,
+        slidesPerView: 2.13,
         spaceBetween: 30,
       },
       1440: {
