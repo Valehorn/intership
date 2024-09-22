@@ -108,7 +108,6 @@
   @media (min-width: $tablet-width) {
     font-size: 20px;
     line-height: 14px;
-    width: 191px;
   }
 
   @media (min-width: $desktop-width) {
@@ -136,6 +135,8 @@
   }
 
   @media (min-width: $tablet-width) {
+    gap: 10px 16px;
+
     p {
       font-size: 14px;
       line-height: 20px;
@@ -146,6 +147,10 @@
   @media (min-width: $desktop-width) {
     p {
       line-height: 18px;
+    }
+
+    &:nth-of-type(2) br {
+      display: none;
     }
   }
 }
