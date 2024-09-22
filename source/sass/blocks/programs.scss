@@ -46,21 +46,13 @@
   position: absolute;
   display: flex;
   gap: 10px;
-  top: -54px;
-  right: 0;
+  top: -55px;
+  right: -2px;
 
   @media (min-width: $tablet-width) {
     top: auto;
     bottom: -12px;
     right: 45px;
-  }
-}
-
-.programs__swiper-pagination {
-  display: none;
-
-  @media (min-width: $tablet-width) {
-    display: block;
   }
 }
 
@@ -110,6 +102,7 @@
 }
 
 .programs__slide-title {
+  position: relative;
   display: flex;
   align-items: center;
   font-size: 16px;
@@ -117,7 +110,7 @@
   font-weight: 400;
   color: $primary-color;
   word-break: break-all;
-  width: 173px;
+  width: 146px;
   background-color: #ffffff;
   padding-top: 18px;
   padding-bottom: 6px;
@@ -126,9 +119,24 @@
   border-radius: 12px 12px 0 0;
   margin: 0;
 
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: -18px;
+    content: "";
+    width: 18px;
+    height: 18px;
+    mask-image: url("/__spritemap#sprite-angle-view");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 18px 18px;
+    background-color: #ffffff;
+  }
+
   @media (min-width: $tablet-width) {
     font-size: 20px;
     line-height: 14px;
+    width: 173px;
   }
 
   @media (min-width: $desktop-width) {
@@ -206,6 +214,7 @@
   display: inline-flex;
   width: 205px;
   min-height: 44px;
+  padding-left: 5px;
 
   @media (min-width: $tablet-width) {
     position: absolute;
@@ -237,17 +246,22 @@
 }
 
 .programs__swiper-scrollbar {
-  width: 562px;
-  height: 2px;
-  background-color: rgba(49, 109, 194, 0.2);
-
-  div {
-    width: 326px;
-    height: 2px;
-    background-color: $primary-color;
-  }
+  display: none;
 
   @media (min-width: $tablet-width) {
+    display: block;
+    width: 562px;
+    height: 2px;
+    background-color: rgba(49, 109, 194, 0.2);
+
+    div {
+      width: 326px;
+      height: 2px;
+      background-color: $primary-color;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
     width: 1136px;
 
     div {
