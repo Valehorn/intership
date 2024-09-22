@@ -1,17 +1,36 @@
 @use "../global/variables";
 
 .grant {
+  padding-top: 70px;
+  padding-bottom: 70px;
   color: #ffffff;
   background-color: $primary-color;
 
   p {
     margin: 0;
   }
+
+  p:first-of-type {
+    margin-bottom: 30px;
+  }
 }
 
-.grant__steps {
+.grant__title {
+  margin-bottom: 15px;
+}
+
+.grant__image-container {
+  margin-bottom: 40px;
+}
+
+.grant__image {
+  display: block;
+}
+
+.grant .grant__steps {
   font-size: 18px;
   line-height: 22px;
+  margin-bottom: 30px;
 
   @media (min-width: $tablet-width) {
     font-size: 28px;
@@ -26,10 +45,38 @@
 
 .grant__list {
   list-style: none;
+  counter-reset: grantList 0;
   padding: 0;
   margin: 0;
+  padding-left: 15px;
 }
 
 .grant__item {
+  position: relative;
+  border: 1px solid $secondary-text-color;
+  border-radius: 16px;
   color: $secondary-text-color;
+  counter-increment: grantList 1;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 26px;
+  padding-right: 5px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -5px;
+    content: counter(grantList);
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 500;
+    width: 11px;
+    height: 18px;
+    background-color: $primary-color;
+    box-shadow: 10px -2px 0 0 $primary-color, 0 10px 0 0 $primary-color;
+  }
 }

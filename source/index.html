@@ -470,47 +470,49 @@
       </div>
     </section>
     <section class="grant" data-test="grant" id="grant">
-      <h2 class="grant__title title">Как поехать</h2>
-      <p>Свяжитесь с координатором, чтобы узнать
-        полную информацию. Вы получите
-        актуальные сведения о доступных
-        программах и городах, в которых можете
-        пройти программу.</p>
-      <div class="grant__image-container">
-        <picture>
-          <source type="image/webp" media="(min-width: 1440px)"
-            srcset="img/hero/hero-card-desktop-1@1x.webp 1x, img/hero/hero-card-desktop-1@2x.webp 2x" width="498"
-            height="363">
-          <source type="image/webp" media="(min-width: 768px)"
-            srcset="img/hero/hero-card-tablet-1@1x.webp 1x, img/hero/hero-card-tablet-1@2x.webp 2x" width="678"
-            height="375">
-          <source type="image/jpeg" media="(min-width: 1440px)"
-            srcset="img/hero/hero-card-desktop-1@1x.jpg 1x, img/hero/hero-card-desktop-1@2x.jpg 2x" width="498"
-            height="363">
-          <source type="image/jpeg" media="(min-width: 768px)"
-            srcset="img/hero/hero-card-tablet-1@1x.jpg 1x, img/hero/hero-card-tablet-1@2x.jpg 2x" width="678"
-            height="375">
-          <source type="image/webp" media="(max-width: 767px)"
-            srcset="img/hero/hero-card-mobile-1@1x.webp 1x, img/hero/hero-card-mobile-1@1x.webp 2x" width="290"
-            height="200">
-          <img class="grant__image" src="#" alt="Указатели направления в разные страны." width="290" height="200"
-            draggable="false">
-        </picture>
+      <div class="container">
+        <h2 class="grant__title title">Как поехать</h2>
+        <p>Свяжитесь с координатором, чтобы узнать
+          полную информацию. Вы получите
+          актуальные сведения о доступных
+          программах и городах, в которых можете
+          пройти программу.</p>
+        <div class="grant__image-container">
+          <picture>
+            <source type="image/webp" media="(min-width: 1440px)"
+              srcset="img/grant/grant-image-desktop@1x.webp 1x, img/grant/grant-image-desktop@2x.webp 2x" width="498"
+              height="363">
+            <source type="image/webp" media="(min-width: 768px)"
+              srcset="img/grant/grant-image-tablet@1x.webp 1x, img/grant/grant-image-tablet@2x.webp 2x" width="678"
+              height="375">
+            <source type="image/png" media="(min-width: 1440px)"
+              srcset="img/grant/grant-image-desktop@1x.png 1x, img/grant/grant-image-desktop@2x.png 2x" width="498"
+              height="363">
+            <source type="image/png" media="(min-width: 768px)"
+              srcset="img/grant/grant-image-tablet@1x.png 1x, img/grant/grant-image-tablet@2x.png 2x" width="678"
+              height="375">
+            <source type="image/webp" media="(max-width: 767px)"
+              srcset="img/grant/grant-image-mobile@1x.webp 1x, img/grant/grant-image-mobile@2x.webp 2x" width="290"
+              height="200">
+            <img class="grant__image" src="img/grant/grant-image-mobile@1x.png" alt="Указатели направления в разные страны." width="290" height="200"
+              draggable="false">
+          </picture>
+        </div>
+        <p class="grant__steps">Чтобы получить грант
+          на обучение, вам нужно:</p>
+        <ol class="grant__list">
+          <li class="grant__item">Быть в возрасте от 16 до 30 лет</li>
+          <li class="grant__item">Иметь оконченное среднее
+            образование</li>
+          <li class="grant__item">Иметь документально
+            подтверждённое отсутствие
+            судимости и пройти консульскую
+            проверку</li>
+          <li class="grant__item">За последние 2 года быть
+            не больше 3х месяцев подряд
+            непрерывно в одной стране</li>
+        </ol>
       </div>
-      <p class="grant__steps">Чтобы получить грант
-        на обучение, вам нужно:</p>
-      <ol class="grant__list">
-        <li class="grant__item">Быть в возрасте от 16 до 30 лет</li>
-        <li class="grant__item">Иметь оконченное среднее
-          образование</li>
-        <li class="grant__item">Иметь документально
-          подтверждённое отсутствие
-          судимости и пройти консульскую
-          проверку</li>
-        <li class="grant__item">За последние 2 года быть
-          не больше 3х месяцев подряд
-          непрерывно в одной стране</li>
-      </ol>
     </section>
     <section class="news" data-test="news" id="news">
       <h2 class="news__title title">Новости и материалы</h2>
@@ -1348,7 +1350,8 @@
           <div class="form__select form__element form-group__input form-group__select">
             <span class="form__select-value form-group__select-value"></span>
             <label class="visually-hidden">Значение select
-              <input class="form__select-hidden form-group__select-hidden" type="hidden" id="form-city" name="form-city">
+              <input class="form__select-hidden form-group__select-hidden" type="hidden" id="form-city"
+                name="form-city">
             </label>
             <div class="form__select-item-container form-group__select-item-container">
               <div class="form__select-item form-group__select-item" data-city-form=" ">&nbsp;</div>
@@ -1443,7 +1446,8 @@
         <div class="modal__select modal__element form-group__input form-group__select">
           <span class="modal__select-value form-group__select-value"></span>
           <label class="visually-hidden">Значение select
-            <input class="modal__select-hidden form-group__select-hidden" type="hidden" id="modal-city" name="modal-city">
+            <input class="modal__select-hidden form-group__select-hidden" type="hidden" id="modal-city"
+              name="modal-city">
           </label>
           <div class="modal__select-item-container form-group__select-item-container">
             <div class="modal__select-item form-group__select-item" data-city-modal=" ">&nbsp;</div>
