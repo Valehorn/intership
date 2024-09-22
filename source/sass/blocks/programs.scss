@@ -67,12 +67,23 @@
   align-items: flex-end;
   min-height: 400px;
 
+  &::before {
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    content: "";
+    border-radius: 12px;
+    width: calc(100% - 3px);
+    height: calc(100% - 3px);
+    background-color: #bdb9b9;
+  }
+
   @media (min-width: $tablet-width) {
     min-width: 324px;
     min-height: 420px;
   }
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $desktop-width) {
     min-width: 392px;
   }
 }
