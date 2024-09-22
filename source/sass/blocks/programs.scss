@@ -13,7 +13,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    padding-top: 60px;
+    padding-top: 65px;
     padding-bottom: 70px;
   }
 }
@@ -53,6 +53,11 @@
     top: auto;
     bottom: -12px;
     right: 45px;
+  }
+
+  @media (min-width: $tablet-width) {
+    bottom: -11px;
+    right: 55px;
   }
 }
 
@@ -175,7 +180,6 @@
   }
 
   @media (min-width: $desktop-width) {
-    gap: 10px 22px;
     min-height: 82px;
 
     p {
@@ -225,6 +229,7 @@
   }
 
   @media (min-width: $desktop-width) {
+    top: 62px;
     right: 100px;
   }
 }
@@ -255,7 +260,6 @@
     background-color: rgba(49, 109, 194, 0.2);
 
     div {
-      /* width: 326px; */
       height: 2px;
       background-color: $primary-color;
     }
