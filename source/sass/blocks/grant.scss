@@ -10,19 +10,9 @@
     margin: 0;
   }
 
-  .grant__desktop-group-contents:first-of-type p {
-    color: $secondary-text-color;
-    margin-bottom: 30px;
-  }
-
   @media (min-width: $tablet-width) {
     padding-top: 100px;
     padding-bottom: 100px;
-
-    .grant__desktop-group-contents:first-of-type p {
-      width: 498px;
-      margin-bottom: 40px;
-    }
   }
 
   @media (min-width: $desktop-width) {
@@ -40,6 +30,18 @@
 
 .grant__desktop-group-contents {
   display: contents;
+
+  &:first-of-type p {
+    color: $secondary-text-color;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $tablet-width) {
+    &:first-of-type p {
+      width: 498px;
+      margin-bottom: 40px;
+    }
+  }
 
   @media (min-width: $desktop-width) {
     display: block;
