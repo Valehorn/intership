@@ -25,6 +25,7 @@ const initSwiperPrograms = () => {
       },
       1440: {
         slidesPerView: 3,
+        spaceBetween: 32,
         allowTouchMove: false,
         pagination: {
           clickable: true,
