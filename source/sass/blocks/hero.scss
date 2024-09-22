@@ -97,6 +97,7 @@
 }
 
 .hero__slide-inner p {
+  position: relative;
   font-size: 16px;
   line-height: 20px;
   width: 267px;
@@ -104,6 +105,21 @@
   border-radius: 0 0 14px;
   padding: 0 14px 15px;
   margin: 0;
+
+  &::after {
+    position: absolute;
+    top: -1px;
+    right: -8px;
+    content: "";
+    width: 8px;
+    height: 10px;
+    transform: rotate(90deg);
+    mask-image: url("/__spritemap#sprite-angle-view");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 8px 10px;
+    background-color: #ffffff;
+  }
 
   @media (min-width: $tablet-width) {
     width: 285px;
@@ -119,6 +135,7 @@
 }
 
 .hero__button-wrapper {
+  position: relative;
   background-color: #ffffff;
   border-radius: 0 0 14px 14px;
   width: fit-content;
@@ -126,6 +143,21 @@
   padding-bottom: 10px;
   padding-left: 15px;
   padding-right: 15px;
+
+  &::after {
+    position: absolute;
+    top: -1px;
+    right: -8px;
+    content: "";
+    width: 8px;
+    height: 10px;
+    transform: rotate(90deg);
+    mask-image: url("/__spritemap#sprite-angle-view");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 8px 10px;
+    background-color: #ffffff;
+  }
 
   @media (min-width: $tablet-width) {
     display: contents;
@@ -220,6 +252,20 @@
   padding-right: 16px;
   z-index: 2;
   transition: bottom 0.3s ease, opacity 0.3s ease;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    content: "";
+    width: 10px;
+    height: 10px;
+    mask-image: url("/__spritemap#sprite-angle-view");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 10px 10px;
+    background-color: #ffffff;
+  }
 
   @media (min-width: $tablet-width) {
     min-width: 100px;
