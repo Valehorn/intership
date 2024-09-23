@@ -17,7 +17,7 @@ const onTabButtonClick = (evt) => {
   buttonTarget.scrollIntoView({
     behavior: 'smooth',
     block: 'nearest',
-    inline: 'start',
+    inline: 'center',
   });
 };
 

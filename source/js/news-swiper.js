@@ -1,29 +1,50 @@
 import Swiper from 'swiper/bundle';
-import 'swiper/scss';
+import 'swiper/css/bundle';
+import { Grid, Pagination } from 'swiper/modules';
 
 const newsSwiperContainer = document.querySelector('.news__swiper');
 
 const initSwiperNews = () => {
   const newsSwiper = new Swiper(newsSwiperContainer, {
+    modules: [Grid, Pagination],
     speed: 600,
-    spaceBetween: 10,
-    slidesPerView: 2,
+    spaceBetween: 20,
+    slidesPerView: 'auto',
+    slidesPerGroup: 1,
+    grid: {
+      rows : 2,
+      fill: 'row',
+    },
     navigation: {
       nextEl: '.news__swiper-button-next',
       prevEl: '.news__swiper-button-prev',
     },
+    pagination: {
+      el: '.news__pagination',
+      bulletElement: 'button type="button"',
+      bulletClass: 'news__pagination-bullet',
+      bulletActiveClass: 'news__pagination-bullet--active',
+      clickable: true,
+    },
     breakpoints: {
       768: {
-        slidesPerView: 4,
+        slidesPerView: 2,
+        grid: {
+          rows: 1,
+        },
         spaceBetween: 30,
       },
       1440: {
         slidesPerView: 3,
+        grid: {
+          rows: 1,
+        },
         spaceBetween: 32,
         allowTouchMove: false,
       },
     },
   });
+
   newsSwiper.on('slideChange', () => {
     updateNavigationButtons(newsSwiper);
   });
