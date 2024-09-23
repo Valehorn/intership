@@ -1,11 +1,5 @@
 @use "../global/variables";
 
-/* .hero {
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
-} */
-
 .hero__card {
   display: flex;
   align-items: flex-end;
@@ -236,40 +230,32 @@
 // Swiper
 
 .hero .hero__swiper {
-  width: 320px;
-
-  @media (min-width: $tablet-width) {
-    width: 768px;
-    height: 1024px;
-  }
-
-  @media (min-width: $desktop-width) {
-    width: 1440px;
-    height: 800px;
-  }
+  width: 100%;
 }
 
-.hero__slide:first-of-type {
-  br {
-    display: none;
-  }
+.hero__slide {
+  height: auto;
 
-  @media (min-width: $desktop-width) {
+  &:first-of-type {
     br {
-      display: block;
+      display: none;
+    }
+
+    @media (min-width: $desktop-width) {
+      br {
+        display: block;
+      }
     }
   }
 }
 
 .hero__pagination {
-  position: absolute;
-
-  // вертикальная позиция регулируется через js в hero-swiper.js updatePaginationPosition.
-  left: calc(4% + 2px);
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
   min-width: 80px;
+  width: fit-content;
   height: 28px;
   background-color: #ffffff;
   border-radius: 12px 12px 0 0;
@@ -294,7 +280,6 @@
 
   @media (min-width: $tablet-width) {
     min-width: 100px;
-    left: calc(5% + 7px);
     height: 40px;
     border-radius: 20px 20px 0 0;
     padding-left: 20px;
@@ -306,10 +291,6 @@
       height: 20px;
       mask-size: 20px 20px;
     }
-  }
-
-  @media (min-width: $desktop-width) {
-    left: calc(7% - 1px);
   }
 }
 

@@ -13,7 +13,7 @@ const initSwiperHero = () => {
     loop: true,
     autoHeight: true,
     pagination: {
-      el: '.hero__pagination',
+      el: '.swiper-slide-active .hero__pagination',
       clickable: true,
       bulletElement: 'button type="button"',
       bulletClass: 'hero__pagination-bullet',
@@ -31,12 +31,16 @@ const initSwiperHero = () => {
 
   heroSwiper.on('init', () => {
     updateTabIndex(heroSwiper);
-    updatePaginationPosition(heroSwiper);
   });
 
   heroSwiper.on('slideChange', () => {
     updateTabIndex(heroSwiper);
-    updatePaginationPosition(heroSwiper);
+  });
+
+  heroSwiper.on('slideChangeTransitionStart', () => {
+    heroSwiper.pagination.init();
+    heroSwiper.pagination.render();
+    heroSwiper.pagination.update();
   });
 
   function updateTabIndex(swiperSlide) {
@@ -59,24 +63,8 @@ const initSwiperHero = () => {
     });
   }
 
-  function updatePaginationPosition(swiperInstance) {
-    const pagination = document.querySelector('.hero__pagination');
-    const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
-    const slideInner = activeSlide.querySelector('.hero__slide-inner');
-    const position = slideInner.offsetHeight;
-
-    if (window.innerWidth >= 768) {
-      pagination.style.bottom = `calc(${position}px + 60px)`;
-    } else if (window.innerWidth >= 1440) {
-      pagination.style.bottom = `calc(${position}px + 80px)`;
-    } else {
-      pagination.style.bottom = `calc(${position}px + 20px)`;
-    }
-  }
-
   heroSwiper.init();
   updateTabIndex(heroSwiper);
-  updatePaginationPosition(heroSwiper);
 };
 
 export { initSwiperHero };

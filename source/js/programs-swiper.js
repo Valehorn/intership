@@ -1,12 +1,10 @@
 import Swiper from 'swiper/bundle';
-import { Pagination } from 'swiper/modules';
 import 'swiper/scss';
 
 const programsSwiperContainer = document.querySelector('.programs__swiper');
 
 const initSwiperPrograms = () => {
   const swiperPrograms = new Swiper(programsSwiperContainer, {
-    modules: [Pagination],
     speed: 600,
     spaceBetween: 10,
     slidesPerView: 1,
