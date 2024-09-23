@@ -11,7 +11,7 @@ const initSwiperHero = () => {
     spaceBetween: 10,
     slidesPerView: 1,
     loop: true,
-    autoHeight: true,
+    /* autoHeight: true, */
     pagination: {
       el: '.swiper-slide-active .hero__pagination',
       clickable: true,
