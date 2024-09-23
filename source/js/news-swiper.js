@@ -1,5 +1,5 @@
 import Swiper from 'swiper/bundle';
-import 'swiper/scss';
+import 'swiper/scss/grid';
 import { Grid, Pagination } from 'swiper/modules';
 
 const newsSwiperContainer = document.querySelector('.news__swiper');
@@ -9,7 +9,7 @@ const initSwiperNews = () => {
     modules: [Grid, Pagination],
     speed: 600,
     spaceBetween: 20,
-    slidesPerView: 'auto',
+    slidesPerView: 1,
     slidesPerGroup: 1,
     grid: {
       rows : 2,
