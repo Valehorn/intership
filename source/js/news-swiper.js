@@ -1,5 +1,5 @@
 import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
+import 'swiper/scss';
 import { Grid, Pagination } from 'swiper/modules';
 
 const newsSwiperContainer = document.querySelector('.news__swiper');
