@@ -13,6 +13,12 @@ const onTabButtonClick = (evt) => {
   }
 
   buttonTarget.classList.add('news__tab-button--active');
+
+  buttonTarget.scrollIntoView({
+    behavior: 'smooth',
+    block: 'nearest',
+    inline: 'start',
+  });
 };
 
 const tabsToggle = () => {
