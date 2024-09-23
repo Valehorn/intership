@@ -38,9 +38,7 @@ const initSwiperHero = () => {
   });
 
   heroSwiper.on('slideChangeTransitionStart', () => {
-    heroSwiper.pagination.init();
-    heroSwiper.pagination.render();
-    heroSwiper.pagination.update();
+    updatePagination(heroSwiper);
   });
 
   function updateTabIndex(swiperSlide) {
@@ -61,6 +59,12 @@ const initSwiperHero = () => {
         }
       }
     });
+  }
+
+  function updatePagination(swiper) {
+    swiper.pagination.init();
+    swiper.pagination.render();
+    swiper.pagination.update();
   }
 
   heroSwiper.init();
