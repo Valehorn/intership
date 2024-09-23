@@ -18,24 +18,88 @@
   a {
     display: block;
   }
+
+  @media (min-width: $tablet-width) {
+    h2 {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    h2 {
+      margin-bottom: 40px;
+    }
+  }
 }
 
 .news__list {
+  display: flex;
+  gap: 12px;
+
+  // Скрол для Firefox
+  overflow-x: auto;
+  scrollbar-width: none;
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-bottom: 24px;
+
+  // Скролл для Webkit
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
 }
 
 .news__tab-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   font-size: 12px;
   line-height: 12px;
+  color: $primary-color;
   letter-spacing: 0.24px;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  background-color: transparent;
+  border-radius: 20px;
+  min-width: 75px;
+  height: 36px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
 
   @media (min-width: $tablet-width) {
     font-size: 14px;
     line-height: 14px;
     letter-spacing: 0.28px;
+    min-width: 94px;
+    min-height: 46px;
+    padding-left: 19px;
+    padding-right: 19px;
   }
+
+  @media (min-width: $desktop-width) {
+    flex-wrap: wrap;
+    overflow: visible;
+    width: 120px;
+  }
+}
+
+.news__tab-button--active {
+  border-color: $primary-color;
 }
 
 .news__time {

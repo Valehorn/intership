@@ -4,11 +4,13 @@ import './modal';
 import './modal-select';
 import './validate';
 import initSwiperPrograms from './programs-swiper';
+import { tabsToggle } from './news-tab';
 
 const bootStrap = () => {
   burgerMenuToggle();
   initSwiperHero();
   initSwiperPrograms();
+  tabsToggle();
 };
 
 bootStrap();
