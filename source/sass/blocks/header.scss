@@ -8,30 +8,27 @@
   --burger-menu-overall: 136px;
   --burger-menu-after-x: 20.8px;
 
-  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 20px;
+  margin-bottom: -94px;
 
   @media (min-width: $tablet-width) {
     padding-top: 32px;
+    margin-bottom: -108px;
   }
 
   @media (min-width: $desktop-width) {
     left: calc(5% + 3px);
     width: 1240px;
     padding-top: 30px;
+    margin-bottom: -106px;
   }
 }
 
-.header__container {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-}
-
 .header__logo-container {
-  position: absolute;
-  left: $phone-padding-x;
   width: 52px;
   height: 52px;
   z-index: 2;
