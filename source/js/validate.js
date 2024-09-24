@@ -34,16 +34,16 @@ const validatePhone = (phoneInput) => {
 };
 
 const formatPhoneNumber = (input) => {
-  let value = input.value.replace(/\D/g, '');
-  if (value.length > 11) {
-    value = value.slice(0, 11);
-  }
+  let value = input.value.replace(/\D/g, ''); // Удалить нецифровые символы
+  if (value.length > 11) value = value.slice(0, 11); // Ограничить до 11 цифр
 
-  if (value) {
+  if (value.length === 0) {
+    input.value = ''; // Если нет цифр, очищаем поле
+  } else if (value.length === 1) {
+    input.value = '+7('; // Если введена только первая цифра, показываем маску
+  } else {
     const formattedValue = `+7(${value.slice(1, 4)})${value.slice(4, 7)}-${value.slice(7, 9)}-${value.slice(9, 11)}`;
     input.value = formattedValue;
-  } else {
-    input.value = '';
   }
 };
 
@@ -64,13 +64,13 @@ const onInputChange = (input) => {
 
 const onFocus = (input) => {
   if (input.value.trim() === '') {
-    input.value = '+7(';
+    input.value = '+7('; // Показать маску при фокусе
   }
 };
 
 const onBlur = (input) => {
-  if (input.value === '+7(') {
-    input.value = '';
+  if (input.value === '+7(' || input.value === '+7()') {
+    input.value = ''; // Удалить маску, если нет ввода
   }
 };
 
@@ -86,7 +86,7 @@ const onFormSubmit = (evt) => {
       isValid = validateName(nameInput) && isValid;
     }
     if (phoneInput) {
-      formatPhoneNumber(phoneInput);
+      formatPhoneNumber(phoneInput); // Форматировать номер перед валидацией
       isValid = validatePhone(phoneInput) && isValid;
     }
   });
