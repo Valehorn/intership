@@ -110,6 +110,8 @@
 
 .news__image-container {
   position: absolute;
+  background-color: #b0c4de;
+  border-radius: 12px;
 }
 
 .news__image {
@@ -201,7 +203,7 @@
   background-color: $secondary-color;
   flex-wrap: wrap;
   align-content: center;
-  border-radius: 0 12px;
+  border-radius: 0 10px;
   width: fit-content;
   padding-top: 12px;
   padding-bottom: 10px;
