@@ -32,7 +32,7 @@
   display: contents;
 
   &:first-of-type p {
-    color: $secondary-text-color;
+    color: $secondary-color;
     margin-bottom: 30px;
   }
 
@@ -122,9 +122,9 @@
 
 .grant__item {
   position: relative;
-  border: 1px solid $secondary-text-color;
+  border: 1px solid $secondary-color;
   border-radius: 16px;
-  color: $secondary-text-color;
+  color: $secondary-color;
   counter-increment: grantList 1;
   padding-top: 24px;
   padding-bottom: 24px;

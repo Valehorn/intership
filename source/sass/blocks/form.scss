@@ -26,14 +26,14 @@
 }
 
 .form__description {
-  color: $secondary-text-color;
+  color: $secondary-color;
   margin: 0;
 }
 
 .form__label {
   font-size: 12px;
   line-height: 14px;
-  color: $secondary-text-color;
+  color: $secondary-color;
   opacity: 0.8;
 
   @media (min-width: $tablet-width) {
