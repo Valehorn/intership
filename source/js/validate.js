@@ -34,17 +34,17 @@ const validatePhone = (phoneInput) => {
 };
 
 const formatPhoneNumber = (input) => {
-  let value = input.value.replace(/\D/g, '');
-  if (value.length > 11) {
-    value = value.slice(0, 11);
+  let phoneValue = input.value.replace(/\D/g, '');
+  if (phoneValue.length > 11) {
+    phoneValue = phoneValue.slice(0, 11);
   }
 
-  if (value.length === 0) {
+  if (phoneValue.length === 0) {
     input.value = '';
-  } else if (value.length === 1) {
+  } else if (phoneValue.length === 1) {
     input.value = '+7(';
   } else {
-    const formattedValue = `+7(${value.slice(1, 4)})${value.slice(4, 7)}-${value.slice(7, 9)}-${value.slice(9, 11)}`;
+    const formattedValue = `+7(${phoneValue.slice(1, 4)})${phoneValue.slice(4, 7)}-${phoneValue.slice(7, 9)}-${phoneValue.slice(9, 11)}`;
     input.value = formattedValue;
   }
 };
@@ -64,13 +64,13 @@ const onInputChange = (input) => {
   }
 };
 
-const onFocus = (input) => {
+const onPhoneFocus = (input) => {
   if (input.value.trim() === '') {
     input.value = '+7(';
   }
 };
 
-const onBlur = (input) => {
+const onPhoneBlur = (input) => {
   if (input.value === '+7(' || input.value === '+7()') {
     input.value = '';
   }
@@ -113,7 +113,7 @@ forms.forEach((form) => {
       formatPhoneNumber(phoneInput);
       onInputChange(phoneInput);
     });
-    phoneInput.addEventListener('focus', () => onFocus(phoneInput));
-    phoneInput.addEventListener('blur', () => onBlur(phoneInput));
+    phoneInput.addEventListener('focus', () => onPhoneFocus(phoneInput));
+    phoneInput.addEventListener('blur', () => onPhoneBlur(phoneInput));
   }
 });
