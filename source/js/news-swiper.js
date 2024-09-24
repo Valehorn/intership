@@ -53,6 +53,7 @@ const initSwiperNews = () => {
 
   newsSwiper.on('slideChange', () => {
     updateNavigationButtons(newsSwiper);
+    updatePaginationBullets(newsSwiper);
   });
 
   newsSwiper.on('slideNextTransitionStart', () => {
@@ -81,10 +82,6 @@ const initSwiperNews = () => {
       nextButton.disabled = false;
     }
   }
-
-  newsSwiper.on('slideChange', () => {
-    updatePaginationBullets(newsSwiper);
-  });
 
   function updatePaginationBullets(swiper) {
     const totalSlides = swiper.slides.length;
