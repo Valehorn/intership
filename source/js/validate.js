@@ -19,11 +19,11 @@ const validateName = (nameInput) => {
 
 const validatePhone = (phoneInput) => {
   const phoneValue = phoneInput.value;
-  const phoneValidate = /^(?:\d[-\d]*){11}$/;
+  const phoneValidate = /^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
 
   if (!phoneValidate.test(phoneValue) && phoneValue.trim() !== '') {
     phoneInput.classList.add('form__group-input--error');
-    phoneInput.setCustomValidity('Введите корректный номер телефона из 11 цифр.');
+    phoneInput.setCustomValidity('Введите корректный номер телефона в формате +7(777)777-77-77.');
     phoneInput.reportValidity();
     return false;
   } else {
@@ -33,6 +33,19 @@ const validatePhone = (phoneInput) => {
   }
 };
 
+const formatPhoneNumber = (input) => {
+  let value = input.value.replace(/\D/g, '');
+  if (value.length > 11) {
+    value = value.slice(0, 11);
+  }
+
+  if (value) {
+    const formattedValue = `+7(${value.slice(1, 4)})${value.slice(4, 7)}-${value.slice(7, 9)}-${value.slice(9, 11)}`;
+    input.value = formattedValue;
+  } else {
+    input.value = '';
+  }
+};
 
 const onInputChange = (input) => {
   if (input.value.trim() === '') {
@@ -49,6 +62,18 @@ const onInputChange = (input) => {
   }
 };
 
+const onFocus = (input) => {
+  if (input.value.trim() === '') {
+    input.value = '+7(';
+  }
+};
+
+const onBlur = (input) => {
+  if (input.value === '+7(') {
+    input.value = '';
+  }
+};
+
 const onFormSubmit = (evt) => {
   evt.preventDefault();
   isValid = true;
@@ -61,6 +86,7 @@ const onFormSubmit = (evt) => {
       isValid = validateName(nameInput) && isValid;
     }
     if (phoneInput) {
+      formatPhoneNumber(phoneInput);
       isValid = validatePhone(phoneInput) && isValid;
     }
   });
@@ -81,6 +107,11 @@ forms.forEach((form) => {
     nameInput.addEventListener('input', () => onInputChange(nameInput));
   }
   if (phoneInput) {
-    phoneInput.addEventListener('input', () => onInputChange(phoneInput));
+    phoneInput.addEventListener('input', () => {
+      formatPhoneNumber(phoneInput);
+      onInputChange(phoneInput);
+    });
+    phoneInput.addEventListener('focus', () => onFocus(phoneInput));
+    phoneInput.addEventListener('blur', () => onBlur(phoneInput));
   }
 });
