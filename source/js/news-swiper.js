@@ -29,15 +29,19 @@ const initSwiperNews = () => {
     breakpoints: {
       768: {
         slidesPerView: 2,
+        slidesPerGroup: 2,
         grid: {
-          rows: 1,
+          rows: 2,
+          fill: 'row',
         },
         spaceBetween: 30,
       },
       1440: {
         slidesPerView: 3,
+        slidesPerGroup: 3,
         grid: {
           rows: 1,
+          fill: 'row',
         },
         spaceBetween: 32,
         allowTouchMove: false,
