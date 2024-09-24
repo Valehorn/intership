@@ -5,17 +5,15 @@
   font-weight: 400;
   background-color: transparent;
   border-radius: 8px;
-  padding: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 5px;
 }
 
 .form-group__input[type="text"],
 .form-group__input[type="tel"] {
   width: 100%;
-}
-
-.form-group__input--phone {
-  padding-left: 27px;
-  padding-bottom: 6px;
 }
 
 .form__group-input--error {
@@ -36,13 +34,6 @@
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-
-// Прорисовка маски.
-
-/* .form-group__input--phone:focus-visible ~ .form-group__input-mask,
-.form-group__input--phone:not(:placeholder-shown) ~ .form-group__input-mask {
-  opacity: 1;
-} */
 
 .form-group__input-checkbox {
   position: relative;
