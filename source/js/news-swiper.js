@@ -24,6 +24,9 @@ const initSwiperNews = () => {
       bulletClass: 'news__pagination-bullet',
       bulletActiveClass: 'news__pagination-bullet--active',
       clickable: true,
+      renderBullet: (index, className) => `<button class="${className}">${index + 1}</button>`,
+      dynamicBullets: true,
+      dynamicMainBullets: 3,
     },
     breakpoints: {
       768: {
