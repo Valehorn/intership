@@ -146,6 +146,7 @@
 }
 
 .news__time {
+  position: relative;
   font-size: 12px;
   line-height: 12px;
   letter-spacing: 0.12px;
@@ -156,9 +157,17 @@
   padding-top: 12px;
   padding-bottom: 6px;
   padding-right: 12px;
+
+  &::after {
+    top: 14px;
+    right: -16px;
+
+    @include decoration-angle(16px, 16px, 16px 16px, $secondary-color);
+  }
 }
 
 .news__card-title {
+  position: relative;
   font-size: 16px;
   line-height: 18px;
   background-color: $secondary-color;
@@ -168,6 +177,13 @@
   padding-bottom: 4px;
   padding-right: 18px;
   margin: 0;
+
+  &::after {
+    bottom: 0;
+    right: -18px;
+
+    @include decoration-angle(18px, 18px, 18px 18px, $secondary-color);
+  }
 
   @media (min-width: $tablet-width) {
     font-size: 20px;

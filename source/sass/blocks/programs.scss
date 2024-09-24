@@ -136,17 +136,10 @@
   margin: 0;
 
   &::after {
-    position: absolute;
     bottom: 0;
     right: -17px;
-    content: "";
-    width: 18px;
-    height: 18px;
-    mask-image: url("/__spritemap#sprite-angle-view");
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: 18px 18px;
-    background-color: #ffffff;
+
+    @include decoration-angle(18px, 18px);
   }
 
   @media (min-width: $tablet-width) {

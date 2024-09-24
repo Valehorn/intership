@@ -80,18 +80,11 @@
     padding-right: 40px;
 
     &::after {
-      position: absolute;
       top: 0;
       right: -26px;
-      content: "";
-      width: 26px;
-      height: 26px;
       transform: rotate(90deg);
-      mask-image: url("/__spritemap#sprite-angle-view");
-      mask-repeat: no-repeat;
-      mask-position: center;
-      mask-size: 26px 26px;
-      background-color: #ffffff;
+
+      @include decoration-angle;
     }
   }
 
@@ -119,18 +112,11 @@
   margin: 0;
 
   &::after {
-    position: absolute;
     top: -1px;
     right: -8px;
-    content: "";
-    width: 8px;
-    height: 10px;
     transform: rotate(90deg);
-    mask-image: url("/__spritemap#sprite-angle-view");
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: 8px 10px;
-    background-color: #ffffff;
+
+    @include decoration-angle(8px, 10px);
   }
 
   @media (min-width: $tablet-width) {
@@ -161,18 +147,11 @@
   padding-right: 15px;
 
   &::after {
-    position: absolute;
     top: -1px;
     right: -8px;
-    content: "";
-    width: 8px;
-    height: 10px;
     transform: rotate(90deg);
-    mask-image: url("/__spritemap#sprite-angle-view");
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: 8px 10px;
-    background-color: #ffffff;
+
+    @include decoration-angle(8px, 10px);
   }
 
   @media (min-width: $tablet-width) {
@@ -265,17 +244,10 @@
   transition: bottom 0.3s ease, opacity 0.3s ease;
 
   &::after {
-    position: absolute;
     bottom: 0;
     right: -10px;
-    content: "";
-    width: 10px;
-    height: 10px;
-    mask-image: url("/__spritemap#sprite-angle-view");
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: 10px 10px;
-    background-color: #ffffff;
+
+    @include decoration-angle(10px, 10px);
   }
 
   @media (min-width: $tablet-width) {
