@@ -255,6 +255,7 @@
 
 .programs__swiper-scrollbar {
   display: none;
+  cursor: grab;
 
   @media (min-width: $tablet-width) {
     display: block;

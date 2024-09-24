@@ -26,7 +26,7 @@ const initSwiperNews = () => {
       clickable: true,
       renderBullet: (index, className) => `<button class="${className}">${index + 1}</button>`,
       dynamicBullets: true,
-      dynamicMainBullets: 3,
+      dynamicMainBullets: 4,
     },
     breakpoints: {
       768: {
@@ -81,6 +81,33 @@ const initSwiperNews = () => {
       nextButton.disabled = false;
     }
   }
+
+  newsSwiper.on('slideChange', () => {
+    updatePaginationBullets(newsSwiper);
+  });
+
+  function updatePaginationBullets(swiper) {
+    const totalSlides = swiper.slides.length;
+    const currentSlide = swiper.realIndex + 1;
+    const startBullet = Math.max(currentSlide - 2, 1);
+
+    if (totalSlides <= 4) {
+      return;
+    }
+
+    const endBullet = Math.min(startBullet + 3, totalSlides);
+
+    swiper.pagination.bullets.forEach((bullet, index) => {
+      const bulletNumber = index + 1;
+      if (bulletNumber >= startBullet && bulletNumber <= endBullet) {
+        bullet.style.display = 'inline-block';
+      } else {
+        bullet.style.display = 'none';
+      }
+    });
+  }
+
+  updatePaginationBullets(newsSwiper);
 };
 
 export default initSwiperNews;
