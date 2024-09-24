@@ -10,10 +10,9 @@ const initSwiperNews = () => {
     speed: 600,
     spaceBetween: 20,
     slidesPerView: 1,
-    slidesPerGroup: 1,
     grid: {
       rows : 2,
-      fill: 'row',
+      fill: 'column',
     },
     navigation: {
       nextEl: '.news__swiper-button-next',
