@@ -39,8 +39,8 @@ const initSwiperNews = () => {
         spaceBetween: 30,
         verticalSwipes: true,
         pagination: {
-          dynamicBullets: true, // Включаем динамические буллеты
-          dynamicMainBullets: 4, // Устанавливаем количество основных буллетов
+          dynamicBullets: true,
+          dynamicMainBullets: 4,
         },
         grid: {
           rows: 2,
@@ -54,8 +54,8 @@ const initSwiperNews = () => {
         spaceBetween: 32,
         allowTouchMove: false,
         pagination: {
-          dynamicBullets: true, // Включаем динамические буллеты
-          dynamicMainBullets: 4, // Устанавливаем количество основных буллетов
+          dynamicBullets: true,
+          dynamicMainBullets: 4,
         },
         grid: {
           rows: 1,
