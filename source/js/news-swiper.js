@@ -99,26 +99,54 @@ const initSwiperNews = () => {
   function updatePaginationBullets(swiper) {
     const totalBullets = swiper.pagination.bullets.length;
     const currentSlide = swiper.realIndex + 1;
-    const startBullet = Math.max(currentSlide - 2, 1);
-    const thirdToLastBulletIndex = totalBullets - 4;
 
     if (totalBullets <= 4) {
       return;
     }
 
-    const endBullet = Math.min(startBullet + 3, totalBullets);
+    if (window.innerWidth >= 1440) {
+      const bulletsToShow = 4;
+      let startBullet = 1;
+      let endBullet = bulletsToShow;
 
-    swiper.pagination.bullets.forEach((bullet, index) => {
-      const bulletNumber = index + 1;
-
-      if (swiper.isEnd && index === thirdToLastBulletIndex) {
-        bullet.style.display = 'inline-block';
-      } else if (bulletNumber >= startBullet && bulletNumber <= endBullet) {
-        bullet.style.display = 'inline-block';
-      } else {
-        bullet.style.display = 'none';
+      if (currentSlide >= 4) {
+        startBullet = currentSlide - 3;
+        endBullet = startBullet + bulletsToShow - 1;
       }
-    });
+
+      startBullet = Math.max(startBullet, 1);
+
+      if (endBullet > totalBullets) {
+        endBullet = totalBullets;
+        startBullet = Math.max(endBullet - bulletsToShow + 1, 1);
+      }
+
+      swiper.pagination.bullets.forEach((bullet, index) => {
+        const bulletNumber = index + 1;
+
+        if (bulletNumber >= startBullet && bulletNumber <= endBullet) {
+          bullet.style.display = 'inline-block';
+        } else {
+          bullet.style.display = 'none';
+        }
+      });
+    } else {
+      const startBullet = Math.max(currentSlide - 2, 1);
+      const thirdToLastBulletIndex = totalBullets - 4;
+      const endBullet = Math.min(startBullet + 3, totalBullets);
+
+      swiper.pagination.bullets.forEach((bullet, index) => {
+        const bulletNumber = index + 1;
+
+        if (swiper.isEnd && index === thirdToLastBulletIndex) {
+          bullet.style.display = 'inline-block';
+        } else if (bulletNumber >= startBullet && bulletNumber <= endBullet) {
+          bullet.style.display = 'inline-block';
+        } else {
+          bullet.style.display = 'none';
+        }
+      });
+    }
   }
   updatePaginationBullets(newsSwiper);
 };
