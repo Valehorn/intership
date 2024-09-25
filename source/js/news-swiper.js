@@ -36,22 +36,30 @@ const initSwiperNews = () => {
       768: {
         slidesPerView: 2,
         slidesPerGroup: 2,
+        spaceBetween: 30,
         verticalSwipes: true,
+        pagination: {
+          dynamicBullets: true, // Включаем динамические буллеты
+          dynamicMainBullets: 4, // Устанавливаем количество основных буллетов
+        },
         grid: {
           rows: 2,
           fill: 'row',
         },
-        spaceBetween: 30,
       },
       1440: {
         slidesPerView: 'auto',
         slidesPerGroup: 3,
         verticalSwipes: false,
+        spaceBetween: 32,
+        allowTouchMove: false,
+        pagination: {
+          dynamicBullets: true, // Включаем динамические буллеты
+          dynamicMainBullets: 4, // Устанавливаем количество основных буллетов
+        },
         grid: {
           rows: 1,
         },
-        spaceBetween: 32,
-        allowTouchMove: false,
       },
     },
   });
