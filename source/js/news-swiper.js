@@ -92,6 +92,7 @@ const initSwiperNews = () => {
     const totalBullets = swiper.pagination.bullets.length;
     const currentSlide = swiper.realIndex + 1;
     const startBullet = Math.max(currentSlide - 2, 1);
+    const thirdToLastBulletIndex = totalBullets - 4;
 
     if (totalBullets <= 4) {
       return;
@@ -101,14 +102,16 @@ const initSwiperNews = () => {
 
     swiper.pagination.bullets.forEach((bullet, index) => {
       const bulletNumber = index + 1;
-      if (bulletNumber >= startBullet && bulletNumber <= endBullet) {
+
+      if (swiper.isEnd && index === thirdToLastBulletIndex) {
+        bullet.style.display = 'inline-block';
+      } else if (bulletNumber >= startBullet && bulletNumber <= endBullet) {
         bullet.style.display = 'inline-block';
       } else {
         bullet.style.display = 'none';
       }
     });
   }
-
   updatePaginationBullets(newsSwiper);
 };
 
@@ -118,7 +121,7 @@ window.addEventListener('resize', () => {
   if (resizeTimeout) {
     clearTimeout(resizeTimeout);
   }
-  resizeTimeout = setTimeout(initSwiperNews, 100);
+  resizeTimeout = setTimeout(initSwiperNews, 1000);
 });
 
 export default initSwiperNews;
