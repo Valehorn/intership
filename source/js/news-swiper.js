@@ -40,12 +40,11 @@ const initSwiperNews = () => {
         spaceBetween: 30,
       },
       1440: {
-        slidesPerView: 3,
+        slidesPerView: 'auto',
         slidesPerGroup: 3,
         verticalSwipes: false,
         grid: {
           rows: 1,
-          fill: 'row',
         },
         spaceBetween: 32,
         allowTouchMove: false,

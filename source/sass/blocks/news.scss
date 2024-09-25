@@ -106,6 +106,15 @@
   position: relative;
   display: flex;
   min-height: 330px;
+
+  @media (min-width: $tablet-width) {
+    min-height: 350px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: 286px;
+    max-width: 286px;
+  }
 }
 
 .news__image-container {
@@ -134,8 +143,6 @@
   }
 
   @media (min-width: $tablet-width) {
-    height: 350px;
-
     p {
       font-size: 14px;
       line-height: 20px;
@@ -281,14 +288,20 @@
     max-height: 350px;
 
     &:nth-of-type(2n) {
-      min-height: none;
-      max-height: none;
+      min-height: 350px;
+      max-height: 350px;
     }
   }
 
   @media (min-width: $desktop-width) {
     width: 286px;
     min-height: 400px;
+    max-height: 400px;
+
+    &:nth-of-type(2n) {
+      min-height: 400px;
+      max-height: 400px;
+    }
 
     &:nth-of-type(3n - 2) {
       width: 604px;
@@ -296,13 +309,36 @@
   }
 }
 
+.news .news__slide:nth-of-type(3n - 2) .news__card {
+  @media (min-width: $desktop-width) {
+    min-width: 604px;
+    max-width: 604px;
+  }
+}
+
 .news .news__slide:nth-of-type(2n) .news__card {
   min-height: 240px;
   max-height: 240px;
+
+  @media (min-width: $tablet-width) {
+    min-height: 350px;
+    max-height: 350px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 400px;
+    max-height: 400px;
+  }
 }
 
 .news .news__slide:nth-of-type(n+3) .news__image {
   @media (max-width: $pre-tablet-width) {
+    object-fit: cover;
+  }
+}
+
+.news .news__slide:nth-of-type(3n - 2) .news__image {
+  @media (min-width: $desktop-width) {
     object-fit: cover;
   }
 }
