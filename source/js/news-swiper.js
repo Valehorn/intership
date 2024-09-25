@@ -66,7 +66,7 @@ const initSwiperNews = () => {
 
   newsSwiper.on('slideChange', () => {
     updateNavigationButtons(newsSwiper);
-    updatePaginationBullets(newsSwiper);
+    updateBullets(newsSwiper);
   });
 
   newsSwiper.on('slideNextTransitionStart', () => {
@@ -96,21 +96,22 @@ const initSwiperNews = () => {
     }
   }
 
-  function updatePaginationBullets(swiper) {
+  function updateBullets(swiper) {
     const totalBullets = swiper.pagination.bullets.length;
-    const currentSlide = swiper.realIndex + 1;
+    let currentSlide = swiper.realIndex + 1;
 
     if (totalBullets <= 4) {
       return;
     }
 
     if (window.innerWidth >= 1440) {
+      currentSlide = swiper.realIndex + 3;
       const bulletsToShow = 4;
       let startBullet = 1;
       let endBullet = bulletsToShow;
 
-      if (currentSlide >= 4) {
-        startBullet = currentSlide - 3;
+      if (currentSlide >= 12) {
+        startBullet = currentSlide - 2;
         endBullet = startBullet + bulletsToShow - 1;
       }
 
@@ -148,7 +149,7 @@ const initSwiperNews = () => {
       });
     }
   }
-  updatePaginationBullets(newsSwiper);
+  updateBullets(newsSwiper);
 };
 
 let resizeTimeout;
