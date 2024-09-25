@@ -84,7 +84,12 @@ const initSwiperNews = () => {
   }
 
   function updatePaginationBullets(swiper) {
+    const totalSlides = swiper.pagination.bullets.length;
     const startBullet = Math.max(1, swiper.realIndex - 2);
+
+    if (totalSlides <= 4) {
+      return;
+    }
 
     swiper.pagination.bullets.forEach((bullet, index) => {
       const bulletNumber = index + 1;
