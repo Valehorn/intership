@@ -99,17 +99,26 @@ const initSwiperNews = () => {
   function updateBullets(swiper) {
     const totalBullets = swiper.pagination.bullets.length;
     const bulletsToShow = 4;
-    let currentSlide = swiper.realIndex + 1;
+    const currentSlide = swiper.realIndex + (window.innerWidth >= 1440 ? 3 : 1);
 
     if (totalBullets <= bulletsToShow) {
       return;
     }
 
-    if (window.innerWidth >= 1440) {
-      currentSlide = swiper.realIndex + 3;
-      let startBullet = 1;
-      let endBullet = bulletsToShow;
+    let startBullet = 1;
+    let endBullet = bulletsToShow;
 
+    if (window.innerWidth >= 768 && window.innerWidth < 1440) {
+      if (currentSlide >= 6) {
+        startBullet = currentSlide - 5;
+        endBullet = startBullet + bulletsToShow - 1;
+
+        if (endBullet > totalBullets) {
+          endBullet = totalBullets;
+          startBullet = Math.max(endBullet - bulletsToShow + 1, 1);
+        }
+      }
+    } else if (window.innerWidth >= 1440) {
       if (currentSlide >= 12) {
         startBullet = currentSlide - 2;
         endBullet = startBullet + bulletsToShow - 1;
@@ -121,69 +130,23 @@ const initSwiperNews = () => {
         endBullet = totalBullets;
         startBullet = Math.max(endBullet - bulletsToShow + 1, 1);
       }
-
-      swiper.pagination.bullets.forEach((bullet, index) => {
-        const bulletNumber = index + 1;
-
-        if (bulletNumber >= startBullet && bulletNumber <= endBullet) {
-          bullet.style.display = 'inline-block';
-        } else {
-          bullet.style.display = 'none';
-        }
-      });
     } else {
-      const startBullet = Math.max(currentSlide - 2, 1);
-      const thirdToLastBulletIndex = totalBullets - 4;
-      const endBullet = Math.min(startBullet + 3, totalBullets);
-
-      swiper.pagination.bullets.forEach((bullet, index) => {
-        const bulletNumber = index + 1;
-
-        if (swiper.isEnd && index === thirdToLastBulletIndex) {
-          bullet.style.display = 'inline-block';
-        } else if (bulletNumber >= startBullet && bulletNumber <= endBullet) {
-          bullet.style.display = 'inline-block';
-        } else {
-          bullet.style.display = 'none';
-        }
-      });
-    }
-  }
-
-  /* function updateBullets(swiper) {
-    const totalBullets = swiper.pagination.bullets.length;
-    const bulletsToShow = 4;
-    let currentSlide = swiper.realIndex + 2;
-
-    if (totalBullets <= bulletsToShow) {
-      return;
+      startBullet = Math.max(currentSlide - 2, 1);
+      endBullet = Math.min(startBullet + 3, totalBullets);
     }
 
-    if (window.innerWidth >= 768 && window.innerWidth < 1440) {
-      let startBullet = 1;
-      let endBullet = bulletsToShow;
+    swiper.pagination.bullets.forEach((bullet, index) => {
+      const bulletNumber = index + 1;
 
-      if (currentSlide >= 6) {
-        startBullet = currentSlide - 5;
-        endBullet = startBullet + bulletsToShow - 1;
-
-        if (endBullet > totalBullets) {
-          endBullet = totalBullets;
-          startBullet = Math.max(endBullet - bulletsToShow + 1, 1);
-        }
+      if (swiper.isEnd && index === totalBullets - 4) {
+        bullet.style.display = 'inline-block';
+      } else if (bulletNumber >= startBullet && bulletNumber <= endBullet) {
+        bullet.style.display = 'inline-block';
+      } else {
+        bullet.style.display = 'none';
       }
-
-      swiper.pagination.bullets.forEach((bullet, index) => {
-        const bulletNumber = index + 1;
-
-        if (bulletNumber >= startBullet && bulletNumber <= endBullet) {
-          bullet.style.display = 'inline-block';
-        } else {
-          bullet.style.display = 'none';
-        }
-      });
-    }
-  } */
+    });
+  }
 
   updateBullets(newsSwiper);
 };
