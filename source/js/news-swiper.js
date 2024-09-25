@@ -85,16 +85,20 @@ const initSwiperNews = () => {
   }
 
   function updatePaginationBullets(swiper) {
-    const totalSlides = swiper.pagination.bullets.length;
-    const startBullet = Math.max(1, swiper.realIndex - 2);
+    const totalSlides = swiper.slides.length;
+    const totalBullets = swiper.pagination.bullets.length;
+    const currentSlide = swiper.realIndex + 1;
+    const startBullet = Math.max(currentSlide - 2, 1);
 
-    if (totalSlides <= 4) {
+    if (totalBullets <= 4) {
       return;
     }
 
+    const endBullet = Math.min(startBullet + 3, totalSlides);
+
     swiper.pagination.bullets.forEach((bullet, index) => {
       const bulletNumber = index + 1;
-      if (bulletNumber >= startBullet && bulletNumber <= startBullet + 3) {
+      if (bulletNumber >= startBullet && bulletNumber <= endBullet) {
         bullet.style.display = 'inline-block';
       } else {
         bullet.style.display = 'none';
