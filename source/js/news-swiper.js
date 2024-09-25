@@ -5,7 +5,11 @@ import { Grid, Pagination } from 'swiper/modules';
 const newsSwiperContainer = document.querySelector('.news__swiper');
 
 const initSwiperNews = () => {
-  const newsSwiper = new Swiper(newsSwiperContainer, {
+  let newsSwiper = null;
+  if (newsSwiper) {
+    newsSwiper.destroy(true, true);
+  }
+  newsSwiper = new Swiper(newsSwiperContainer, {
     modules: [Grid, Pagination],
     speed: 600,
     spaceBetween: 20,
@@ -85,7 +89,6 @@ const initSwiperNews = () => {
   }
 
   function updatePaginationBullets(swiper) {
-    const totalSlides = swiper.slides.length;
     const totalBullets = swiper.pagination.bullets.length;
     const currentSlide = swiper.realIndex + 1;
     const startBullet = Math.max(currentSlide - 2, 1);
@@ -94,7 +97,7 @@ const initSwiperNews = () => {
       return;
     }
 
-    const endBullet = Math.min(startBullet + 3, totalSlides);
+    const endBullet = Math.min(startBullet + 3, totalBullets);
 
     swiper.pagination.bullets.forEach((bullet, index) => {
       const bulletNumber = index + 1;
@@ -109,6 +112,13 @@ const initSwiperNews = () => {
   updatePaginationBullets(newsSwiper);
 };
 
-window.addEventListener('resize', initSwiperNews);
+let resizeTimeout;
+
+window.addEventListener('resize', () => {
+  if (resizeTimeout) {
+    clearTimeout(resizeTimeout);
+  }
+  resizeTimeout = setTimeout(initSwiperNews, 100);
+});
 
 export default initSwiperNews;
