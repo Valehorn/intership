@@ -32,6 +32,7 @@ const initSwiperNews = () => {
       768: {
         slidesPerView: 2,
         slidesPerGroup: 2,
+        verticalSwipes: true,
         grid: {
           rows: 2,
           fill: 'row',
@@ -41,6 +42,7 @@ const initSwiperNews = () => {
       1440: {
         slidesPerView: 3,
         slidesPerGroup: 3,
+        verticalSwipes: false,
         grid: {
           rows: 1,
           fill: 'row',

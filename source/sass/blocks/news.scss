@@ -134,13 +134,18 @@
   }
 
   @media (min-width: $tablet-width) {
+    height: 350px;
+
     p {
       font-size: 14px;
       line-height: 20px;
+      width: 176px;
     }
   }
 
   @media (min-width: $desktop-width) {
+    height: 400px;
+
     p {
       line-height: 18px;
     }
@@ -190,6 +195,8 @@
   @media (min-width: $tablet-width) {
     font-size: 20px;
     line-height: 24px;
+    width: 207px;
+    padding-bottom: 6px;
   }
 
   @media (min-width: $desktop-width) {
@@ -202,12 +209,18 @@
   display: flex;
   background-color: $secondary-color;
   flex-wrap: wrap;
-  align-content: center;
+  align-items: center;
   border-radius: 0 12px 0 10px;
-  width: fit-content;
+  width: 263px;
   padding-top: 12px;
   padding-bottom: 10px;
   padding-right: 10px;
+
+  @media (min-width: $tablet-width) {
+    gap: 16px;
+    width: 240px;
+    padding-bottom: 15px;
+  }
 }
 
 .news__link {
@@ -244,6 +257,7 @@
 
   @media (min-width: $tablet-width) {
     height: 730px;
+    margin-bottom: 30px;
   }
 
   @media (min-width: $desktop-width) {
@@ -264,9 +278,11 @@
   @media (min-width: $tablet-width) {
     width: 324px;
     min-height: 350px;
+    max-height: 350px;
 
     &:nth-of-type(2n) {
       min-height: none;
+      max-height: none;
     }
   }
 
@@ -298,15 +314,29 @@
   align-items: center;
   gap: 40px;
   width: 290px;
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+  }
 }
 
 .news .news__pagination {
   display: flex;
   justify-content: center;
   gap: 16px;
+
+  // Регулировка ширины для смещения пагинации на мобильной ориентации.
   min-width: 152px;
   max-width: 152px;
   height: 26px;
+
+  @media (min-width: $tablet-width) {
+    min-width: 188px;
+    max-width: 188px;
+    height: 32px;
+  }
 }
 
 .news__pagination-bullet {
@@ -324,6 +354,11 @@
   opacity: 0.5;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+
+  @media (min-width: $tablet-width) {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .news__pagination-bullet--active {
