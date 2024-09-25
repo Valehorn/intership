@@ -11,7 +11,7 @@ const initSwiperNews = () => {
     spaceBetween: 20,
     slidesPerView: 1,
     grid: {
-      rows : 2,
+      rows: 2,
       fill: 'column',
     },
     navigation: {
@@ -84,19 +84,11 @@ const initSwiperNews = () => {
   }
 
   function updatePaginationBullets(swiper) {
-    const totalSlides = swiper.slides.length;
-    const currentSlide = swiper.realIndex + 1;
-    const startBullet = Math.max(currentSlide - 2, 1);
-
-    if (totalSlides <= 4) {
-      return;
-    }
-
-    const endBullet = Math.min(startBullet + 3, totalSlides);
+    const startBullet = Math.max(1, swiper.realIndex - 2);
 
     swiper.pagination.bullets.forEach((bullet, index) => {
       const bulletNumber = index + 1;
-      if (bulletNumber >= startBullet && bulletNumber <= endBullet) {
+      if (bulletNumber >= startBullet && bulletNumber <= startBullet + 3) {
         bullet.style.display = 'inline-block';
       } else {
         bullet.style.display = 'none';
