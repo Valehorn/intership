@@ -120,7 +120,7 @@ const initSwiperNews = () => {
       }
     } else if (window.innerWidth >= 1440) {
       if (currentSlide >= 12) {
-        startBullet = currentSlide - 2;
+        startBullet = currentSlide - 9;
         endBullet = startBullet + bulletsToShow - 1;
       }
 
