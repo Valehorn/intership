@@ -104,4 +104,6 @@ const initSwiperNews = () => {
   updatePaginationBullets(newsSwiper);
 };
 
+window.addEventListener('resize', initSwiperNews);
+
 export default initSwiperNews;
