@@ -62,7 +62,7 @@
 
   @media (min-width: $desktop-width) {
     justify-content: center;
-    gap: 30px;
+    gap: 28px;
     margin-bottom: 40px;
   }
 }
@@ -102,7 +102,9 @@
   @media (min-width: $desktop-width) {
     flex-wrap: wrap;
     overflow: visible;
-    width: 120px;
+    min-width: 120px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 
