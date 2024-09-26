@@ -172,6 +172,13 @@
   padding-bottom: 6px;
   padding-right: 12px;
 
+  &::before {
+    top: -15px;
+    left: 0;
+
+    @include decoration-angle(16px, 16px, 16px 16px, $secondary-color);
+  }
+
   &::after {
     top: 14px;
     right: -16px;
