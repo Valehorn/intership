@@ -1,5 +1,5 @@
 const faqDetailsListContainer = document.querySelector('.faq__details-list');
-const faqThirdItemInner = faqDetailsListContainer.querySelector('.faq__item:nth-of-type(3) .faq__details-list-marker-inner');
+const faqThirdItemInner = faqDetailsListContainer.querySelector('.faq__details-list-item:nth-of-type(3) .faq__details-list-marker-inner');
 
 const openThirdItem = () => {
   faqThirdItemInner.classList.add('faq__details-list-marker-inner--active');
