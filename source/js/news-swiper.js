@@ -1,4 +1,4 @@
-import Swiper from 'swiper/bundle';
+import Swiper from 'swiper';
 import 'swiper/scss/grid';
 import { Grid, Pagination } from 'swiper/modules';
 
@@ -64,9 +64,14 @@ const initSwiperNews = () => {
     },
   });
 
+  newsSwiper.on('init', () => {
+    updateTabIndex(newsSwiper);
+  });
+
   newsSwiper.on('slideChange', () => {
     updateNavigationButtons(newsSwiper);
     updateBullets(newsSwiper);
+    updateTabIndex(newsSwiper);
   });
 
   newsSwiper.on('slideNextTransitionStart', () => {
@@ -149,6 +154,26 @@ const initSwiperNews = () => {
   }
 
   updateBullets(newsSwiper);
+
+  function updateTabIndex(swiperSlide) {
+    const slides = swiperSlide.slides;
+    const activeIndex = swiperSlide.activeIndex;
+
+    slides.forEach((slide, index) => {
+      const slideButtons = slide.querySelectorAll('.news__link');
+      if (slideButtons.length > 0) {
+        if (index === activeIndex) {
+          slideButtons.forEach((button) => {
+            button.removeAttribute('tabindex');
+          });
+        } else {
+          slideButtons.forEach((button) => {
+            button.setAttribute('tabindex', '-1');
+          });
+        }
+      }
+    });
+  }
 };
 
 let resizeTimeout;
