@@ -77,6 +77,14 @@
     padding-bottom: 22px;
   }
 
+  &:nth-last-of-type(1) .faq__details-list-marker-container {
+    top: 16px;
+  }
+
+  &:nth-last-of-type(2) .faq__details-list-marker-container {
+    top: 7px;
+  }
+
   &:has(.faq__details-list-marker-inner--active) {
     color: #ffffff;
     background-color: $primary-color;
@@ -122,6 +130,11 @@
     &:nth-of-type(2) {
       padding-top: 37px;
       padding-bottom: 37px;
+    }
+
+    &:nth-last-of-type(1) .faq__details-list-marker-container,
+    &:nth-last-of-type(2) .faq__details-list-marker-container {
+      top: 20px;
     }
 
     &:has(.faq__details-list-marker-inner--active) {

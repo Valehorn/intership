@@ -1,6 +1,9 @@
 @use "../global/variables";
 
 .reviews {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
   h2,
   h3 {
     font-weight: 400;
@@ -18,6 +21,7 @@
   font-size: 16px;
   line-height: 18px;
   margin: 0;
+  margin-bottom: 35px;
 
   @media (min-width: $tablet-width) {
     font-size: 20px;
@@ -27,6 +31,18 @@
   @media (min-width: $desktop-width) {
     font-size: 24px;
     line-height: 26px;
+  }
+}
+
+.reviews__swiper-buttons-container {
+  position: absolute;
+  top: -53px;
+  right: 0;
+
+  @media (min-width: $tablet-width) {
+    position: static;
+    top: auto;
+    right: auto;
   }
 }
 
@@ -64,5 +80,15 @@
 
   @media (min-width: $desktop-width) {
     line-height: 18px;
+  }
+}
+
+// Swiper
+
+.reviews__swiper-scrollbar {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
   }
 }

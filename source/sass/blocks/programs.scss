@@ -45,19 +45,18 @@
 .programs__swiper-buttons-container {
   position: absolute;
   display: flex;
-  gap: 10px;
-  top: -55px;
-  right: -2px;
+  top: -64px;
+  right: -14px;
 
   @media (min-width: $tablet-width) {
     top: auto;
-    bottom: -12px;
-    right: 45px;
+    bottom: -21px;
+    right: 32px;
   }
 
   @media (min-width: $desktop-width) {
-    bottom: -11px;
-    right: 55px;
+    bottom: -20px;
+    right: 42px;
   }
 }
 

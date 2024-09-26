@@ -3,17 +3,30 @@
 .swiper-button {
   position: relative;
   display: inline-block;
-  width: 22px;
-  height: 22px;
+  width: 40px;
+  height: 40px;
   border: 1px solid transparent;
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 22px;
+    height: 22px;
+    border-radius: 30px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+
   &::after {
     position: absolute;
     top: calc(50% - 1px);
-    left: 50%;
+    left: 39%;
     content: "";
     width: 14px;
     height: 9px;

@@ -9,6 +9,9 @@ const initSwiperReviews = () => {
       nextEl: '.reviews__swiper-button-next',
       prevEl: '.reviews__swiper-button-prev',
     },
+    scrollbar: {
+      el: '.reviews__swiper-scrollbar',
+    },
     speed: 900,
     loop: false,
     slidesPerView: 1,
