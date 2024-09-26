@@ -451,3 +451,18 @@
   background-color: $primary-color;
   opacity: 1;
 }
+
+.news__swiper-button-prev,
+.news__swiper-button-next {
+  &::after {
+    width: 10px;
+    height: 10px;
+    mask-size: 10px 10px;
+  }
+}
+
+.news .news__swiper-button-next {
+  &::after {
+    top: 50%;
+  }
+}
