@@ -3,12 +3,21 @@
 .faq {
   padding-top: 50px;
   padding-bottom: 50px;
+
+  @media (min-width: $desktop-width) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .faq__title {
   text-align: center;
   color: $primary-color;
   margin-bottom: 30px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 40px;
+  }
 }
 
 .faq__details-list {
@@ -40,6 +49,10 @@
     overflow: hidden;
     margin: 0;
     transition: height 0.3s ease, overflow 0.3s ease;
+  }
+
+  br {
+    display: none;
   }
 
   &:nth-of-type(1),
@@ -78,6 +91,38 @@
       overflow: visible;
     }
   }
+
+  @media (min-width: $tablet-width) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    br {
+      display: block;
+    }
+
+    &:nth-of-type(1),
+    &:nth-of-type(2) {
+      padding-top: 37px;
+      padding-bottom: 37px;
+    }
+
+    &:has(.faq__details-list-marker-inner--active) {
+      padding-top: 37px;
+      padding-bottom: 30px;
+
+      .faq__details-list-title-container {
+        margin-bottom: 27px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    br {
+      display: none;
+    }
+  }
 }
 
 .faq__details-list-title-container {
@@ -91,6 +136,11 @@
 .faq__details-list-marker-container {
   position: absolute;
   right: 0;
+
+  @media (min-width: $tablet-width) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .faq__details-list-marker {
