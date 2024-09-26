@@ -12,8 +12,6 @@ const initSwiperReviews = () => {
     speed: 900,
     loop: false,
     slidesPerView: 1,
-    allowTouchMove: true,
-    autoHeight: true,
 
     breakpoints: {
       320: {
@@ -27,19 +25,17 @@ const initSwiperReviews = () => {
       },
 
       1440: {
-        slidesPerView: 1.741,
-        spaceBetween: 120,
+        slidesPerView: 2,
+        spaceBetween: 32,
         allowTouchMove: false
       }
     },
-    on: {
-      slideChange() {
-        updateNavigationButtons(swiperReviews);
-      },
-      slideNextTransitionStart() {
-        updateNavigationButtons(swiperReviews);
-      }
-    }
+  });
+  swiperReviews.on('slideChange', () => {
+    updateNavigationButtons(swiperReviews);
+  });
+  swiperReviews.on('slideNextTransitionStart', () => {
+    updateNavigationButtons(swiperReviews);
   });
   updateNavigationButtons(swiperReviews);
 
@@ -65,4 +61,4 @@ const initSwiperReviews = () => {
   }
 };
 
-export { initSwiperReviews };
+export default initSwiperReviews;

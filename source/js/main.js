@@ -7,6 +7,7 @@ import initSwiperPrograms from './programs-swiper';
 import { tabsToggle } from './news-tab';
 import initSwiperNews from './news-swiper';
 import { toggleFaqAccordion } from './faq-accordion';
+import initSwiperReviews from './reviews-swiper';
 
 const bootStrap = () => {
   burgerMenuToggle();
@@ -15,6 +16,7 @@ const bootStrap = () => {
   tabsToggle();
   initSwiperNews();
   toggleFaqAccordion();
+  initSwiperReviews();
 };
 
 bootStrap();
