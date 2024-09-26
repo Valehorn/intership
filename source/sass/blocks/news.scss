@@ -78,6 +78,8 @@
   border-radius: 20px;
   min-width: 75px;
   height: 36px;
+  padding-left: 12px;
+  padding-right: 13px;
   cursor: pointer;
   transition: border-color 0.3s ease;
 
@@ -226,6 +228,7 @@
   background-color: $secondary-color;
   flex-wrap: wrap;
   align-items: center;
+  gap: 10px;
   border-radius: 0 12px 0 10px;
   width: 263px;
   padding-top: 12px;
@@ -390,7 +393,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 34px;
   width: 290px;
 
   @media (min-width: $tablet-width) {
