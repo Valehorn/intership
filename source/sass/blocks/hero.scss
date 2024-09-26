@@ -99,6 +99,12 @@
 .hero__slide-inner {
   position: relative;
   z-index: 1;
+
+  // Переполнение на мобильной ориентации.
+  @media (max-width: $pre-tablet-width) {
+    max-height: 475px;
+    overflow: auto;
+  }
 }
 
 .hero__slide-inner p {
