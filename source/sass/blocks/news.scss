@@ -232,6 +232,13 @@
   padding-bottom: 10px;
   padding-right: 10px;
 
+  &::after {
+    bottom: 0;
+    right: -15px;
+
+    @include decoration-angle(16px, 16px, 16px 16px, $secondary-color);
+  }
+
   @media (min-width: $tablet-width) {
     gap: 16px;
     width: 240px;
