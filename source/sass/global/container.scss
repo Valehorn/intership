@@ -41,3 +41,28 @@
     padding-right: $tablet-padding-x;
   }
 }
+
+.container--news-tablet-plus {
+  display: contents;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+}
+
+.container--mobile {
+  display: contents;
+
+  @media (max-width: $pre-tablet-width) {
+    display: block;
+  }
+}
+
+.container--news-list-mobile {
+  display: contents;
+
+  @media (max-width: $pre-tablet-width) {
+    display: block;
+    padding-right: 0;
+  }
+}
