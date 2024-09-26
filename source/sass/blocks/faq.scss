@@ -85,6 +85,7 @@
   display: flex;
   flex-wrap: wrap;
   padding-right: 43px;
+  transition: margin-bottom 0.3s ease;
 }
 
 .faq__details-list-marker-container {
@@ -98,6 +99,7 @@
   height: 40px;
   border-radius: 40px;
   background-color: $primary-color;
+  transition: background-color 0.3s ease;
 
   &::before {
     position: absolute;
@@ -129,7 +131,6 @@
   line-height: 18px;
   font-weight: 400;
   margin: 0;
-  transition: margin-bottom 0.3s ease;
 
   @media (min-width: $tablet-width) {
     font-size: 22px;
