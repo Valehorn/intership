@@ -463,6 +463,10 @@
 
 .news .news__swiper-button-prev,
 .news .news__swiper-button-next {
+  &::before {
+    left: 78%;
+  }
+
   &::after {
     top: 50%;
     left: 69%;
