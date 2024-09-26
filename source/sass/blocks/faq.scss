@@ -54,6 +54,10 @@
     padding-top: 24px;
     padding-bottom: 22px;
 
+    .faq__details-list-title-container {
+      margin-bottom: 22px;
+    }
+
     .faq__details-list-marker {
       background-color: #ffffff;
     }
@@ -66,10 +70,6 @@
     .faq__details-list-marker::after {
       top: 11px;
       transform: rotate(-90deg);
-    }
-
-    .faq__details-item-title {
-      margin-bottom: 22px;
     }
 
     p {
