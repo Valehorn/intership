@@ -70,7 +70,6 @@
 .news__tab-button {
   display: inline-flex;
   justify-content: center;
-  align-items: center;
   font-size: 12px;
   line-height: 12px;
   font-weight: 500;
@@ -82,17 +81,20 @@
   border-radius: 20px;
   min-width: 75px;
   height: 36px;
+  padding-top: 11px;
   padding-left: 12px;
   padding-right: 13px;
   cursor: pointer;
   transition: border-color 0.3s ease;
 
   @media (min-width: $tablet-width) {
+    align-items: center;
     font-size: 14px;
     line-height: 14px;
     letter-spacing: 0.28px;
     min-width: 94px;
     min-height: 46px;
+    padding-top: 0;
     padding-left: 19px;
     padding-right: 19px;
   }
