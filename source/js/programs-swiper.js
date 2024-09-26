@@ -43,6 +43,10 @@ const initSwiperPrograms = () => {
     updateNavigationButtons(programsSwiper);
   });
 
+  programsSwiper.on ('scrollbarDragEnd', () => {
+    updateNavigationButtons(programsSwiper);
+  });
+
   updateNavigationButtons(programsSwiper);
 
   function updateNavigationButtons(swiper) {
