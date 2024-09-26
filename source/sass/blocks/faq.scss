@@ -1,29 +1,126 @@
 @use "../global/variables";
 
+.faq {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .faq__title {
+  text-align: center;
   color: $primary-color;
+  margin-bottom: 30px;
 }
 
 .faq__details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .faq__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: $primary-color;
+  border: 2px solid $primary-color;
+  border-radius: 14px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  padding-left: 17px;
+  padding-right: 17px;
+  cursor: pointer;
+  transition: padding 0.3s ease;
 
   p {
+    height: 0;
+    overflow: hidden;
     margin: 0;
+    transition: height 0.3s ease;
   }
 
-  &:has(.faq__details-list-marker--active) {
+  &:nth-of-type(1),
+  &:nth-of-type(2) {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  &:has(.faq__details-list-marker-inner--active) {
     color: #ffffff;
     background-color: $primary-color;
+    padding-top: 24px;
+    padding-bottom: 22px;
+
+    .faq__details-list-marker {
+      background-color: #ffffff;
+    }
+
+    .faq__details-list-marker::before,
+    .faq__details-list-marker::after {
+      background-color: $primary-color;
+    }
+
+    .faq__details-list-marker::after {
+      top: 11px;
+      transform: rotate(-90deg);
+    }
+
+    .faq__details-item-title {
+      margin-bottom: 22px;
+    }
 
     p {
       color: $secondary-color;
+      height: auto;
+      overflow: visible;
     }
+  }
+}
+
+.faq__details-list-title-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 43px;
+}
+
+.faq__details-list-marker-container {
+  position: absolute;
+  right: 0;
+}
+
+.faq__details-list-marker {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: $primary-color;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 18px;
+    height: 1px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 1px;
+    height: 18px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease, top 0.3s ease;
   }
 }
 
