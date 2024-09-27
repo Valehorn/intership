@@ -1,13 +1,17 @@
 @use "../global/variables";
 
 .reviews {
-  padding-top: 50px;
+  padding-top: 55px;
   padding-bottom: 50px;
 
   h2,
   h3 {
     font-weight: 400;
     color: $primary-color;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding-top: 50px;
   }
 
   @media (min-width: $desktop-width) {
@@ -135,7 +139,7 @@
 .reviews__swiper-buttons-container {
   position: absolute;
   top: -64px;
-  right: 0;
+  right: -14px;
 
   @media (min-width: $tablet-width) {
     top: auto;
