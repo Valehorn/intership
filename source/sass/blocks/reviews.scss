@@ -12,6 +12,16 @@
   }
 }
 
+.reviews__mobile-desktop-container {
+  @media (min-width: $tablet-width) {
+    display: contents;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: block;
+  }
+}
+
 .reviews__card {
   p {
     margin: 0;
@@ -35,17 +45,27 @@
   }
 }
 
+.reviews__overflow {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews__tablet-container {
+  padding-right: 0;
+}
+
 .reviews__swiper-buttons-container {
   position: absolute;
   top: -64px;
   right: 0;
 
   @media (min-width: $tablet-width) {
-    position: static;
     top: auto;
-    right: auto;
+    bottom: -40px;
+    order: 3;
   }
 }
+
 
 .reviews__name {
   font-size: 14px;
@@ -102,6 +122,14 @@
 
 // Swiper
 
+.reviews__swiper {
+  width: 100%;
+
+  @media (min-width: $tablet-width) {
+    order: 1;
+  }
+}
+
 .reviews__swiper-scrollbar {
   display: none;
   cursor: grab;
@@ -112,6 +140,7 @@
     height: 2px;
     background-color: rgba(49, 109, 194, 0.2);
     transition: transform 0.3s ease;
+    order: 2;
 
     div {
       height: 2px;
