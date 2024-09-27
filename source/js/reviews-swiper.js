@@ -23,7 +23,7 @@ const initSwiperReviews = () => {
       },
 
       768: {
-        slidesPerView: 1.267,
+        slidesPerView: 1.277,
         spaceBetween: 30,
         scrollbar: {
           draggable: true,

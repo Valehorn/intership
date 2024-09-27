@@ -66,6 +66,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0 65px;
+    width: 560px;
     min-height: 417px;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -143,8 +144,8 @@
 
   @media (min-width: $tablet-width) {
     top: auto;
-    bottom: -23px;
-    order: 3;
+    right: 31px;
+    bottom: -31px;
   }
 }
 
@@ -191,6 +192,7 @@
   font-size: 12px;
   line-height: 12px;
   letter-spacing: 0.12px;
+  text-transform: uppercase;
   margin: 0;
 }
 
