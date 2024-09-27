@@ -77,14 +77,6 @@
     padding-bottom: 22px;
   }
 
-  /* &:nth-last-of-type(1) .faq__details-list-marker-container {
-    top: 16px;
-  }
-
-  &:nth-last-of-type(2) .faq__details-list-marker-container {
-    top: 7px;
-  } */
-
   &:has(.faq__details-list-marker-inner--active) {
     color: #ffffff;
     background-color: $primary-color;
@@ -132,11 +124,6 @@
       padding-bottom: 37px;
     }
 
-    /* &:nth-last-of-type(1) .faq__details-list-marker-container,
-    &:nth-last-of-type(2) .faq__details-list-marker-container {
-      top: 20px;
-    } */
-
     &:has(.faq__details-list-marker-inner--active) {
       padding-top: 37px;
       padding-bottom: 30px;
@@ -163,11 +150,6 @@
       padding-bottom: 43px;
     }
 
-    /* &:nth-last-of-type(1) .faq__details-list-marker-container,
-    &:nth-last-of-type(2) .faq__details-list-marker-container {
-      top: 30%;
-    } */
-
     &:has(.faq__details-list-marker-inner--active) {
       padding-top: 43px;
       padding-bottom: 40px;
@@ -185,10 +167,6 @@
   @media (min-width: $tablet-width) {
     top: 20px;
   }
-
-  /* @media (min-width: $desktop-width) {
-    top: 30%;
-  } */
 }
 
 .faq__details-list-item:nth-last-of-type(2) .faq__details-list-marker-container {
@@ -197,10 +175,6 @@
   @media (min-width: $tablet-width) {
     top: 20px;
   }
-
-  /* @media (min-width: $desktop-width) {
-    top: 30%;
-  } */
 }
 
 .faq__details-list-title-container {
