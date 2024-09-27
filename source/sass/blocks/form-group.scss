@@ -148,6 +148,7 @@
   visibility: hidden;
   max-height: 130px;
   overflow-y: auto;
+  overscroll-behavior: none;
   z-index: 10;
   transition: padding 0.3s ease;
 
