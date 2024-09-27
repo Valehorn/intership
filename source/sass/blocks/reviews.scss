@@ -17,7 +17,7 @@
 
   @media (min-width: $desktop-width) {
     padding-top: 65px;
-    padding-bottom: 60px;
+    padding-bottom: 62px;
   }
 }
 
@@ -76,6 +76,8 @@
   }
 
   @media (min-width: $desktop-width) {
+    display: block;
+    width: 604px;
     min-height: 483px;
     padding-right: 46px;
   }
@@ -91,7 +93,9 @@
   }
 
   @media (min-width: $desktop-width) {
-    gap: 0 118px;
+    width: 100%;
+    justify-content: space-between;
+    gap: 0 0;
   }
 }
 
@@ -147,6 +151,11 @@
     top: auto;
     right: 31px;
     bottom: -14px;
+  }
+
+  @media (min-width: $desktop-width) {
+    right: -14px;
+    bottom: -17px;
   }
 }
 
@@ -255,6 +264,7 @@
     background-color: transparent;
     transition: transform 0.3s ease;
 
+    // Ползунок внутри скроллбара.
     div {
       height: 2px;
       background-color: $primary-color;
