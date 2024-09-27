@@ -1473,30 +1473,44 @@
       </div>
     </section>
     <section class="contacts" data-test="contacts" id="contacts">
-      <h2 class="contacts__title title">Контакты</h2>
-      <div class="contacts__item">
-        <h3 class="contacts__item-title">Центральный офис</h3>
-        <address class="contacts__item-description">г. Новосибирск, ул. Щетинкина 68,
-          культурный центр</address>
-      </div>
-      <div class="contacts__item">
-        <h3 class="contacts__item-title">Телефон</h3>
-        <a class="contacts__item-description" href="tel:796387687676">+7 963 876 876 76</a>
-      </div>
-      <div class="contacts__item">
-        <h3 class="contacts__item-title">Email</h3>
-        <a class="contacts__item-description" href="mailto:Info@stazh.ru">Info@stazh.ru</a>
-      </div>
-      <div class="contacts__map-container">
-        <picture>
-          <source type="image/webp" media="(min-width: 1440px)" srcset="# 1x, # 2x" width="1240" height="486">
-          <source type="image/webp" media="(min-width: 768px)" srcset="# 1x, # 2x" width="678" height="500">
-          <source type="image/jpeg" media="(min-width: 1440px)" srcset="# 1x, # 2x" width="1240" height="486">
-          <source type="image/jpeg" media="(min-width: 768px)" srcset="# 1x, # 2x" width="678" height="500">
-          <source type="image/webp" media="(max-width: 767px)" srcset="# 1x, # 2x" width="290" height="240">
-          <img class="contacts__map-image" src="#" alt="Карта расположения Internship." width="290" height="240"
-            loading="lazy" draggable="false">
-        </picture>
+      <div class="contacts__container container">
+        <h2 class="contacts__title title">Контакты</h2>
+        <div class="contacts__content">
+          <div class="contacts__item">
+            <h3 class="contacts__item-title">Центральный офис</h3>
+            <address class="contacts__item-description">г. Новосибирск, ул. Щетинкина 68,
+              культурный центр</address>
+          </div>
+          <div class="contacts__item">
+            <h3 class="contacts__item-title">Телефон</h3>
+            <a class="contacts__item-description" href="tel:796387687676">+7 963 876 876 76</a>
+          </div>
+          <div class="contacts__item">
+            <h3 class="contacts__item-title">Email</h3>
+            <a class="contacts__item-description" href="mailto:Info@stazh.ru">Info@stazh.ru</a>
+          </div>
+        </div>
+        <div class="contacts__map-container">
+          <picture>
+            <source type="image/webp" media="(min-width: 1440px)"
+              srcset="img/contacts/contacts-map-desktop@1x.webp 1x, img/contacts/contacts-map-desktop@2x.webp 2x"
+              width="1240" height="486">
+            <source type="image/webp" media="(min-width: 768px)"
+              srcset="img/contacts/contacts-map-tablet@1x.webp 1x, img/contacts/contacts-map-tablet@2x.webp 2x"
+              width="678" height="500">
+            <source type="image/png" media="(min-width: 1440px)"
+              srcset="img/contacts/contacts-map-desktop@1x.png 1x, img/contacts/contacts-map-desktop@2x.png 2x"
+              width="1240" height="486">
+            <source type="image/png" media="(min-width: 768px)"
+              srcset="img/contacts/contacts-map-tablet@1x.png 1x, img/contacts/contacts-map-tablet@2x.png 2x"
+              width="678" height="500">
+            <source type="image/webp" media="(max-width: 767px)"
+              srcset="img/contacts/contacts-map-mobile@1x.webp 1x, img/contacts/contacts-map-mobile@2x.webp 2x"
+              width="290" height="240">
+            <img class="contacts__map-image" src="img/contacts/contacts-map-mobile@1x.png"
+              alt="Карта расположения Internship." width="290" height="240" loading="lazy" draggable="false">
+          </picture>
+        </div>
       </div>
     </section>
     <section class="form" data-test="form">
@@ -1644,22 +1658,7 @@
       </button>
     </form>
   </dialog>
-  <!-- пример использования спрайта -->
-  <!-- <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
-    <svg>
-      <use href="/__spritemap#sprite-user"></use>
-    </svg> -->
-  <!-- примеры требуемых атрибутов data-test="*" -->
-  <!-- <div data-test="hero">hero</div>
-    <div data-test="about">about</div>
-    <div data-test="programs">programs</div>
-    <div data-test="grant">grant</div>
-    <div data-test="news">news</div>
-    <div data-test="FAQ">FAQ</div>
-    <div data-test="reviews">reviews</div>
-    <div data-test="contacts">contacts</div>
-    <div data-test="form">form</div>
-    <div data-test="footer">footer</div> -->
+
   <script type="module" src="js/main.js"></script>
 </body>
 
