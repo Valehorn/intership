@@ -8,6 +8,7 @@
   h3 {
     font-weight: 400;
     color: $primary-color;
+    margin: 0;
   }
 }
 
@@ -17,26 +18,26 @@
   }
 }
 
-.reviews__title {
-  font-size: 16px;
-  line-height: 18px;
+.reviews .reviews__title {
+  font-size: 20px;
+  line-height: 20px;
   margin: 0;
   margin-bottom: 35px;
 
   @media (min-width: $tablet-width) {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 34px;
+    line-height: 50px;
   }
 
   @media (min-width: $desktop-width) {
-    font-size: 24px;
-    line-height: 26px;
+    font-size: 50px;
+    line-height: 50px;
   }
 }
 
 .reviews__swiper-buttons-container {
   position: absolute;
-  top: -53px;
+  top: -64px;
   right: 0;
 
   @media (min-width: $tablet-width) {
@@ -83,12 +84,46 @@
   }
 }
 
+.reviews__card-title {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 24px;
+    line-height: 26px;
+  }
+}
+
 // Swiper
 
 .reviews__swiper-scrollbar {
   display: none;
+  cursor: grab;
 
   @media (min-width: $tablet-width) {
     display: block;
+    width: 562px;
+    height: 2px;
+    background-color: rgba(49, 109, 194, 0.2);
+    transition: transform 0.3s ease;
+
+    div {
+      height: 2px;
+      background-color: $primary-color;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1136px;
+
+    div {
+      width: 394px;
+    }
   }
 }
