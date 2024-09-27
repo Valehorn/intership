@@ -8,7 +8,6 @@
   h3 {
     font-weight: 400;
     color: $primary-color;
-    margin: 0;
   }
 }
 
@@ -23,9 +22,36 @@
 }
 
 .reviews__card {
+  border: 2px solid $primary-color;
+  min-height: 472px;
+  border-radius: 17px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 17px;
+  padding-right: 17px;
+
   p {
     margin: 0;
   }
+}
+
+.reviews__main-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.reviews__image-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+}
+
+.reviews__image {
+  display: block;
+  border-radius: 30px;
 }
 
 .reviews .reviews__title {
@@ -82,6 +108,19 @@
   }
 }
 
+.reviews__info-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.reviews__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .reviews__group-title {
   font-size: 12px;
   line-height: 12px;
@@ -108,6 +147,8 @@
   font-size: 16px;
   line-height: 18px;
   font-weight: 400;
+  margin: 0;
+  margin-bottom: 20px;
 
   @media (min-width: $tablet-width) {
     font-size: 20px;
