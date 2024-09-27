@@ -33,6 +33,27 @@
   p {
     margin: 0;
   }
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 65px;
+    min-height: 417px;
+    padding-top: 52px;
+    padding-bottom: 52px;
+    padding-left: 52px;
+    padding-right: 52px;
+  }
+}
+
+.reviews__tablet-plus-group {
+  display: contents;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    gap: 0 65px;
+    margin-bottom: 30px;
+  }
 }
 
 .reviews__main-group {
@@ -41,17 +62,32 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 15px;
+
+  @media (min-width: $tablet-width) {
+    gap: 15px;
+    margin-bottom: 0;
+  }
 }
 
 .reviews__image-container {
   width: 60px;
   height: 60px;
   border-radius: 60px;
+
+  @media (min-width: $tablet-width) {
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+  }
 }
 
 .reviews__image {
   display: block;
   border-radius: 30px;
+
+  @media (min-width: $tablet-width) {
+    border-radius: 45px;
+  }
 }
 
 .reviews .reviews__title {
@@ -63,11 +99,13 @@
   @media (min-width: $tablet-width) {
     font-size: 34px;
     line-height: 50px;
+    margin-bottom: 40px;
   }
 
   @media (min-width: $desktop-width) {
     font-size: 50px;
     line-height: 50px;
+    margin-bottom: 45px;
   }
 }
 
@@ -87,7 +125,7 @@
 
   @media (min-width: $tablet-width) {
     top: auto;
-    bottom: -40px;
+    bottom: -23px;
     order: 3;
   }
 }
@@ -97,6 +135,7 @@
   font-size: 14px;
   line-height: 18px;
   margin: 0;
+
 
   @media (min-width: $tablet-width) {
     font-size: 20px;
@@ -111,14 +150,23 @@
 .reviews__info-group {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 25px;
   margin-bottom: 25px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
 }
 
 .reviews__group {
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  @media (min-width: $tablet-width) {
+    gap: 11px;
+  }
 }
 
 .reviews__group-title {
@@ -153,6 +201,7 @@
   @media (min-width: $tablet-width) {
     font-size: 20px;
     line-height: 24px;
+    margin-bottom: 25px;
   }
 
   @media (min-width: $desktop-width) {
@@ -168,6 +217,12 @@
 
   @media (min-width: $tablet-width) {
     order: 1;
+  }
+}
+
+.reviews__swiper-wrapper {
+  @media (min-width: $tablet-width) {
+    margin-bottom: 40px;
   }
 }
 
