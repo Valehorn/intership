@@ -1,8 +1,8 @@
 @use "../global/variables";
 
 .contacts {
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 76px;
+  padding-bottom: 65px;
   background-color: $primary-color;
   color: #ffffff;
 
@@ -32,10 +32,10 @@
 .contacts__item {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
 
   &:not(:last-of-type) {
-    margin-bottom: 20px;
+    margin-bottom: 21px;
   }
 }
 
