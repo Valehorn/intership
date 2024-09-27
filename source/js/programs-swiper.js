@@ -35,8 +35,13 @@ const initSwiperPrograms = () => {
       },
     },
   });
+  programsSwiper.on('init', () => {
+    updateTabIndex(programsSwiper);
+  });
+
   programsSwiper.on('slideChange', () => {
     updateNavigationButtons(programsSwiper);
+    updateTabIndex(programsSwiper);
   });
 
   programsSwiper.on('slideNextTransitionStart', () => {
@@ -46,6 +51,26 @@ const initSwiperPrograms = () => {
   programsSwiper.on ('scrollbarDragEnd', () => {
     updateNavigationButtons(programsSwiper);
   });
+
+  function updateTabIndex(swiperSlide) {
+    const slides = swiperSlide.slides;
+    const activeIndex = swiperSlide.activeIndex;
+
+    slides.forEach((slide, index) => {
+      const slideButtons = slide.querySelectorAll('.programs__slide-link');
+      if (slideButtons.length > 0) {
+        if (index === activeIndex) {
+          slideButtons.forEach((button) => {
+            button.removeAttribute('tabindex');
+          });
+        } else {
+          slideButtons.forEach((button) => {
+            button.setAttribute('tabindex', '-1');
+          });
+        }
+      }
+    });
+  }
 
   updateNavigationButtons(programsSwiper);
 
