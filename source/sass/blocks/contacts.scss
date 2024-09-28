@@ -23,10 +23,22 @@
     padding-top: 100px;
     padding-bottom: 100px;
   }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }
 
 .contacts__text-group {
   margin-bottom: 62px;
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 82px;
+  }
 }
 
 .contacts__title {
@@ -43,6 +55,14 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20.5px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 52.5px;
+
+    address {
+      width: 263px;
+    }
   }
 }
 
@@ -106,5 +126,9 @@
   @media (min-width: $desktop-width) {
     width: 1240px;
     height: 486px;
+
+    &::before {
+      top: -40px;
+    }
   }
 }
