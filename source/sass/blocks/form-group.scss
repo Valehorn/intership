@@ -93,9 +93,10 @@
   }
 
   .form-group__select-item {
+    line-height: 14px;
     min-height: 48px;
     overflow: visible;
-    line-height: 14px;
+    opacity: 1;
   }
 
   .form-group__select-item:first-of-type {
@@ -150,7 +151,7 @@
   overflow-y: auto;
   overscroll-behavior: none;
   z-index: 10;
-  transition: padding 0.3s ease;
+  transition: padding 0.3s ease, visibility 0.3s ease, color 0.3s ease;
 
   @media (min-width: $tablet-width) {
     top: 54px;
@@ -165,5 +166,6 @@
   min-height: 0;
   line-height: 0;
   overflow: hidden;
-  transition: min-height 0.3s ease, line-height 0.3s ease, overflow 0.3s ease;
+  opacity: 0;
+  transition: min-height 0.3s ease, line-height 0.3s ease, overflow 0.3s ease, opacity 0.1s ease;
 }
