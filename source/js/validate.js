@@ -7,6 +7,7 @@ const validateName = (nameInput) => {
   if (!nameValidate.test(nameValue) && nameValue.trim() !== '') {
     nameInput.classList.add('form-group__input--error');
     nameInput.setCustomValidity('Введите корректное имя, начинающееся с заглавной буквы.');
+    nameInput.reportValidity();
     return false;
   } else {
     nameInput.classList.remove('form-group__input--error');
@@ -22,6 +23,7 @@ const validatePhone = (phoneInput) => {
   if (!phoneValidate.test(phoneValue) && phoneValue.trim() !== '') {
     phoneInput.classList.add('form-group__input--error');
     phoneInput.setCustomValidity('Введите корректный номер телефона в формате +7(777)777-77-77.');
+    phoneInput.reportValidity();
     return false;
   } else {
     phoneInput.classList.remove('form-group__input--error');
@@ -58,15 +60,42 @@ const validateCheckbox = (checkboxInput) => {
   }
 };
 
+const onInputChange = (input) => {
+  if (input.value.trim() === '') {
+    input.classList.remove('form-group__input--error');
+    input.setCustomValidity('');
+  } else {
+    if (input.classList.contains('form-group__input--error')) {
+      if (input.type === 'text') {
+        validateName(input);
+      } else if (input.type === 'tel') {
+        validatePhone(input);
+      } else if (input.type === 'checkbox') {
+        validateCheckbox(input);
+      }
+    }
+  }
+};
+
+const onPhoneFocus = (input) => {
+  if (input.value.trim() === '') {
+    input.value = '+7(';
+  }
+};
+
+const onPhoneBlur = (input) => {
+  if (input.value === '+7(' || input.value === '+7()') {
+    input.value = '';
+  }
+};
+
 const onFormSubmit = (evt) => {
   evt.preventDefault();
+  let isValid = true;
 
   const form = evt.target;
   const nameInput = form.querySelector('.form-group__input--name');
   const phoneInput = form.querySelector('.form-group__input--phone');
-  const checkboxInputs = form.querySelectorAll('.form-group__input-checkbox');
-
-  let isValid = true;
 
   if (nameInput) {
     isValid = validateName(nameInput) && isValid;
@@ -75,13 +104,7 @@ const onFormSubmit = (evt) => {
     isValid = validatePhone(phoneInput) && isValid;
   }
 
-  checkboxInputs.forEach((checkboxInput) => {
-    isValid = validateCheckbox(checkboxInput) && isValid;
-  });
-
-  if (!isValid) {
-    form.reportValidity();
-  } else {
+  if (isValid) {
     form.submit();
     form.reset();
   }
@@ -92,23 +115,20 @@ forms.forEach((form) => {
 
   const nameInput = form.querySelector('.form-group__input--name');
   const phoneInput = form.querySelector('.form-group__input--phone');
-  const checkboxInputs = form.querySelectorAll('.form-group__input-checkbox');
+  const checkboxInput = form.querySelector('.form-group__input-checkbox');
 
   if (nameInput) {
-    nameInput.addEventListener('input', () => {
-      nameInput.classList.remove('form-group__input--error');
-    });
+    nameInput.addEventListener('input', () => onInputChange(nameInput));
   }
   if (phoneInput) {
     phoneInput.addEventListener('input', () => {
       formatPhoneNumber(phoneInput);
-      phoneInput.classList.remove('form-group__input--error');
+      onInputChange(phoneInput);
     });
+    phoneInput.addEventListener('focus', () => onPhoneFocus(phoneInput));
+    phoneInput.addEventListener('blur', () => onPhoneBlur(phoneInput));
   }
-
-  checkboxInputs.forEach((checkboxInput) => {
-    checkboxInput.addEventListener('change', () => {
-      checkboxInput.classList.remove('form-group__input--error');
-    });
-  });
+  if (checkboxInput) {
+    checkboxInput.addEventListener('change', () => onInputChange(checkboxInput));
+  }
 });
