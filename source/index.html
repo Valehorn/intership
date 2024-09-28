@@ -1534,7 +1534,8 @@
               </div>
               <div class="form__group">
                 <label class="form__label" for="comment">Ваше сообщение</label>
-                <textarea class="form__textarea form__element form-group__input" name="comment" id="comment" required></textarea>
+                <textarea class="form__textarea form__element form-group__input" name="comment" id="comment"
+                  required></textarea>
               </div>
               <div class="form__group form__group-fields form-group__fields">
                 <p class="form__label">Выберите город</p>
@@ -1558,7 +1559,8 @@
               <div class="form__checkbox-group">
                 <input class="form__checkbox form-group__input-checkbox" type="checkbox" name="form-confidentiality"
                   id="form-confidentiality">
-                <label class="form__checkbox-label" for="form-confidentiality">Я согласен на обработку моих персональных<br>
+                <label class="form__checkbox-label" for="form-confidentiality">Я согласен на обработку моих
+                  персональных<br>
                   данных</label>
               </div>
               <button class="button form__submit-button button--secondary" type="submit">Отправить
@@ -1573,56 +1575,58 @@
     </section>
   </main>
   <footer class="footer" data-test="footer">
-    <div class="footer__logo-container">
-      <img class="footer__logo logo" src="#" alt="Логотип Internship" width="52" height="52" loading="lazy"
-        draggable="false">
-    </div>
-    <nav class="footer__nav" aria-label="footer navigation">
-      <ul class="footer__nav-list">
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#about">О проекте</a>
+    <div class="footer__container container">
+      <div class="footer__logo-container">
+        <img class="footer__logo logo" src="img/logo.svg" alt="Логотип Internship" width="52" height="52" loading="lazy"
+          draggable="false">
+      </div>
+      <nav class="footer__nav" aria-label="footer navigation">
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="#about">О проекте</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="#programs">Программы</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="#grant">Как поехать</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="#reviews">Отзывы</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="#news">Новости</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="#contacts">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="footer__confidential-group">
+        <a class="footer__confidential-link" href="404.html">Политика конфиденциальности</a>
+        <p class="footer__rights">Стажировка © 2023 Все права защищены</p>
+      </div>
+      <ul class="social-list">
+        <li class="social-list__item">
+          <a class="social-list__link social-button social-list__link--vk" href="https://vk.com/htmlacademy"
+            target="_blank" rel="noopener noreferrer" draggable="false">
+            <span class="visually-hidden">Вконтакте</span>
+          </a>
         </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#programs">Программы</a>
+        <li class="social-list__item">
+          <a class="social-list__link social-button social-list__link--classmates" href="https://ok.ru" target="_blank"
+            rel="noopener noreferrer" draggable="false">
+            <span class="visually-hidden">Одноклассники</span>
+          </a>
         </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#grant">Как поехать</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#reviews">Отзывы</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#news">Новости</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#contacts">Контакты</a>
+        <li class="social-list__item">
+          <a class="social-list__link social-button social-list__link--reddit" href="https://www.reddit.com"
+            target="_blank" rel="noopener noreferrer" draggable="false">
+            <span class="visually-hidden">Реддит</span>
+          </a>
         </li>
       </ul>
-    </nav>
-    <div class="footer__confidential-group">
-      <a class="footer__confidential-link" href="404.html">Политика конфиденциальности</a>
-      <p class="footer__rights">Стажировка © 2023 Все права защищены</p>
     </div>
-    <ul class="social-list">
-      <li class="social-list__item">
-        <a class="social-list__link social-button social-list__link--vk" href="https://vk.com/htmlacademy"
-          target="_blank" rel="noopener noreferrer" draggable="false">
-          <span class="visually-hidden">Вконтакте</span>
-        </a>
-      </li>
-      <li class="social-list__item">
-        <a class="social-list__link social-button social-list__link--classmates" href="https://ok.ru" target="_blank"
-          rel="noopener noreferrer" draggable="false">
-          <span class="visually-hidden">Одноклассники</span>
-        </a>
-      </li>
-      <li class="social-list__item">
-        <a class="social-list__link social-button social-list__link--reddit" href="https://www.reddit.com"
-          target="_blank" rel="noopener noreferrer" draggable="false">
-          <span class="visually-hidden">Реддит</span>
-        </a>
-      </li>
-    </ul>
   </footer>
   <dialog class="modal">
     <div class="modal__button-container">
@@ -1663,7 +1667,8 @@
       <div class="modal__checkbox-group">
         <input class="modal__checkbox form-group__input-checkbox" type="checkbox" name="modal-confidentiality"
           id="modal-confidentiality">
-        <label class="modal__checkbox-label" for="modal-confidentiality">Я согласен на обработку моих персональных данных</label>
+        <label class="modal__checkbox-label" for="modal-confidentiality">Я согласен на обработку моих персональных
+          данных</label>
       </div>
       <button class="button modal__submit-button" type="submit">
         <span>Отправить</span>

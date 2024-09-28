@@ -1,19 +1,64 @@
 @use "../global/variables";
 
 .social-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .social-list__link {
+  --social-icon: 0;
+  --social-icon-size: 0;
+  --social-icon-width: 0;
+  --social-icon-height: 0;
+
+  position: relative;
   width: 26px;
   height: 26px;
   background-color: $primary-color;
   border-radius: 100%;
 
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: var(--social-icon-width);
+    height: var(--social-icon-height);
+    mask-image: var(--social-icon);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: var(--social-icon-size);
+    background-color: #ffffff;
+  }
+
   @media (min-width: $tablet-width) {
     width: 36px;
     height: 36px;
   }
+}
+
+.social-list__link--vk {
+  --social-icon: url("/__spritemap#sprite-vk-view");
+  --social-icon-size: 11.56px 6.3px;
+  --social-icon-width: 11.56px;
+  --social-icon-height: 6.3px;
+}
+
+.social-list__link--classmates {
+  --social-icon: url("/__spritemap#sprite-classmates-view");
+  --social-icon-size: 6.83px 11.56px;
+  --social-icon-width: 6.83px;
+  --social-icon-height: 11.56px;
+}
+
+.social-list__link--reddit {
+  --social-icon: url("/__spritemap#sprite-reddit-view");
+  --social-icon-size: 10.51px 11.03px;
+  --social-icon-width: 10.51px;
+  --social-icon-height: 11.03px;
 }
