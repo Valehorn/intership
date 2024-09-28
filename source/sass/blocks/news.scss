@@ -42,18 +42,10 @@
   display: flex;
   gap: 12px;
 
-  // Скрол для Firefox
-  overflow-x: auto;
-  scrollbar-width: none;
   list-style: none;
   padding: 0;
   margin: 0;
   margin-bottom: 24px;
-
-  // Скролл для Webkit
-  &::-webkit-scrollbar {
-    display: none;
-  }
 
   @media (min-width: $tablet-width) {
     gap: 10px;
@@ -64,6 +56,25 @@
     justify-content: center;
     gap: 28px;
     margin-bottom: 40px;
+  }
+
+  @media (max-width: $pre-tablet-width) {
+    scroll-snap-type: x mandatory;
+
+    // Скрол для Firefox
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    // Скролл для Webkit
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.news__item {
+  @media (max-width: $pre-tablet-width) {
+    scroll-snap-align: start;
   }
 }
 
