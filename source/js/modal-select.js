@@ -1,38 +1,38 @@
 const modal = document.querySelector('.modal');
-const fields = modal.querySelector('.form-group__fields');
-const select = modal.querySelector('.form-group__select');
-const item = modal.querySelectorAll('.form-group__select-item');
+const modalFields = modal.querySelector('.form-group__fields');
+const modalSelect = modal.querySelector('.form-group__select');
+const modalItems = modal.querySelectorAll('.form-group__select-item');
 const modalItemContainer = modal.querySelector('.form-group__select-item-container');
-const selectValue = modal.querySelector('.form-group__select-value');
-const hiddenSelectInput = modal.querySelector('.form-group__select-hidden');
+const modalSelectValue = modal.querySelector('.form-group__select-value');
+const modalHiddenSelectInput = modal.querySelector('.form-group__select-hidden');
 
 const onSelectClickOpen = () => {
-  if (fields.classList.contains('form-group__fields--open')) {
-    fields.classList.remove('form-group__fields--open');
+  if (modalFields.classList.contains('form-group__fields--open')) {
+    modalFields.classList.remove('form-group__fields--open');
   } else {
-    fields.classList.add('form-group__fields--open');
+    modalFields.classList.add('form-group__fields--open');
   }
 };
 
 const onSelectClickClose = () => {
-  fields.classList.remove('form-group__fields--open');
+  modalFields.classList.remove('form-group__fields--open');
 };
 
 const onSelectItemClick = (evt) => {
-  if (!item) {
+  if (!modalItems) {
     return;
   }
-  selectValue.textContent = evt.target.dataset.cityModal;
-  hiddenSelectInput.value = selectValue.textContent.trim();
+  modalSelectValue.textContent = evt.target.dataset.cityModal;
+  modalHiddenSelectInput.value = modalSelectValue.textContent.trim();
 };
 
-select.addEventListener('click', onSelectClickOpen);
-select.addEventListener('blur', onSelectClickClose);
+modalSelect.addEventListener('click', onSelectClickOpen);
+modalSelect.addEventListener('blur', onSelectClickClose);
 
 modalItemContainer.addEventListener('click', onSelectItemClick);
 
 modal.addEventListener('click', (evt) => {
-  if (!select.contains(evt.target) && !fields.contains(evt.target)) {
-    fields.classList.remove('form-group__fields--open');
+  if (!modalSelect.contains(evt.target) && !modalFields.contains(evt.target)) {
+    modalFields.classList.remove('form-group__fields--open');
   }
 });

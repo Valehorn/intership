@@ -1,5 +1,4 @@
 const forms = document.querySelectorAll('.form-group');
-let isValid;
 
 const validateName = (nameInput) => {
   const nameValue = nameInput.value;
@@ -78,24 +77,22 @@ const onPhoneBlur = (input) => {
 
 const onFormSubmit = (evt) => {
   evt.preventDefault();
-  isValid = true;
+  let isValid = true;
 
-  forms.forEach((form) => {
-    const nameInput = form.querySelector('.form-group__input--name');
-    const phoneInput = form.querySelector('.form-group__input--phone');
+  const form = evt.target;
+  const nameInput = form.querySelector('.form-group__input--name');
+  const phoneInput = form.querySelector('.form-group__input--phone');
 
-    if (nameInput) {
-      isValid = validateName(nameInput) && isValid;
-    }
-    if (phoneInput) {
-      formatPhoneNumber(phoneInput);
-      isValid = validatePhone(phoneInput) && isValid;
-    }
-  });
+  if (nameInput) {
+    isValid = validateName(nameInput) && isValid;
+  }
+  if (phoneInput) {
+    isValid = validatePhone(phoneInput) && isValid;
+  }
 
   if (isValid) {
-    forms.forEach((form) => form.submit());
-    forms.forEach((form) => form.reset());
+    form.submit();
+    form.reset();
   }
 };
 
