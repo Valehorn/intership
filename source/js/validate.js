@@ -89,11 +89,8 @@ const onPhoneBlur = (input) => {
   }
 };
 
-// ... (other code remains the same)
-
 const onFormSubmit = (evt) => {
   evt.preventDefault();
-  let isValid = true;
 
   const form = evt.target;
   const nameInput = form.querySelector('.form-group__input--name');
@@ -101,16 +98,17 @@ const onFormSubmit = (evt) => {
   const checkboxInput = form.querySelector('.form-group__input-checkbox');
 
   if (nameInput) {
-    isValid = validateName(nameInput) && isValid;
+    validateName(nameInput);
   }
   if (phoneInput) {
-    isValid = validatePhone(phoneInput) && isValid;
+    validatePhone(phoneInput);
   }
   if (checkboxInput) {
-    isValid = validateCheckbox(checkboxInput) && isValid;
+    validateCheckbox(checkboxInput);
+    checkboxInput.reportValidity();
   }
 
-  if (isValid) {
+  if (form.checkValidity()) {
     form.submit();
     form.reset();
   }
