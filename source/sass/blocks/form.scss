@@ -9,11 +9,18 @@
     padding-top: 50px;
     padding-bottom: 50px;
   }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .form__container-tablet-plus {
-  padding-left: 58px;
-  padding-right: 58px;
+  @media (min-width: $tablet-width) and (max-width: $pre-desktop-width) {
+    padding-left: 58px;
+    padding-right: 58px;
+  }
 }
 
 .form__background {
@@ -50,6 +57,7 @@
       url("../../img/form/form-bg-desktop@2x.webp") type("image/webp") 2x,
       url("../../img/form/form-bg-desktop@1x.png") type("image/png") 1x,
       url("../../img/form/form-bg-desktop@2x.png") type("image/png") 2x);
+    min-height: 800px;
   }
 }
 
@@ -73,6 +81,14 @@
     padding-left: 40px;
     padding-right: 40px;
   }
+
+  @media (min-width: $desktop-width) {
+    width: 490px;
+    padding-top: 44px;
+    padding-bottom: 40px;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
 }
 
 .form__title {
@@ -91,6 +107,7 @@
   @media (min-width: $desktop-width) {
     font-size: 32px;
     line-height: 36px;
+    margin-bottom: 34px;
   }
 }
 
@@ -109,6 +126,10 @@
   flex-direction: column;
   gap: 12px;
   margin-bottom: 20px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 19px;
+  }
 }
 
 .form__label {
@@ -243,6 +264,10 @@
   @media (min-width: $tablet-width) {
     width: 352px;
     height: 56px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 350px;
   }
 }
 
