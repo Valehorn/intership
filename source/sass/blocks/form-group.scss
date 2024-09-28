@@ -16,9 +16,13 @@
   width: 100%;
 }
 
-.form__group-input--error {
+.form-group .form-group__input--error {
   border: 1px solid $form-error;
   background-color: $form-error-bg;
+
+  &::before {
+    background-color: $form-error;
+  }
 }
 
 .form-group__input-mask {

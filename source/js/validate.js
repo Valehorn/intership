@@ -5,12 +5,12 @@ const validateName = (nameInput) => {
   const nameValidate = /^[А-ЯA-Z][А-Яа-яA-Za-z\s]*$/;
 
   if (!nameValidate.test(nameValue) && nameValue.trim() !== '') {
-    nameInput.classList.add('form__group-input--error');
+    nameInput.classList.add('form-group__input--error');
     nameInput.setCustomValidity('Введите корректное имя, начинающееся с заглавной буквы.');
     nameInput.reportValidity();
     return false;
   } else {
-    nameInput.classList.remove('form__group-input--error');
+    nameInput.classList.remove('form-group__input--error');
     nameInput.setCustomValidity('');
     return true;
   }
@@ -21,12 +21,12 @@ const validatePhone = (phoneInput) => {
   const phoneValidate = /^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
 
   if (!phoneValidate.test(phoneValue) && phoneValue.trim() !== '') {
-    phoneInput.classList.add('form__group-input--error');
+    phoneInput.classList.add('form-group__input--error');
     phoneInput.setCustomValidity('Введите корректный номер телефона в формате +7(777)777-77-77.');
     phoneInput.reportValidity();
     return false;
   } else {
-    phoneInput.classList.remove('form__group-input--error');
+    phoneInput.classList.remove('form-group__input--error');
     phoneInput.setCustomValidity('');
     return true;
   }
@@ -50,10 +50,10 @@ const formatPhoneNumber = (input) => {
 
 const onInputChange = (input) => {
   if (input.value.trim() === '') {
-    input.classList.remove('form__group-input--error');
+    input.classList.remove('form-group__input--error');
     input.setCustomValidity('');
   } else {
-    if (input.classList.contains('form__group-input--error')) {
+    if (input.classList.contains('form-group__input--error')) {
       if (input.type === 'text') {
         validateName(input);
       } else if (input.type === 'tel') {
