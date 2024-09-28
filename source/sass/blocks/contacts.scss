@@ -18,15 +18,32 @@
   address {
     font-style: normal;
   }
+
+  @media (min-width: $tablet-width) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.contacts__text-group {
+  margin-bottom: 62px;
 }
 
 .contacts__title {
   color: #ffffff;
   margin-bottom: 35px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 30px;
+  }
 }
 
 .contacts__content {
-  margin-bottom: 62px;
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20.5px;
+  }
 }
 
 .contacts__item {
@@ -36,6 +53,14 @@
 
   &:not(:last-of-type) {
     margin-bottom: 21px;
+  }
+
+  @media (min-width: $tablet-width) {
+    gap: 24px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -57,7 +82,7 @@
 .contacts__map-container {
   position: relative;
   width: 290px;
-  height: 400px;
+  height: 240px;
   border-radius: 16px;
   background-color: #b0c4de;
 
