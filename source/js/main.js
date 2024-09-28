@@ -2,6 +2,7 @@ import { burgerMenuToggle } from './burger-menu';
 import { initSwiperHero } from './hero-swiper';
 import './modal';
 import './modal-select';
+import './form-select';
 import './validate';
 import initSwiperPrograms from './programs-swiper';
 import { tabsToggle } from './news-tab';
