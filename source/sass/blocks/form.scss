@@ -1,11 +1,19 @@
 @use "../global/variables";
 
 .form {
-  --select-width: 100%;
-
   color: #ffffff;
   padding-top: 40px;
   padding-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.form__container-tablet-plus {
+  padding-left: 58px;
+  padding-right: 58px;
 }
 
 .form__background {
@@ -22,11 +30,18 @@
   padding-bottom: 40px;
 
   @media (min-width: $tablet-width) {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     background-image:
       image-set(url("../../img/form/form-bg-tablet@1x.webp") type("image/webp") 1x,
       url("../../img/form/form-bg-tablet@2x.webp") type("image/webp") 2x,
       url("../../img/form/form-bg-tablet@1x.png") type("image/png") 1x,
       url("../../img/form/form-bg-tablet@2x.png") type("image/png") 2x);
+    border-radius: 16px;
+    min-height: 780px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   @media (min-width: $desktop-width) {
@@ -50,6 +65,14 @@
   padding-bottom: 27px;
   padding-left: 15px;
   padding-right: 15px;
+
+  @media (min-width: $tablet-width) {
+    width: 442px;
+    padding-top: 41px;
+    padding-bottom: 36px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 .form__title {
@@ -62,6 +85,7 @@
   @media (min-width: $tablet-width) {
     font-size: 28px;
     line-height: 28px;
+    margin-bottom: 31px;
   }
 
   @media (min-width: $desktop-width) {
@@ -74,6 +98,10 @@
   color: $secondary-color;
   margin: 0;
   margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 40px;
+  }
 }
 
 .form__group {
@@ -130,6 +158,10 @@
   &::after {
     background-color: #ffffff;
   }
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+  }
 }
 
 .form__select-item-container {
@@ -143,6 +175,10 @@
   gap: 10px;
   align-items: center;
   margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 40px;
+  }
 }
 
 
@@ -191,6 +227,11 @@
 
   @media (min-width: $tablet-width) {
     line-height: 12px;
+    width: fit-content;
+
+    br {
+      display: none;
+    }
   }
 }
 
@@ -198,6 +239,11 @@
   width: 260px;
   min-height: 44px;
   color: #ffffff;
+
+  @media (min-width: $tablet-width) {
+    width: 352px;
+    height: 56px;
+  }
 }
 
 .form__button-decoration-inner {
