@@ -14,7 +14,7 @@ const openModal = (evt) => {
   body.classList.add('page-body--modal-open');
   modal.showModal();
   modal.style.display = 'flex';
-  modal.style.position = 'relative';
+  modal.style.position = 'fixed';
   document.addEventListener('click', onDocumentClick);
 };
 

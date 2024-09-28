@@ -1534,7 +1534,7 @@
               </div>
               <div class="form__group">
                 <label class="form__label" for="comment">Ваше сообщение</label>
-                <textarea class="form__textarea form__element form-group__input" name="comment" id="comment"></textarea>
+                <textarea class="form__textarea form__element form-group__input" name="comment" id="comment" required></textarea>
               </div>
               <div class="form__group form__group-fields form-group__fields">
                 <p class="form__label">Выберите город</p>
@@ -1542,7 +1542,7 @@
                   <span class="form__select-value form-group__select-value"></span>
                   <label class="visually-hidden">Значение select
                     <input class="form__select-hidden form-group__select-hidden" type="hidden" id="form-city"
-                      name="form-city">
+                      name="form-city" value=" " required>
                   </label>
                   <div class="form__select-item-container form-group__select-item-container">
                     <div class="form__select-item form-group__select-item" data-city-form=" ">&nbsp;</div>
@@ -1649,7 +1649,7 @@
           <span class="modal__select-value form-group__select-value"></span>
           <label class="visually-hidden">Значение select
             <input class="modal__select-hidden form-group__select-hidden" type="hidden" id="modal-city"
-              name="modal-city">
+              name="modal-city" value=" " required>
           </label>
           <div class="modal__select-item-container form-group__select-item-container">
             <div class="modal__select-item form-group__select-item" data-city-modal=" ">&nbsp;</div>
