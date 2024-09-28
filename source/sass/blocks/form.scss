@@ -124,6 +124,7 @@
 }
 
 .form__select {
+  width: 260px;
   height: 52px;
 
   &::after {
@@ -186,6 +187,7 @@
   font-size: 12px;
   line-height: 14px;
   width: 240px;
+  cursor: pointer;
 
   @media (min-width: $tablet-width) {
     line-height: 12px;
