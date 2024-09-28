@@ -7,6 +7,7 @@ const validateName = (nameInput) => {
   if (!nameValidate.test(nameValue) && nameValue.trim() !== '') {
     nameInput.classList.add('form-group__input--error');
     nameInput.setCustomValidity('Введите корректное имя, начинающееся с заглавной буквы.');
+    nameInput.reportValidity();
     return false;
   } else {
     nameInput.classList.remove('form-group__input--error');
@@ -22,6 +23,7 @@ const validatePhone = (phoneInput) => {
   if (!phoneValidate.test(phoneValue) && phoneValue.trim() !== '') {
     phoneInput.classList.add('form-group__input--error');
     phoneInput.setCustomValidity('Введите корректный номер телефона в формате +7(777)777-77-77.');
+    phoneInput.reportValidity();
     return false;
   } else {
     phoneInput.classList.remove('form-group__input--error');
@@ -50,6 +52,7 @@ const validateCheckbox = (checkboxInput) => {
   if (!checkboxInput.checked) {
     checkboxInput.classList.add('form-group__input--error');
     checkboxInput.setCustomValidity('Согласие на обработку данных является обязательным');
+    checkboxInput.reportValidity();
     return false;
   } else {
     checkboxInput.classList.remove('form-group__input--error');
