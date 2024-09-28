@@ -121,8 +121,12 @@
   }
 }
 
-.form__select {
+.form .form__select {
   height: 52px;
+
+  &::after {
+    background-color: #ffffff;
+  }
 }
 
 .form__select-item {
