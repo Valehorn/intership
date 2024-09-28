@@ -7,7 +7,6 @@ const validateName = (nameInput) => {
   if (!nameValidate.test(nameValue) && nameValue.trim() !== '') {
     nameInput.classList.add('form-group__input--error');
     nameInput.setCustomValidity('Введите корректное имя, начинающееся с заглавной буквы.');
-    nameInput.reportValidity();
     return false;
   } else {
     nameInput.classList.remove('form-group__input--error');
@@ -23,7 +22,6 @@ const validatePhone = (phoneInput) => {
   if (!phoneValidate.test(phoneValue) && phoneValue.trim() !== '') {
     phoneInput.classList.add('form-group__input--error');
     phoneInput.setCustomValidity('Введите корректный номер телефона в формате +7(777)777-77-77.');
-    phoneInput.reportValidity();
     return false;
   } else {
     phoneInput.classList.remove('form-group__input--error');
@@ -52,7 +50,6 @@ const validateCheckbox = (checkboxInput) => {
   if (!checkboxInput.checked) {
     checkboxInput.classList.add('form-group__input--error');
     checkboxInput.setCustomValidity('Согласие на обработку данных является обязательным');
-    checkboxInput.reportValidity();
     return false;
   } else {
     checkboxInput.classList.remove('form-group__input--error');
@@ -63,12 +60,13 @@ const validateCheckbox = (checkboxInput) => {
 
 const onFormSubmit = (evt) => {
   evt.preventDefault();
-  let isValid = true;
 
   const form = evt.target;
   const nameInput = form.querySelector('.form-group__input--name');
   const phoneInput = form.querySelector('.form-group__input--phone');
   const checkboxInputs = form.querySelectorAll('.form-group__input-checkbox');
+
+  let isValid = true;
 
   if (nameInput) {
     isValid = validateName(nameInput) && isValid;
@@ -81,7 +79,9 @@ const onFormSubmit = (evt) => {
     isValid = validateCheckbox(checkboxInput) && isValid;
   });
 
-  if (isValid) {
+  if (!isValid) {
+    form.reportValidity();
+  } else {
     form.submit();
     form.reset();
   }
@@ -92,6 +92,7 @@ forms.forEach((form) => {
 
   const nameInput = form.querySelector('.form-group__input--name');
   const phoneInput = form.querySelector('.form-group__input--phone');
+  const checkboxInputs = form.querySelectorAll('.form-group__input-checkbox');
 
   if (nameInput) {
     nameInput.addEventListener('input', () => {
@@ -105,7 +106,6 @@ forms.forEach((form) => {
     });
   }
 
-  const checkboxInputs = form.querySelectorAll('.form-group__input-checkbox');
   checkboxInputs.forEach((checkboxInput) => {
     checkboxInput.addEventListener('change', () => {
       checkboxInput.classList.remove('form-group__input--error');
