@@ -54,3 +54,12 @@
     }
   }
 }
+
+.link--disabled {
+  background-color: $disabled;
+  pointer-events: none;
+
+  &::after {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
