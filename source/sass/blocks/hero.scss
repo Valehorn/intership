@@ -100,10 +100,16 @@
   position: relative;
   z-index: 1;
 
-  // Переполнение на мобильной ориентации.
-  @media (max-width: $pre-tablet-width) {
-    max-height: 475px;
-    overflow: auto;
+  // Переполнение.
+  max-height: 475px;
+  overflow: auto;
+
+  @media (min-width: $tablet-width) {
+    max-height: 860px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-height: 650px;
   }
 }
 
