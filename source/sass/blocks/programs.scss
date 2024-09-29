@@ -18,16 +18,25 @@
   }
 }
 
+.programs__container {
+  @media (min-width: $tablet-width) {
+    position: relative;
+  }
+}
+
 
 .programs__title {
   color: $primary-color;
+  max-width: 260px;
   margin-bottom: 35px;
 
   @media (min-width: $tablet-width) {
+    max-width: 400px;
     margin-bottom: 43px;
   }
 
   @media (min-width: $desktop-width) {
+    max-width: 960px;
     margin-bottom: 45px;
   }
 }
@@ -223,14 +232,14 @@
 
   @media (min-width: $tablet-width) {
     position: absolute;
-    top: 50px;
+    top: -96px;
     right: 45px;
     width: 234px;
     min-height: 56px;
   }
 
   @media (min-width: $desktop-width) {
-    top: 62px;
+    top: -98px;
     right: 100px;
   }
 }
