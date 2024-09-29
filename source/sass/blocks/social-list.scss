@@ -11,6 +11,12 @@
   @media (min-width: $tablet-width) {
     justify-self: end;
   }
+
+  @media (min-width: $desktop-width) {
+    grid-row: 1 / 2;
+    align-self: center;
+    gap: 10px 20px;
+  }
 }
 
 .social-list__link {
