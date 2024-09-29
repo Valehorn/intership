@@ -463,8 +463,8 @@
   transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
 
   @media (min-width: $tablet-width) {
-    width: 32px;
-    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
   }
 }
 
