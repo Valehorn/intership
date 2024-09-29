@@ -1,8 +1,6 @@
 @use "../global/variables";
 
 .modal {
-  --select-width: 260px;
-
   flex-direction: column;
   align-items: center;
   border: 1px solid transparent;
@@ -20,8 +18,6 @@
   }
 
   @media (min-width: $tablet-width) {
-    --select-width: 350px;
-
     min-width: 510px;
     max-width: 640px;
     padding-top: 60px;
@@ -133,14 +129,6 @@
   }
 }
 
-.modal__select {
-  width: var(--select-width);
-}
-
-.modal__select-item-container {
-  width: var(--select-width);
-}
-
 .modal__checkbox-group {
   display: flex;
   align-items: center;
@@ -173,10 +161,27 @@
   caret-color: $primary-text-color;
   height: 44px;
   border: 1px solid rgba(72, 72, 72, 0.3);
+  outline: 1px solid transparent;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    border-color: $primary-text-color;
+  }
+
+  &:disabled {
+    border-color: rgba(169, 175, 183, 0.5);
+    background-color: rgba(169, 175, 183, 0.2);
+  }
 
   @media (min-width: $tablet-width) {
     height: 50px;
   }
+}
+
+.modal__select-item-container {
+  max-height: 138px;
 }
 
 .modal__checkbox {

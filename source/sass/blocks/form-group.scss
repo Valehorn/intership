@@ -5,9 +5,9 @@
   font-weight: 400;
   background-color: transparent;
   border-radius: 8px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 25px;
   padding-right: 5px;
   transition: background-color 0.3s ease, border 0.3s ease;
 }
@@ -82,8 +82,6 @@
     visibility: visible;
     padding-top: 17px;
     padding-bottom: 17px;
-    padding-left: 20px;
-    padding-right: 5px;
   }
 
   .form-group__select-item {
@@ -134,22 +132,19 @@
 
 .form-group__select-item-container {
   position: absolute;
-  top: 46px;
+  top: 54px;
   left: 50%;
   transform: translateX(-50%);
   border: 1px solid $primary-text-color;
   border-radius: 8px;
   background-color: #ffffff;
   visibility: hidden;
-  max-height: 130px;
+  width: calc(100% + 2px);
+  max-height: 194px;
   overflow-y: auto;
   overscroll-behavior: none;
   z-index: 10;
   transition: padding 0.3s ease, visibility 0.3s ease, color 0.3s ease;
-
-  @media (min-width: $tablet-width) {
-    top: 54px;
-  }
 }
 
 
@@ -161,5 +156,18 @@
   line-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: min-height 0.3s ease, line-height 0.3s ease, overflow 0.3s ease, opacity 0.1s ease;
+  padding-left: 20px;
+  padding-right: 10px;
+  outline: 1px solid transparent;
+  transition: min-height 0.3s ease, line-height 0.3s ease, overflow 0.3s ease, opacity 0.1s ease, color 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    color: $primary-color;
+  }
+
+  &:focus-visible,
+  &:active {
+    color: #ffffff;
+    background-color: $primary-color;
+  }
 }

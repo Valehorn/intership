@@ -157,6 +157,23 @@
   color: #ffffff;
   caret-color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: 1px solid transparent;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    border-color: #ffffff;
+  }
+
+  &:disabled {
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (min-width: $tablet-width) {
+    height: 50px;
+  }
 }
 
 .form__textarea {
@@ -187,7 +204,6 @@
 
 .form__select-item-container {
   color: $primary-text-color;
-  width: var(--select-width, 100%);
 }
 
 .form__checkbox-group {
