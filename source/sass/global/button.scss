@@ -68,6 +68,11 @@
 
   &:active {
     color: rgba(255, 255, 255, 0.7);
+    background-color: $primary-color;
+
+    .button__decoration-inner {
+      background-color: #ffffff;
+    }
 
     .button__decoration-inner::after {
       background-color: rgba(49, 109, 194, 0.7);
