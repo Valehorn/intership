@@ -218,6 +218,20 @@
   }
 }
 
+.hero__link--disabled {
+  color: $disabled;
+  border-color: $disabled;
+  pointer-events: none;
+
+  .button__decoration-inner {
+    background-color: $disabled;
+  }
+
+  .button__decoration-inner::after {
+    background-color: #ffffff;
+  }
+}
+
 // Swiper
 
 .hero .hero__swiper {

@@ -57,7 +57,7 @@
   background-color: #ffffff;
   padding-top: 5px;
   padding-right: 51px;
-  transition: min-width 0.3s ease;
+  transition: min-width 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 
   &::before {
     position: absolute;
@@ -69,7 +69,7 @@
     width: 46px;
     height: 46px;
     background-color: $primary-color;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
   }
 
   &::after {
@@ -85,7 +85,59 @@
     mask-size: var(--burger-menu-size);
     mask-position: center;
     background-color: #ffffff;
-    transition: right 0.3s ease, background-color 0.3s ease, mask-image 0.3s ease;
+    transition: right 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+  }
+
+  &:hover {
+    background-color: $primary-color;
+    color: #ffffff;
+
+    &::before {
+      background-color: #ffffff;
+    }
+
+    &::after {
+      background-color: $primary-color;
+    }
+  }
+
+  &:focus-visible {
+    background-color: $primary-color;
+    color: #ffffff;
+
+    &::before {
+      background-color: #ffffff;
+    }
+
+    &::after {
+      background-color: $primary-color;
+    }
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.7);
+
+    &::before {
+      opacity: 0.7;
+    }
+
+    &::after {
+      opacity: 0.7;
+    }
+  }
+
+  &:disabled {
+    color: $disabled;
+    border-color: $disabled;
+    pointer-events: none;
+
+    &::before {
+      background-color: $disabled;
+    }
+
+    &::after {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
   }
 
   @media (min-width: $tablet-width) {
