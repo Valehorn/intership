@@ -48,6 +48,19 @@ const formatPhoneNumber = (input) => {
   }
 };
 
+const validateTextarea = (textareaInput) => {
+  if (textareaInput.value.trim() === '') {
+    textareaInput.classList.add('form-group__input--error');
+    textareaInput.setCustomValidity('Это поле обязательно для заполнения.');
+    textareaInput.reportValidity();
+    return false;
+  } else {
+    textareaInput.classList.remove('form-group__input--error');
+    textareaInput.setCustomValidity('');
+    return true;
+  }
+};
+
 const validateCheckbox = (checkboxInput) => {
   if (!checkboxInput.checked) {
     checkboxInput.classList.add('form-group__input--error');
@@ -72,6 +85,8 @@ const onInputChange = (input) => {
         validatePhone(input);
       } else if (input.type === 'checkbox') {
         validateCheckbox(input);
+      } else if (input.tagName.toLowerCase() === 'textarea') {
+        validateTextarea(input);
       }
     }
   }
@@ -95,6 +110,7 @@ const onFormSubmit = (evt) => {
   const form = evt.target;
   const nameInput = form.querySelector('.form-group__input--name');
   const phoneInput = form.querySelector('.form-group__input--phone');
+  const textareaInput = form.querySelector('.form__textarea');
   const checkboxInput = form.querySelector('.form-group__input-checkbox');
 
   if (nameInput) {
@@ -102,6 +118,9 @@ const onFormSubmit = (evt) => {
   }
   if (phoneInput) {
     validatePhone(phoneInput);
+  }
+  if (textareaInput) {
+    validateTextarea(textareaInput);
   }
   if (checkboxInput) {
     validateCheckbox(checkboxInput);
@@ -119,6 +138,7 @@ forms.forEach((form) => {
 
   const nameInput = form.querySelector('.form-group__input--name');
   const phoneInput = form.querySelector('.form-group__input--phone');
+  const textareaInput = form.querySelector('.form__textarea');
   const checkboxInput = form.querySelector('.form-group__input-checkbox');
 
   if (nameInput) {
@@ -131,6 +151,9 @@ forms.forEach((form) => {
     });
     phoneInput.addEventListener('focus', () => onPhoneFocus(phoneInput));
     phoneInput.addEventListener('blur', () => onPhoneBlur(phoneInput));
+  }
+  if (textareaInput) {
+    textareaInput.addEventListener('input', () => onInputChange(textareaInput));
   }
   if (checkboxInput) {
     checkboxInput.addEventListener('change', () => onInputChange(checkboxInput));
