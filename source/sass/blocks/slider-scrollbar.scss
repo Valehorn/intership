@@ -51,6 +51,10 @@
     div:hover::after {
       background-color: #5d00ff;
     }
+
+    div:active::after {
+      background-color: #5d00ff;
+    }
   }
 
   @media (min-width: $desktop-width) {
