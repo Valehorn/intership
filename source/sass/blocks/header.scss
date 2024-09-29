@@ -186,8 +186,8 @@
 }
 
 .header__nav-link,
-.header__nav-sub-link,
 .header__nav-button {
+  font-weight: 500;
   text-decoration: none;
   color: #ffffff;
   width: fit-content;
@@ -233,10 +233,26 @@
   opacity: 1;
 }
 
+.header__nav-sub-link {
+  text-decoration: none;
+  color: #ffffff;
+  width: fit-content;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.9;
+  }
+}
+
+.header__nav-sub-link--current {
+  opacity: 0.9;
+}
+
 .header__nav-list ul {
   text-transform: none;
   font-weight: 400;
-  opacity: 0.6;
 }
 
 .header__nav-sub-list {
