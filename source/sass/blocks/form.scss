@@ -229,10 +229,6 @@
   background-color: #ffffff;
   cursor: pointer;
 
-  &::before {
-    background-color: $primary-color;
-  }
-
   &::after {
     position: absolute;
     top: 50%;
@@ -247,12 +243,8 @@
     transition: opacity 0.3s ease, background-color 0.3s ease;
   }
 
-  &:checked::before {
+  &:checked {
     background-color: $primary-color;
-  }
-
-  &:checked::after {
-    opacity: 1;
   }
 }
 
