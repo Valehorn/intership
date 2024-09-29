@@ -94,9 +94,55 @@
   margin: 0;
 }
 
-.contacts__item-description {
+.contacts__item-description-address,
+.contacts__item-description-link {
   color: #ffffff;
   text-decoration: none;
+}
+
+.contacts__item-description-link {
+  position: relative;
+  outline: 1px solid transparent;
+  transition: color 0.3s ease, opacity 0.3s;
+
+  &::after {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    opacity: 1;
+    color: $primary-text-color;
+
+    &::after {
+      background-color: $primary-text-color;
+    }
+  }
+
+  &:active {
+    opacity: 1;
+    color: #ffffff;
+
+    &::after {
+      background-color: #ffffff;
+    }
+  }
+}
+
+.contacts__item-description-link--disabled {
+  color: $disabled;
+  pointer-events: none;
 }
 
 .contacts__map-container {
