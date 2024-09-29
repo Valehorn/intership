@@ -47,14 +47,42 @@
     mask-position: center;
     mask-repeat: no-repeat;
     mask-size: 10px 8px;
-  }
-
-  &:checked {
     background-color: $primary-color;
   }
 
-  &:checked::after {
-    opacity: 1;
+  &:checked {
+    background-color: #ffffff;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: transparent;
+  }
+
+  &:disabled {
+    background-color: $disabled;
+  }
+
+  &:checked:hover,
+  &:checked:focus-visible {
+    background-color: $primary-color;
+
+    &::after {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  &:checked:disabled {
+    background-color: $disabled;
+    border-color: rgba(255, 255, 255, 0.7);
+
+    &::after {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
   }
 }
 
