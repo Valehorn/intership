@@ -180,6 +180,26 @@
   visibility: visible;
 }
 
+.header__nav-link,
+.header__nav-sub-link {
+  display: block;
+}
+
+.header__nav-link,
+.header__nav-sub-link,
+.header__nav-button {
+  text-decoration: none;
+  color: #ffffff;
+  width: fit-content;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+  }
+}
+
 .header__nav-button {
   --transform-rotate-item: 0;
 
@@ -209,17 +229,14 @@
   }
 }
 
+.header__nav-button--current {
+  opacity: 1;
+}
+
 .header__nav-list ul {
   text-transform: none;
   font-weight: 400;
   opacity: 0.6;
-}
-
-.header__nav a {
-  display: block;
-  text-decoration: none;
-  color: #ffffff;
-  width: fit-content;
 }
 
 .header__nav-sub-list {

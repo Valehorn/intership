@@ -62,11 +62,13 @@ const onNavButtonClick = (evt) => {
       subList.style.visibility = 'hidden';
       button.style.marginBottom = '0';
       button.style.setProperty('--transform-rotate-item', '0deg');
+      button.classList.remove('header__nav-button--current');
     } else {
       subList.style.height = `${subList.scrollHeight}px`;
       subList.style.visibility = 'visible';
       button.style.marginBottom = '16px';
       button.style.setProperty('--transform-rotate-item', '180deg');
+      button.classList.add('header__nav-button--current');
     }
   }
 };
