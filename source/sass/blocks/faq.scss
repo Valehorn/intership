@@ -58,7 +58,7 @@
   padding-left: 15px;
   padding-right: 15px;
   cursor: pointer;
-  transition: background-color 0.3s ease, padding 0.3s ease, height 0.3s ease;
+  transition: background-color 0.3s ease, padding 0.3s ease, height 0.3s ease, color 0.3s ease;
 
   p {
     height: 0;
@@ -69,6 +69,38 @@
 
   br {
     display: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: $primary-color;
+    background-color: #ffffff;
+    outline: 1px solid transparent;
+
+    .faq__details-list-marker {
+      background-color: transparent;
+      border-color: $primary-color;
+    }
+
+    .faq__details-list-marker::before,
+    .faq__details-list-marker::after {
+      background-color: $primary-color;
+    }
+  }
+
+  &:active {
+    color: #275699;
+    background-color: #ffffff;
+
+    .faq__details-list-marker {
+      background-color: #275699;
+      border-color: #275699;
+    }
+
+    .faq__details-list-marker::before,
+    .faq__details-list-marker::after {
+      background-color: #ffffff;
+    }
   }
 
   &:nth-of-type(1),
@@ -97,7 +129,7 @@
     }
 
     .faq__details-list-marker::after {
-      top: 11px;
+      top: 10px;
       transform: rotate(-90deg);
     }
 
@@ -105,6 +137,38 @@
       color: $secondary-color;
       height: auto;
       overflow: visible;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: #ffffff;
+      background-color: $primary-color;
+      outline: 1px solid transparent;
+
+      .faq__details-list-marker {
+        background-color: transparent;
+        border-color: #ffffff;
+      }
+
+      .faq__details-list-marker::before,
+      .faq__details-list-marker::after {
+        background-color: #ffffff;
+      }
+    }
+
+    &:active {
+      color: #ffffff;
+      background-color: #275699;
+
+      .faq__details-list-marker {
+        background-color: #ffffff;
+        border-color: #275699;
+      }
+
+      .faq__details-list-marker::before,
+      .faq__details-list-marker::after {
+        background-color: #275699;
+      }
     }
   }
 
@@ -161,6 +225,22 @@
   }
 }
 
+.faq__details-list-item--disabled {
+  color: $disabled;
+  border: 2px solid $disabled;
+  pointer-events: none;
+
+  .faq__details-list-marker {
+    background-color: $disabled;
+    border-color: $disabled;
+  }
+
+  .faq__details-list-marker::before,
+  .faq__details-list-marker::after {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
 .faq__details-list-item:nth-last-of-type(1) .faq__details-list-marker-container {
   top: 16px;
 
@@ -200,8 +280,9 @@
   width: 40px;
   height: 40px;
   border-radius: 40px;
+  border: 1px solid transparent;
   background-color: $primary-color;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 
   &::before {
     position: absolute;
