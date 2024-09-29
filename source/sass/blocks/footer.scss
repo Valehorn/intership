@@ -113,6 +113,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
+    grid-column: 1/-1;
     margin-bottom: 0;
   }
 }
