@@ -1,11 +1,4 @@
 const forms = document.querySelectorAll('.form-group');
-const formsInputs = document.querySelectorAll('.form-group__input');
-
-const removeRequiredAttr = () => {
-  formsInputs.forEach((input) => input.removeAttribute('required'));
-};
-
-removeRequiredAttr();
 
 const validateName = (nameInput) => {
   const nameValue = nameInput.value;
