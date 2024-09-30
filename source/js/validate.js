@@ -13,7 +13,7 @@ const validateName = (nameInput) => {
 
   if (!nameValidate.test(nameValue) && nameValue.trim() !== '') {
     nameInput.classList.add('form-group__input--error');
-    nameInput.setCustomValidity('Введите корректное имя, начинающееся с заглавной буквы.');
+    nameInput.setCustomValidity('Введите корректное имя, начинающееся с заглавной буквы. Только латинские буквы или кириллица.');
     nameInput.reportValidity();
     return false;
   } else {
