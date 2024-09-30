@@ -144,6 +144,14 @@
   opacity: 1;
 }
 
+.news__section {
+  display: none;
+}
+
+.news__section--current {
+  display: block;
+}
+
 .news__card {
   position: relative;
   display: flex;

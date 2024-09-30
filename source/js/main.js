@@ -5,7 +5,7 @@ import './modal-select';
 import './form-select';
 import './validate';
 import initSwiperPrograms from './programs-swiper';
-import { tabsToggle } from './news-tab';
+import tabsToggle from './news-tab';
 import initSwiperNews from './news-swiper';
 import { toggleFaqAccordion } from './faq-accordion';
 import initSwiperReviews from './reviews-swiper';
