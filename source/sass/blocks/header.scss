@@ -57,89 +57,31 @@
   background-color: #ffffff;
   padding-top: 5px;
   padding-right: 51px;
+  outline: 1px solid transparent;
   transition: min-width 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 
   &::before {
     position: absolute;
-    top: 50%;
-    right: 4px;
-    transform: translateY(-50%);
+    top: -4px;
+    left: -4px;
     content: "";
-    border-radius: 44px;
-    width: 46px;
-    height: 46px;
-    background-color: $primary-color;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-  }
-
-  &::after {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    content: "";
-    mask-repeat: no-repeat;
-    right: var(--burger-menu-after-x);
-    width: var(--burger-menu-width);
-    height: var(--burger-menu-height);
-    mask-image: var(--burger-menu-icon);
-    mask-size: var(--burger-menu-size);
-    mask-position: center;
-    background-color: #ffffff;
-    transition: right 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
-  }
-
-  &:hover {
-    background-color: $primary-color;
-    color: #ffffff;
-
-    &::before {
-      background-color: #ffffff;
-    }
-
-    &::after {
-      background-color: $primary-color;
-    }
-  }
-
-  &:focus-visible {
-    background-color: $primary-color;
-    color: #ffffff;
-
-    &::before {
-      background-color: #ffffff;
-    }
-
-    &::after {
-      background-color: $primary-color;
-    }
-  }
-
-  &:active {
-    color: rgba(255, 255, 255, 0.7);
-    background-color: $primary-color;
-
-    &::before {
-      background-color: rgba(255, 255, 255, 0.7);
-      opacity: 0.7;
-    }
-
-    &::after {
-      background-color: rgba(255, 255, 255, 0.7);
-      opacity: 0.7;
-    }
-  }
-
-  &:disabled {
-    color: $disabled;
-    border-color: $disabled;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    border-radius: 30px;
+    opacity: 0;
     pointer-events: none;
+    background-color: #02b6f2;
+    z-index: -1;
+  }
 
+  &:hover,
+  &:focus-visible {
     &::before {
-      background-color: $disabled;
+      animation: flickering 0.3s linear infinite;
     }
 
-    &::after {
-      background-color: rgba(255, 255, 255, 0.7);
+    .header__button-menu-decoration-inner::after {
+      transform: translate(-50%, -50%) rotate(0deg);
     }
   }
 
@@ -148,6 +90,21 @@
     min-height: 56px;
     padding-top: 0;
     padding-left: 5px;
+  }
+}
+
+.header__button-menu-decoration {
+  width: 46px;
+  height: 46px;
+}
+
+.header__button-menu-decoration-inner {
+  &::after {
+    right: var(--burger-menu-after-x);
+    width: var(--burger-menu-width);
+    height: var(--burger-menu-height);
+    mask-image: var(--burger-menu-icon);
+    mask-size: var(--burger-menu-size);
   }
 }
 
@@ -311,10 +268,15 @@
   }
 
   .header__button-menu::before {
+    background-color: #ffd900;
+  }
+
+  .header__button-menu-decoration-inner {
+    border-radius: 30px;
     background-color: #ffffff;
   }
 
-  .header__button-menu::after {
+  .header__button-menu-decoration-inner::after {
     background-color: $primary-color;
   }
 
@@ -325,5 +287,31 @@
       width: 52px;
       height: 52px;
     }
+  }
+}
+
+@keyframes flickering {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.2;
+  }
+
+  40% {
+    opacity: 0.4;
+  }
+
+  60% {
+    opacity: 0.6;
+  }
+
+  80% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
