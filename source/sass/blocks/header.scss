@@ -185,6 +185,11 @@
   display: block;
 }
 
+.header__nav-link--disabled,
+.header__nav-sub-link--disabled {
+  color: $disabled;
+}
+
 .header__nav-link,
 .header__nav-button {
   font-weight: 500;
@@ -226,6 +231,11 @@
     mask-position: center;
     background-color: #ffffff;
     transition: transform 0.3s ease;
+  }
+
+  &:disabled {
+    color: $disabled;
+    pointer-events: none;
   }
 }
 
