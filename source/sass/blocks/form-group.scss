@@ -24,17 +24,21 @@
   &::before {
     background-color: $form-error;
   }
+
+  &::after {
+    opacity: 0;
+  }
 }
 
 .form-group__input-checkbox {
   position: relative;
   appearance: none;
-  border: 1px solid transparent;
   border-radius: 2px;
   width: 20px;
   height: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease, border 0.3s ease;
+  outline: 1px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 
   &::after {
     position: absolute;
@@ -50,42 +54,6 @@
     mask-size: 10px 8px;
     opacity: 0;
     transition: background-color 0.3s ease, opacity 0.3s ease;
-  }
-
-  &:checked {
-    background-color: #ffffff;
-
-    &::after {
-      opacity: 1;
-    }
-  }
-
-  &:hover,
-  &:focus-visible {
-    background-color: transparent;
-  }
-
-  &:disabled {
-    background-color: $disabled;
-    pointer-events: none;
-  }
-
-  &:checked:hover,
-  &:checked:focus-visible {
-    background-color: $primary-color;
-
-    &::after {
-      background-color: rgba(255, 255, 255, 0.6);
-    }
-  }
-
-  &:checked:disabled {
-    background-color: $disabled;
-    border-color: rgba(255, 255, 255, 0.7);
-
-    &::after {
-      background-color: rgba(255, 255, 255, 0.7);
-    }
   }
 }
 

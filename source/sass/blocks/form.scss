@@ -222,11 +222,10 @@
 .form__checkbox {
   position: relative;
   appearance: none;
-  border: 1px solid #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 2px;
   width: 20px;
   height: 20px;
-  background-color: #ffffff;
   cursor: pointer;
 
   &::after {
@@ -239,7 +238,44 @@
     height: 100%;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease, background-color 0.3s ease;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: #ffffff;
+  }
+
+  &:disabled {
+    background-color: $disabled;
+    pointer-events: none;
+  }
+
+  &:checked {
+    background-color: #ffffff;
+
+    &::after {
+      background-color: $primary-color;
+      opacity: 1;
+    }
+  }
+
+  &:checked:hover,
+  &:checked:focus-visible {
+    background-color: $primary-color;
+
+    &::after {
+      background-color: #ffffff;
+      opacity: 1;
+    }
+  }
+
+  &:checked:disabled {
+    background-color: $disabled;
+    border-color: $disabled;
+
+    &::after {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
   }
 }
 
