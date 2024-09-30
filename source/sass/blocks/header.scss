@@ -93,12 +93,11 @@
   }
 }
 
-.header__button-menu-decoration {
-  width: 46px;
-  height: 46px;
-}
 
 .header__button-menu-decoration-inner {
+  width: 46px;
+  height: 46px;
+
   &::after {
     right: var(--burger-menu-after-x);
     width: var(--burger-menu-width);
