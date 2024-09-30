@@ -81,22 +81,8 @@ const validateCheckbox = (checkboxInput) => {
 };
 
 const onInputChange = (input) => {
-  if (input.value.trim() === '') {
-    input.classList.remove('form-group__input--error');
-    input.setCustomValidity('');
-  } else {
-    if (input.classList.contains('form-group__input--error')) {
-      if (input.type === 'text') {
-        validateName(input);
-      } else if (input.type === 'tel') {
-        validatePhone(input);
-      } else if (input.type === 'checkbox') {
-        validateCheckbox(input);
-      } else if (input.tagName.toLowerCase() === 'textarea') {
-        validateTextarea(input);
-      }
-    }
-  }
+  input.classList.remove('form-group__input--error');
+  input.setCustomValidity('');
 };
 
 const onPhoneFocus = (input) => {
