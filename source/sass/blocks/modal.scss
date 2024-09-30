@@ -188,12 +188,42 @@
   border: 1px solid $primary-color;
   background-color: $primary-color;
 
-  &:checked {
-    background-color: #ffffff;
+  &:hover,
+  &:focus-visible {
+    border-color: #ffffff;
   }
 
-  &:checked::after {
+  &:disabled {
+    background-color: $disabled;
+    pointer-events: none;
+  }
+
+  &:checked {
+    background-color: #ffffff;
+
+    &::after {
+      background-color: $primary-color;
+      opacity: 1;
+    }
+  }
+
+  &:checked:hover,
+  &:checked:focus-visible {
     background-color: $primary-color;
+
+    &::after {
+      background-color: #ffffff;
+      opacity: 1;
+    }
+  }
+
+  &:checked:disabled {
+    background-color: $disabled;
+    border-color: $disabled;
+
+    &::after {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
   }
 }
 
