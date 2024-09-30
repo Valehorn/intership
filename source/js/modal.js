@@ -26,7 +26,7 @@ const closeModal = () => {
   modal.style.display = 'none';
   modal.style.position = 'absolute';
   document.removeEventListener('click', onDocumentClick);
-  document.remove('keydown', onDocumentKeydownModalClose);
+  document.removeEventListener('keydown', onDocumentKeydownModalClose);
 };
 
 const onModalButtonClick = (evt) => {
@@ -38,12 +38,9 @@ const onModalCloseButtonClick = () => {
 };
 
 function onDocumentKeydownModalClose(evt) {
-  if (!modal.open && !evt.key === 'Esc') {
-    return;
+  if (modal.open && evt.key === 'Escape') {
+    closeModal();
   }
-
-  closeModal();
-  body.classList.remove('page-body--modal-open');
 }
 
 function onDocumentClick(evt) {
