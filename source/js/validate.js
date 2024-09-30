@@ -1,4 +1,11 @@
 const forms = document.querySelectorAll('.form-group');
+const formsInputs = document.querySelectorAll('.form-group__input');
+
+const removeRequiredAttr = () => {
+  formsInputs.forEach((input) => input.removeAttribute('required'));
+};
+
+removeRequiredAttr();
 
 const validateName = (nameInput) => {
   const nameValue = nameInput.value;
@@ -113,21 +120,40 @@ const onFormSubmit = (evt) => {
   const textareaInput = form.querySelector('.form__textarea');
   const checkboxInput = form.querySelector('.form-group__input-checkbox');
 
+  let isValid = true;
+
   if (nameInput) {
-    validateName(nameInput);
+    if (nameInput.value.trim() === '') {
+      nameInput.classList.add('form-group__input--error');
+      nameInput.setCustomValidity('Это поле обязательно для заполнения.');
+      nameInput.reportValidity();
+      isValid = false;
+    } else {
+      isValid = validateName(nameInput) && isValid;
+    }
   }
+
   if (phoneInput) {
-    validatePhone(phoneInput);
+    if (phoneInput.value.trim() === '') {
+      phoneInput.classList.add('form-group__input--error');
+      phoneInput.setCustomValidity('Это поле обязательно для заполнения.');
+      phoneInput.reportValidity();
+      isValid = false;
+    } else {
+      isValid = validatePhone(phoneInput) && isValid;
+    }
   }
+
   if (textareaInput) {
-    validateTextarea(textareaInput);
+    isValid = validateTextarea(textareaInput) && isValid;
   }
+
   if (checkboxInput) {
-    validateCheckbox(checkboxInput);
+    isValid = validateCheckbox(checkboxInput) && isValid;
     checkboxInput.reportValidity();
   }
 
-  if (form.checkValidity()) {
+  if (isValid) {
     form.submit();
     form.reset();
   }
