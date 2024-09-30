@@ -26,10 +26,20 @@ const onSelectItemClick = (evt) => {
   modalHiddenSelectInput.value = modalSelectValue.textContent.trim();
 };
 
+const onSelectItemKeydownEnter = (evt) => {
+  if (!modalItems && !evt.key === 'Enter') {
+    return;
+  }
+  modalSelectValue.textContent = evt.target.dataset.cityModal;
+  modalHiddenSelectInput.value = modalSelectValue.textContent.trim();
+  modalFields.classList.remove('form-group__fields--open');
+};
+
 modalSelect.addEventListener('click', onSelectClickOpen);
 modalSelect.addEventListener('blur', onSelectClickClose);
 
 modalItemContainer.addEventListener('click', onSelectItemClick);
+modalItemContainer.addEventListener('keydown', onSelectItemKeydownEnter);
 
 modal.addEventListener('click', (evt) => {
   if (!modalSelect.contains(evt.target) && !modalFields.contains(evt.target)) {
