@@ -60,8 +60,6 @@
   }
 
   @media (max-width: $pre-tablet-width) {
-    scroll-snap-type: x mandatory;
-
     // Скрол для Firefox
     overflow-x: auto;
     scrollbar-width: none;
@@ -70,12 +68,6 @@
     &::-webkit-scrollbar {
       display: none;
     }
-  }
-}
-
-.news__item {
-  @media (max-width: $pre-tablet-width) {
-    scroll-snap-align: start;
   }
 }
 
@@ -299,6 +291,53 @@
   @media (min-width: $desktop-width) {
     width: fit-content;
     padding-right: 18px;
+  }
+}
+
+// CSS slider
+
+.news__css-slider {
+  display: flex;
+  overflow-x: auto;
+  min-height: 647px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.news__css-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  line-height: 25px;
+  color: #ffffff;
+  min-width: 100%;
+  min-height: 100%;
+  scroll-snap-align: start;
+  background-color: #275399;
+  border-radius: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow-x: auto;
+
+  &:nth-of-type(2) {
+    background-color: #ffa500;
+    color: $primary-text-color;
+  }
+
+  &:nth-of-type(3) {
+    background-color: #08c55d;
+    color: $primary-text-color;
+  }
+
+  &:nth-of-type(4) {
+    background-color: rgb(70, 70, 187);
   }
 }
 
