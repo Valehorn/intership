@@ -16,6 +16,7 @@ const openModal = (evt) => {
   modal.style.display = 'flex';
   modal.style.position = 'fixed';
   document.addEventListener('click', onDocumentClick);
+  document.addEventListener('keydown', onDocumentKeydownModalClose);
 };
 
 const closeModal = () => {
@@ -25,6 +26,7 @@ const closeModal = () => {
   modal.style.display = 'none';
   modal.style.position = 'absolute';
   document.removeEventListener('click', onDocumentClick);
+  document.remove('keydown', onDocumentKeydownModalClose);
 };
 
 const onModalButtonClick = (evt) => {
@@ -34,6 +36,15 @@ const onModalButtonClick = (evt) => {
 const onModalCloseButtonClick = () => {
   closeModal();
 };
+
+function onDocumentKeydownModalClose(evt) {
+  if (!modal.open && !evt.key === 'Esc') {
+    return;
+  }
+
+  closeModal();
+  body.classList.remove('page-body--modal-open');
+}
 
 function onDocumentClick(evt) {
   if (modal.open && !evt.target.closest('.modal') && evt.target !== modalButton) {
