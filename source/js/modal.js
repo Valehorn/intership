@@ -5,6 +5,8 @@ const modal = document.querySelector('.modal');
 const modalForm = document.querySelector('.modal__form');
 const modalButton = document.querySelector('.about__button');
 const modalCloseButton = document.querySelector('.modal__button-close');
+const modalInputs = modal.querySelectorAll('.form-group__input, .form-group__input-checkbox');
+const modalSelect = modal.querySelector('.form-group__select');
 
 const openModal = (evt) => {
   if (!evt.target.closest('.about__button')) {
@@ -22,6 +24,10 @@ const openModal = (evt) => {
 const closeModal = () => {
   modalForm.reset();
   body.classList.remove('page-body--modal-open');
+  modalInputs.forEach((input) => {
+    input.classList.remove('form-group__input--error');
+  });
+  modalSelect.textContent = '';
   modal.close();
   modal.style.display = 'none';
   modal.style.position = 'absolute';
