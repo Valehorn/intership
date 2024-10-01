@@ -68,6 +68,19 @@ const validateTextarea = (textareaInput) => {
   }
 };
 
+const validateSelect = (selectInput, select) => {
+  if (selectInput.value.trim() === '') {
+    select.classList.add('form-group__input--error');
+    selectInput.setCustomValidity('Это поле обязательно для заполнения.');
+    selectInput.reportValidity();
+    return false;
+  } else {
+    select.classList.remove('form-group__input--error');
+    selectInput.setCustomValidity('');
+    return true;
+  }
+};
+
 const validateCheckbox = (checkboxInput) => {
   if (!checkboxInput.checked) {
     checkboxInput.classList.add('form-group__input--error');
@@ -104,6 +117,8 @@ const onFormSubmit = (evt) => {
   const nameInput = form.querySelector('.form-group__input--name');
   const phoneInput = form.querySelector('.form-group__input--phone');
   const textareaInput = form.querySelector('.form__textarea');
+  const select = form.querySelector('.form-group__select');
+  const selectInput = form.querySelector('.form-group__select-hidden');
   const checkboxInput = form.querySelector('.form-group__input-checkbox');
 
   let isValid = true;
@@ -134,6 +149,10 @@ const onFormSubmit = (evt) => {
     isValid = validateTextarea(textareaInput) && isValid;
   }
 
+  if (selectInput) {
+    isValid = validateSelect(selectInput, select) && isValid;
+  }
+
   if (checkboxInput) {
     isValid = validateCheckbox(checkboxInput) && isValid;
     checkboxInput.reportValidity();
@@ -151,6 +170,7 @@ forms.forEach((form) => {
   const nameInput = form.querySelector('.form-group__input--name');
   const phoneInput = form.querySelector('.form-group__input--phone');
   const textareaInput = form.querySelector('.form__textarea');
+  const selectInput = form.querySelector('.form-group__select-hidden');
   const checkboxInput = form.querySelector('.form-group__input-checkbox');
 
   if (nameInput) {
@@ -166,6 +186,9 @@ forms.forEach((form) => {
   }
   if (textareaInput) {
     textareaInput.addEventListener('input', () => onInputChange(textareaInput));
+  }
+  if (selectInput) {
+    selectInput.addEventListener('input', () => onInputChange(selectInput));
   }
   if (checkboxInput) {
     checkboxInput.addEventListener('change', () => onInputChange(checkboxInput));
