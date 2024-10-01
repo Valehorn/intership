@@ -9,6 +9,14 @@ const modalInputs = modal.querySelectorAll('.form-group__input, .form-group__inp
 const modalSelectValue = modal.querySelector('.modal__select-value');
 const modalSelectInput = modal.querySelector('.form-group__select-hidden');
 
+const removeError = () => {
+  if (!body.classList.contains('page-body--modal-open')) {
+    modalInputs.forEach((input) => {
+      input.classList.remove('form-group__input--error');
+    });
+  }
+};
+
 const openModal = (evt) => {
   if (!evt.target.closest('.about__button')) {
     return;
@@ -25,9 +33,7 @@ const openModal = (evt) => {
 const closeModal = () => {
   modalForm.reset();
   body.classList.remove('page-body--modal-open');
-  modalInputs.forEach((input) => {
-    input.classList.remove('form-group__input--error');
-  });
+  removeError();
   modalSelectInput.value = '';
   modalSelectValue.textContent = modalSelectInput.value;
   modal.close();
