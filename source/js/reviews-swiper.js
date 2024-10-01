@@ -25,6 +25,7 @@ const initSwiperReviews = () => {
       768: {
         slidesPerView: 1.277,
         spaceBetween: 30,
+        dragSize: 326,
         scrollbar: {
           draggable: true,
           dragEffect: 'slide',
@@ -34,6 +35,7 @@ const initSwiperReviews = () => {
       1440: {
         slidesPerView: 2,
         spaceBetween: 32,
+        dragSize: 394,
         allowTouchMove: false,
         scrollbar: {
           draggable: true,

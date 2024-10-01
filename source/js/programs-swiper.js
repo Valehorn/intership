@@ -19,6 +19,7 @@ const initSwiperPrograms = () => {
       768: {
         slidesPerView: 2.13,
         spaceBetween: 30,
+        dragSize: 326,
         scrollbar: {
           draggable: true,
           dragEffect: 'slide',
@@ -28,6 +29,7 @@ const initSwiperPrograms = () => {
         slidesPerView: 3,
         spaceBetween: 32,
         allowTouchMove: false,
+        dragSize: 394,
         scrollbar: {
           draggable: true,
           dragEffect: 'slide',
