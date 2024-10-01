@@ -53,9 +53,3 @@ const onSelectKeydownEnter = (evt) => {
 modalSelect.addEventListener('keydown', onSelectKeydownEnter);
 modalSelect.addEventListener('click', onSelectClickOpen);
 modalSelect.addEventListener('blur', onSelectClickClose);
-
-modal.addEventListener('click', (evt) => {
-  if (!modalSelect.contains(evt.target) && !modalFields.contains(evt.target)) {
-    modalFields.classList.remove('form-group__fields--open');
-  }
-});

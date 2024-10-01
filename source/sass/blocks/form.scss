@@ -243,6 +243,7 @@
 
   &:hover,
   &:focus-visible {
+    background-color: $primary-color;
     border-color: #ffffff;
   }
 

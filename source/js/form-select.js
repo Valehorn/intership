@@ -55,10 +55,3 @@ formSelect.addEventListener('click', onSelectClickOpen);
 formSelect.addEventListener('blur', onSelectClickClose);
 formItemContainer.addEventListener('click', onSelectItemClick);
 formItemContainer.addEventListener('keydown', onSelectItemKeydownEnter);
-
-
-form.addEventListener('click', (evt) => {
-  if (!formSelect.contains(evt.target) && !formFields.contains(evt.target)) {
-    formFields.classList.remove('form-group__fields--open');
-  }
-});
