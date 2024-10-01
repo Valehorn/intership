@@ -83,11 +83,6 @@
     opacity: 1;
   }
 
-  .form-group__select-item:first-of-type {
-    min-height: 10px;
-  }
-
-
   .form-group__select::after {
     transform: translateY(-5px) rotate(180deg);
   }
