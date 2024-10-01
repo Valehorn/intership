@@ -11,30 +11,46 @@ const onSelectClickOpen = () => {
     formFields.classList.remove('form-group__fields--open');
   } else {
     formFields.classList.add('form-group__fields--open');
+    formItemContainer.addEventListener('click', onSelectItemClick);
+    formItemContainer.addEventListener('keydown', onSelectItemKeydownEnter);
   }
 };
 
 const onSelectClickClose = () => {
   formFields.classList.remove('form-group__fields--open');
+  formItemContainer.removeEventListener('click', onSelectItemClick);
+  formItemContainer.removeEventListener('keydown', onSelectItemKeydownEnter);
 };
 
-const onSelectItemClick = (evt) => {
+const onSelectKeydownEnter = (evt) => {
+  if (!formSelect && !evt.key === 'Enter') {
+    return;
+  }
+  if (!formFields.classList.contains('form-group__fields--open')) {
+    formFields.classList.add('form-group__fields--open');
+  } else {
+    formFields.classList.remove('form-group__fields--open');
+  }
+};
+
+function onSelectItemClick(evt) {
   if (!formItems) {
     return;
   }
   formSelectValue.textContent = evt.target.dataset.cityForm;
   formHiddenSelectInput.value = formSelectValue.textContent.trim();
-};
+}
 
-const onSelectItemKeydownEnter = (evt) => {
+function onSelectItemKeydownEnter(evt) {
   if (!formItems && !evt.key === 'Enter') {
     return;
   }
   formSelectValue.textContent = evt.target.dataset.cityForm;
   formHiddenSelectInput.value = formSelectValue.textContent.trim();
   formFields.classList.remove('form-group__fields--open');
-};
+}
 
+formSelect.addEventListener('keydown', onSelectKeydownEnter);
 formSelect.addEventListener('click', onSelectClickOpen);
 formSelect.addEventListener('blur', onSelectClickClose);
 formItemContainer.addEventListener('click', onSelectItemClick);

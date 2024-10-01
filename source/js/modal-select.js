@@ -11,29 +11,33 @@ const onSelectClickOpen = () => {
     modalFields.classList.remove('form-group__fields--open');
   } else {
     modalFields.classList.add('form-group__fields--open');
+    modalItemContainer.addEventListener('click', onSelectItemClick);
+    modalItemContainer.addEventListener('keydown', onSelectItemKeydownEnter);
   }
 };
 
 const onSelectClickClose = () => {
   modalFields.classList.remove('form-group__fields--open');
+  modalItemContainer.removeEventListener('click', onSelectItemClick);
+  modalItemContainer.removeEventListener('keydown', onSelectItemKeydownEnter);
 };
 
-const onSelectItemClick = (evt) => {
+function onSelectItemClick(evt) {
   if (!modalItems) {
     return;
   }
   modalSelectValue.textContent = evt.target.dataset.cityModal;
   modalHiddenSelectInput.value = modalSelectValue.textContent.trim();
-};
+}
 
-const onSelectItemKeydownEnter = (evt) => {
+function onSelectItemKeydownEnter(evt) {
   if (!modalItems && !evt.key === 'Enter') {
     return;
   }
   modalSelectValue.textContent = evt.target.dataset.cityModal;
   modalHiddenSelectInput.value = modalSelectValue.textContent.trim();
   modalFields.classList.remove('form-group__fields--open');
-};
+}
 
 const onSelectKeydownEnter = (evt) => {
   if (!modalSelect && !evt.key === 'Enter') {
@@ -44,15 +48,11 @@ const onSelectKeydownEnter = (evt) => {
   } else {
     modalFields.classList.remove('form-group__fields--open');
   }
-
 };
 
 modalSelect.addEventListener('keydown', onSelectKeydownEnter);
 modalSelect.addEventListener('click', onSelectClickOpen);
 modalSelect.addEventListener('blur', onSelectClickClose);
-
-modalItemContainer.addEventListener('click', onSelectItemClick);
-modalItemContainer.addEventListener('keydown', onSelectItemKeydownEnter);
 
 modal.addEventListener('click', (evt) => {
   if (!modalSelect.contains(evt.target) && !modalFields.contains(evt.target)) {
