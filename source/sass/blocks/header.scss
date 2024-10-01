@@ -71,6 +71,7 @@
     opacity: 0;
     pointer-events: none;
     background-color: #02b6f2;
+    transition: opacity 0.3s ease;
     z-index: -1;
   }
 
@@ -78,6 +79,16 @@
   &:focus-visible {
     &::before {
       animation: flickering 0.3s linear infinite;
+    }
+
+    .header__button-menu-decoration-inner::after {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  }
+
+  &:active {
+    &::before {
+      background-color: #ffd900;
     }
 
     .header__button-menu-decoration-inner::after {
@@ -267,6 +278,10 @@
 
   .header__button-menu::before {
     background-color: #ffd900;
+  }
+
+  .header__button-menu:active::before {
+    background-color: #02b6f2;
   }
 
   .header__button-menu-decoration-inner {
