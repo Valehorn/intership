@@ -236,6 +236,11 @@
 
 .hero .hero__swiper {
   width: 100%;
+  z-index: auto;
+}
+
+.hero .hero__swiper-wrapper {
+  z-index: auto;
 }
 
 .hero__slide {

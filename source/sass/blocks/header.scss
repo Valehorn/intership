@@ -9,24 +9,34 @@
   --burger-menu-after-x: 20px;
 
   position: relative;
+}
+
+.header__container {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
-  margin-bottom: -94px;
-  transition: margin-bottom 0.3s ease;
+  padding-left: 15px;
+  padding-right: 15px;
 
   @media (min-width: $tablet-width) {
     justify-content: space-between;
     padding-top: 32px;
-    margin-bottom: -108px;
+    padding-left: 45px;
+    padding-right: 45px;
   }
 
   @media (min-width: $desktop-width) {
+    right: auto;
     width: 1240px;
     padding-top: 30px;
-    margin-bottom: -106px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -48,6 +58,19 @@
 .header__nav-group {
   position: relative;
   z-index: 2;
+
+  @media (min-width: $tablet-width) {
+    max-width: 500px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 650px;
+  }
+
+  @media (max-width: $pre-tablet-width) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .header__button-menu {
