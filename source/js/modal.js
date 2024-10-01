@@ -20,28 +20,30 @@ const openModal = (evt) => {
   modal.style.position = 'fixed';
   document.addEventListener('click', onDocumentClick);
   document.addEventListener('keydown', onDocumentKeydownModalClose);
+  modalCloseButton.addEventListener('click', onModalCloseButtonClick);
 };
 
 const closeModal = () => {
-  modalForm.reset();
   body.classList.remove('page-body--modal-open');
-  removeModalError();
   modalSelectInput.value = '';
   modalSelectValue.textContent = modalSelectInput.value;
+  removeModalError();
+  modalForm.reset();
   modal.close();
   modal.style.display = 'none';
   modal.style.position = 'absolute';
   document.removeEventListener('click', onDocumentClick);
   document.removeEventListener('keydown', onDocumentKeydownModalClose);
+  modalCloseButton.removeEventListener('click', onModalCloseButtonClick);
 };
 
 const onModalButtonClick = (evt) => {
   openModal(evt);
 };
 
-const onModalCloseButtonClick = () => {
+function onModalCloseButtonClick() {
   closeModal();
-};
+}
 
 function onDocumentKeydownModalClose(evt) {
   if (modal.open && evt.key === 'Escape') {
@@ -56,4 +58,3 @@ function onDocumentClick(evt) {
 }
 
 modalButton.addEventListener('click', onModalButtonClick);
-modalCloseButton.addEventListener('click', onModalCloseButtonClick);
