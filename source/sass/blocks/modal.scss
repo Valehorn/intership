@@ -190,7 +190,8 @@
 
   &:hover,
   &:focus-visible {
-    border-color: #ffffff;
+    border-color: $primary-color;
+    background-color: #ffffff;
   }
 
   &:disabled {
