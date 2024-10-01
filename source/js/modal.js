@@ -1,21 +1,13 @@
 import { scrollToStart } from './utils';
+import { removeModalError } from './validate';
 
 const body = document.querySelector('.page-body');
 const modal = document.querySelector('.modal');
 const modalForm = document.querySelector('.modal__form');
 const modalButton = document.querySelector('.about__button');
 const modalCloseButton = document.querySelector('.modal__button-close');
-const modalInputs = modal.querySelectorAll('.form-group__input, .form-group__input-checkbox');
 const modalSelectValue = modal.querySelector('.modal__select-value');
 const modalSelectInput = modal.querySelector('.form-group__select-hidden');
-
-const removeError = () => {
-  if (!body.classList.contains('page-body--modal-open')) {
-    modalInputs.forEach((input) => {
-      input.classList.remove('form-group__input--error');
-    });
-  }
-};
 
 const openModal = (evt) => {
   if (!evt.target.closest('.about__button')) {
@@ -33,7 +25,7 @@ const openModal = (evt) => {
 const closeModal = () => {
   modalForm.reset();
   body.classList.remove('page-body--modal-open');
-  removeError();
+  removeModalError();
   modalSelectInput.value = '';
   modalSelectValue.textContent = modalSelectInput.value;
   modal.close();
