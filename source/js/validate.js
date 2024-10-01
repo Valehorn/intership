@@ -110,6 +110,13 @@ const onPhoneBlur = (input) => {
   }
 };
 
+const onCheckboxFocus = (evt, checkbox) => {
+  if (evt.key === 'Enter') {
+    checkbox.checked = !checkbox.checked;
+  }
+};
+
+
 const onFormSubmit = (evt) => {
   evt.preventDefault();
 
@@ -155,7 +162,6 @@ const onFormSubmit = (evt) => {
 
   if (checkboxInput) {
     isValid = validateCheckbox(checkboxInput) && isValid;
-    checkboxInput.reportValidity();
   }
 
   if (isValid) {
@@ -200,6 +206,11 @@ forms.forEach((form) => {
   }
   if (checkboxInput) {
     checkboxInput.addEventListener('change', () => onInputChange(checkboxInput));
+    checkboxInput.addEventListener('focus', () => {
+      checkboxInput.addEventListener('keydown', (evt) => {
+        onCheckboxFocus(evt, checkboxInput);
+      });
+    });
   }
 });
 
