@@ -30,6 +30,12 @@
   }
 }
 
+.form-group .form-group__select {
+  &::after {
+    opacity: 1;
+  }
+}
+
 .form-group__input-checkbox {
   position: relative;
   appearance: none;

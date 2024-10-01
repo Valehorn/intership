@@ -71,12 +71,9 @@ const validateTextarea = (textareaInput) => {
 const validateSelect = (selectInput, select) => {
   if (selectInput.value.trim() === '') {
     select.classList.add('form-group__input--error');
-    selectInput.setCustomValidity('Это поле обязательно для заполнения.');
-    selectInput.reportValidity();
     return false;
   } else {
     select.classList.remove('form-group__input--error');
-    selectInput.setCustomValidity('');
     return true;
   }
 };
