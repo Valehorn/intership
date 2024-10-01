@@ -587,6 +587,10 @@
   }
 
   @media (min-width: $tablet-width) {
+    &::before {
+      left: 81%;
+    }
+
     &::after {
       left: 82%;
     }
