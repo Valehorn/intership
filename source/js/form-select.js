@@ -45,10 +45,10 @@ function onSelectItemKeydownEnter(evt) {
 }
 
 function onOpenSelectKeydownEsc(evt) {
-  if (!formFields.classList.contains('form-group__fields--open') && evt.key !== 'Esc') {
-    return;
+  if (formFields.classList.contains('form-group__fields--open') && evt.keyCode === 27) {
+    formFields.classList.remove('form-group__fields--open');
   }
-  formFields.classList.remove('form-group__fields--open');
 }
+
 
 formSelect.addEventListener('click', onSelectClickToggle);
