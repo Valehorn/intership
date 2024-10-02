@@ -45,7 +45,7 @@ function onSelectItemKeydownEnter(evt) {
 }
 
 function onOpenSelectKeydownEsc(evt) {
-  if (formFields.classList.contains('form-group__fields--open') && evt.keyCode === 27) {
+  if (formFields.classList.contains('form-group__fields--open') && evt.key === 'Escape') {
     formFields.classList.remove('form-group__fields--open');
   }
 }

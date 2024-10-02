@@ -20,7 +20,7 @@ const openModal = (evt) => {
   modal.style.display = 'flex';
   modal.style.position = 'fixed';
   document.addEventListener('click', onDocumentClick);
-  document.addEventListener('keydown', onDocumentKeydownModalClose);
+  document.addEventListener('keydown', onDocumentKeydownEsc);
   modalCloseButton.addEventListener('click', onModalCloseButtonClick);
 };
 
@@ -35,7 +35,7 @@ const closeModal = () => {
   modal.style.display = 'none';
   modal.style.position = 'absolute';
   document.removeEventListener('click', onDocumentClick);
-  document.removeEventListener('keydown', onDocumentKeydownModalClose);
+  document.removeEventListener('keydown', onDocumentKeydownEsc);
   modalCloseButton.removeEventListener('click', onModalCloseButtonClick);
 };
 
@@ -47,7 +47,7 @@ function onModalCloseButtonClick() {
   closeModal();
 }
 
-function onDocumentKeydownModalClose(evt) {
+function onDocumentKeydownEsc(evt) {
   if (evt.key === 'Escape') {
     if (modalFields.classList.contains('form-group__fields--open')) {
       modalFields.classList.remove('form-group__fields--open');
