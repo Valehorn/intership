@@ -1,4 +1,4 @@
-const modal = document.querySelector('.modal');
+const modal = document.querySelector('.modal__form');
 const modalFields = modal.querySelector('.form-group__fields');
 const modalSelect = modal.querySelector('.form-group__select');
 const modalItemContainer = modal.querySelector('.form-group__select-item-container');

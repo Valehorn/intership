@@ -16,5 +16,6 @@ const onSelectLabelClick = (evt) => {
   }
 };
 
+
 form.addEventListener('click', onSelectLabelClick);
 modal.addEventListener('click', onSelectLabelClick);

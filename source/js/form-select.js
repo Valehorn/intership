@@ -12,6 +12,7 @@ const onSelectClickToggle = () => {
     formItems.forEach((item) => {
       item.setAttribute('tabindex', -1);
     });
+    formFields.removeEventListener('keydown', onOpenSelectKeydownEsc);
     formItemContainer.removeEventListener('click', onSelectItemClick);
     formItemContainer.removeEventListener('keydown', onSelectItemKeydownEnter);
   } else {
@@ -19,6 +20,7 @@ const onSelectClickToggle = () => {
     formItems.forEach((item) => {
       item.setAttribute('tabindex', 0);
     });
+    formFields.addEventListener('keydown', onOpenSelectKeydownEsc);
     formItemContainer.addEventListener('click', onSelectItemClick);
     formItemContainer.addEventListener('keydown', onSelectItemKeydownEnter);
   }
@@ -39,6 +41,13 @@ function onSelectItemKeydownEnter(evt) {
   }
   formSelectValue.textContent = evt.target.dataset.cityForm;
   formHiddenSelectInput.value = formSelectValue.textContent.trim();
+  formFields.classList.remove('form-group__fields--open');
+}
+
+function onOpenSelectKeydownEsc(evt) {
+  if (!formFields.classList.contains('form-group__fields--open') && evt.key !== 'Esc') {
+    return;
+  }
   formFields.classList.remove('form-group__fields--open');
 }
 
