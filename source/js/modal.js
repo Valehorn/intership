@@ -6,6 +6,7 @@ const modal = document.querySelector('.modal');
 const modalForm = document.querySelector('.modal__form');
 const modalButton = document.querySelector('.about__button');
 const modalCloseButton = document.querySelector('.modal__button-close');
+const modalFields = modal.querySelector('.form-group__fields');
 const modalSelectValue = modal.querySelector('.modal__select-value');
 const modalSelectInput = modal.querySelector('.form-group__select-hidden');
 
@@ -46,8 +47,12 @@ function onModalCloseButtonClick() {
 }
 
 function onDocumentKeydownModalClose(evt) {
-  if (modal.open && evt.key === 'Escape') {
-    closeModal();
+  if (evt.key === 'Escape') {
+    if (modalFields.classList.contains('form-group__fields--open')) {
+      modalFields.classList.remove('form-group__fields--open');
+    } else {
+      closeModal();
+    }
   }
 }
 
