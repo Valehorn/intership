@@ -67,6 +67,14 @@
   position: relative;
 }
 
+.form-group__select-hidden {
+  position: absolute;
+  appearance: none;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
 // Открытие селекта.
 
 .form-group__fields--open {
@@ -112,14 +120,14 @@
 
 .form-group__select-value {
   position: absolute;
-  top: 50%;
-  left: 12px;
+  top: 68%;
+  left: 23px;
   transform: translateY(-50%);
 }
 
 .form-group__select-item-container {
   position: absolute;
-  top: 54px;
+  top: 69px;
   left: 50%;
   transform: translateX(-50%);
   border: 1px solid $primary-text-color;
@@ -132,6 +140,14 @@
   overscroll-behavior: none;
   z-index: 10;
   transition: padding 0.3s ease, visibility 0.3s ease;
+
+  @media (min-width: $tablet-width) {
+    top: 84px;
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 86px;
+  }
 }
 
 
