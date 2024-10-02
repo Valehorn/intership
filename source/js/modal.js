@@ -25,6 +25,7 @@ const openModal = (evt) => {
 };
 
 const closeModal = () => {
+  modalFields.classList.remove('form-group__fields--open');
   body.classList.remove('page-body--modal-open');
   modalSelectInput.value = '';
   modalSelectValue.textContent = modalSelectInput.value;
