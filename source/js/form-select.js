@@ -12,8 +12,8 @@ const onSelectClickToggle = () => {
     formItems.forEach((item) => {
       item.setAttribute('tabindex', -1);
     });
-    formItemContainer.removeListener('click', onSelectItemClick);
-    formItemContainer.removeListener('keydown', onSelectItemKeydownEnter);
+    formItemContainer.removeEventListener('click', onSelectItemClick);
+    formItemContainer.removeEventListener('keydown', onSelectItemKeydownEnter);
   } else {
     formFields.classList.add('form-group__fields--open');
     formItems.forEach((item) => {

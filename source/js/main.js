@@ -3,6 +3,7 @@ import { initSwiperHero } from './hero-swiper';
 import './modal';
 import './modal-select';
 import './form-select';
+import './select-labels';
 import './validate';
 import initSwiperPrograms from './programs-swiper';
 import tabsToggle from './news-tab';
