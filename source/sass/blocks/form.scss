@@ -203,7 +203,21 @@
 }
 
 .form__select-item-container {
+  top: 88px;
   color: $primary-text-color;
+
+  @media (min-width: $tablet-width) {
+    top: 90px;
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 94px;
+  }
+
+  @media (max-width: $pre-tablet-width) {
+    left: 49%;
+    width: 260px;
+  }
 }
 
 .form__checkbox-group {

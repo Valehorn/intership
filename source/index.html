@@ -1800,30 +1800,26 @@
                   required></textarea>
               </div>
               <div class="form__group form__group-fields form-group__fields">
-                <p class="form__label">Выберите город</p>
-                <div class="form__select form__element form-group__input form-group__select" tabindex="0">
+                <label class="forml__label" for="form-city">Выберите город</label>
+                <input class="form__select-hidden form-group__select-hidden" type="text" id="form-city" name="form-city"
+                  value=" " tabindex="-1">
                   <span class="form__select-value form-group__select-value"></span>
-                  <label class="visually-hidden">Значение select
-                    <input class="form__select-hidden form-group__select-hidden" type="hidden" id="form-city"
-                      name="form-city" value=" ">
-                  </label>
-                  <div class="form__select-item-container form-group__select-item-container">
-                    <div class="form__select-item form-group__select-item" data-city-form=" ">&nbsp;</div>
-                    <div class="form__select-item form-group__select-item" data-city-form="Москва">Москва
-                    </div>
-                    <div class="form__select-item form-group__select-item" data-city-form="Санкт-Петербург">
-                      Санкт-Петербург
-                    </div>
-                    <div class="form__select-item form-group__select-item" data-city-form="Рязань">
-                      Рязань
-                    </div>
-                    <div class="form__select-item form-group__select-item" data-city-form="Казань">
-                      Казань
-                    </div>
-                    <div class="form__select-item form-group__select-item" data-city-form="Новосибирск">
-                      Новосибирск
-                    </div>
+                <button class="form__select form__element form-group__input form-group__select" type="button"><span
+                    class="visually-hidden">
+                    Выпадающий список города.</span>
+                </button>
+                <div class="form__select-item-container form-group__select-item-container">
+                  <div class="form__select-item form-group__select-item" tabindex="-1" data-city-form=" ">&nbsp;</div>
+                  <div class="form__select-item form-group__select-item" tabindex="-1" data-city-form="Москва">Москва</div>
+                  <div class="form__select-item form-group__select-item" tabindex="-1" data-city-form="Санкт-Петербург">
+                    Санкт-Петербург
                   </div>
+                  <div class="form__select-item form-group__select-item" tabindex="-1" data-city-form="Рязань">Рязань
+                  </div>
+                  <div class="form__select-item form-group__select-item" tabindex="-1" data-city-form="Казань">Казань
+                  </div>
+                  <div class="form__select-item form-group__select-item" tabindex="-1" data-city-form="Новосибирск">
+                    Новосибирск</div>
                 </div>
               </div>
               <div class="form__checkbox-group">

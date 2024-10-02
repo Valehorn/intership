@@ -162,6 +162,7 @@
   padding-left: 20px;
   padding-right: 10px;
   outline: 1px solid transparent;
+  cursor: pointer;
   transition: min-height 0.3s ease, line-height 0.3s ease, overflow 0.3s ease, opacity 0.1s ease, color 0.3s ease, background-color 0.3s ease;
 
   &:hover {
