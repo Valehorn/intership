@@ -9,6 +9,7 @@ const formHiddenSelectInput = form.querySelector('.form-group__select-hidden');
 const onSelectClickToggle = () => {
   if (formFields.classList.contains('form-group__fields--open')) {
     formFields.classList.remove('form-group__fields--open');
+    formSelect.setAttribute('aria-expanded', 'false');
     formItems.forEach((item) => {
       item.setAttribute('tabindex', -1);
     });
@@ -17,6 +18,7 @@ const onSelectClickToggle = () => {
     formItemContainer.removeEventListener('keydown', onSelectItemKeydownEnter);
   } else {
     formFields.classList.add('form-group__fields--open');
+    formSelect.setAttribute('aria-expanded', 'true');
     formItems.forEach((item) => {
       item.setAttribute('tabindex', 0);
     });
