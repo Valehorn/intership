@@ -1,6 +1,8 @@
 const body = document.querySelector('.page-body');
 const forms = document.querySelectorAll('.form-group');
 const formsInputs = document.querySelectorAll('.form-group__input');
+const formSubmitButtons = document.querySelectorAll('.form-group__submit-button');
+const formSubmitText = document.querySelectorAll('.button__text');
 const modal = document.querySelector('.modal');
 const modalInputs = modal.querySelectorAll('.form-group__input, .form-group__input-checkbox');
 
@@ -166,6 +168,12 @@ const onFormSubmit = (evt) => {
   }
 
   if (isValid) {
+    formSubmitButtons.forEach((button) => {
+      button.disabled = true;
+    });
+    formSubmitText.forEach((text) => {
+      text.textContent = 'Отправляю';
+    });
     form.submit();
     form.reset();
   }
