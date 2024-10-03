@@ -112,6 +112,7 @@ const onPhoneBlur = (input) => {
 
 const onCheckboxFocus = (evt, checkbox) => {
   if (evt.key === 'Enter') {
+    evt.preventDefault();
     checkbox.checked = !checkbox.checked;
   }
 };
