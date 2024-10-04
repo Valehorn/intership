@@ -193,7 +193,6 @@ forms.forEach((form) => {
   const nameInput = form.querySelector('.form-group__input--name');
   const phoneInput = form.querySelector('.form-group__input--phone');
   const textareaInput = form.querySelector('.form__textarea');
-  const selectInput = form.querySelector('.form-group__select-hidden');
   const checkboxInput = form.querySelector('.form-group__input-checkbox');
 
   if (nameInput) {
@@ -209,9 +208,6 @@ forms.forEach((form) => {
   }
   if (textareaInput) {
     textareaInput.addEventListener('input', () => onInputChange(textareaInput));
-  }
-  if (selectInput) {
-    selectInput.addEventListener('input', () => onInputChange(selectInput));
   }
   if (checkboxInput) {
     checkboxInput.addEventListener('change', () => onInputChange(checkboxInput));
