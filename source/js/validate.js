@@ -1,12 +1,5 @@
-const body = document.querySelector('.page-body');
-const forms = document.querySelectorAll('.form-group');
-const formsInputs = document.querySelectorAll('.form-group__input');
-const formSubmitButtons = document.querySelectorAll('.form-group__submit-button');
-const formSubmitText = document.querySelectorAll('.button__text');
-const modal = document.querySelector('.modal');
-const modalInputs = modal.querySelectorAll('.form-group__input, .form-group__input-checkbox');
-
 const removeRequiredAttr = () => {
+  const formsInputs = document.querySelectorAll('.form-group__input');
   formsInputs.forEach((input) => input.removeAttribute('required'));
 };
 
@@ -130,6 +123,8 @@ const onFormSubmit = (evt) => {
   const select = form.querySelector('.form-group__select');
   const selectInput = form.querySelector('.form-group__select-hidden');
   const checkboxInput = form.querySelector('.form-group__input-checkbox');
+  const formSubmitButtons = document.querySelectorAll('.form-group__submit-button');
+  const formSubmitText = document.querySelectorAll('.button__text');
 
   let isValid = true;
 
@@ -180,12 +175,18 @@ const onFormSubmit = (evt) => {
 };
 
 const removeModalError = () => {
+  const body = document.querySelector('.page-body');
+  const modal = document.querySelector('.modal');
+  const modalInputs = modal.querySelectorAll('.form-group__input, .form-group__input-checkbox');
+
   if (!body.classList.contains('page-body--modal-open')) {
     modalInputs.forEach((input) => {
       input.classList.remove('form-group__input--error');
     });
   }
 };
+
+const forms = document.querySelectorAll('.form-group');
 
 forms.forEach((form) => {
   form.addEventListener('submit', onFormSubmit);
