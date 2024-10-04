@@ -223,11 +223,11 @@
   border-color: $disabled;
   pointer-events: none;
 
-  .button__decoration-inner {
+  .hero__button-decoration-inner {
     background-color: $disabled;
   }
 
-  .button__decoration-inner::after {
+  .hero__button-decoration-inner::after {
     background-color: #ffffff;
   }
 }
