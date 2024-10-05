@@ -8,22 +8,18 @@ const checkboxInput = modalForm.querySelector('.form-group__input-checkbox');
 
 modalForm.addEventListener('submit', onFormSubmit);
 
-if (nameInput) {
-  nameInput.addEventListener('input', () => onInputChange(nameInput));
-}
-if (phoneInput) {
-  phoneInput.addEventListener('input', () => {
-    formatPhoneNumber(phoneInput);
-    onInputChange(phoneInput);
+
+nameInput.addEventListener('input', () => onInputChange(nameInput));
+phoneInput.addEventListener('input', () => {
+  formatPhoneNumber(phoneInput);
+  onInputChange(phoneInput);
+});
+phoneInput.addEventListener('focus', () => onPhoneFocus(phoneInput));
+phoneInput.addEventListener('blur', () => onPhoneBlur(phoneInput));
+
+checkboxInput.addEventListener('change', () => onInputChange(checkboxInput));
+checkboxInput.addEventListener('focus', () => {
+  checkboxInput.addEventListener('keydown', (evt) => {
+    onCheckboxFocus(evt, checkboxInput);
   });
-  phoneInput.addEventListener('focus', () => onPhoneFocus(phoneInput));
-  phoneInput.addEventListener('blur', () => onPhoneBlur(phoneInput));
-}
-if (checkboxInput) {
-  checkboxInput.addEventListener('change', () => onInputChange(checkboxInput));
-  checkboxInput.addEventListener('focus', () => {
-    checkboxInput.addEventListener('keydown', (evt) => {
-      onCheckboxFocus(evt, checkboxInput);
-    });
-  });
-}
+});
