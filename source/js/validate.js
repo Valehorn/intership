@@ -17,6 +17,7 @@ const validateName = (nameInput) => {
   } else {
     nameInput.classList.remove('form-group__input--error');
     nameInput.setCustomValidity('');
+    nameInput.reportValidity();
     return true;
   }
 };
@@ -33,6 +34,7 @@ const validatePhone = (phoneInput) => {
   } else {
     phoneInput.classList.remove('form-group__input--error');
     phoneInput.setCustomValidity('');
+    phoneInput.reportValidity();
     return true;
   }
 };
@@ -62,6 +64,7 @@ const validateTextarea = (textareaInput) => {
   } else {
     textareaInput.classList.remove('form-group__input--error');
     textareaInput.setCustomValidity('');
+    textareaInput.reportValidity();
     return true;
   }
 };
@@ -80,10 +83,12 @@ const validateCheckbox = (checkboxInput) => {
   if (!checkboxInput.checked) {
     checkboxInput.classList.add('form-group__input--error');
     checkboxInput.setCustomValidity('Согласие на обработку данных является обязательным');
+    checkboxInput.reportValidity();
     return false;
   } else {
     checkboxInput.classList.remove('form-group__input--error');
     checkboxInput.setCustomValidity('');
+    checkboxInput.reportValidity();
     return true;
   }
 };

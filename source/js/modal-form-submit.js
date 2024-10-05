@@ -10,10 +10,12 @@ modalForm.addEventListener('submit', onFormSubmit);
 
 
 nameInput.addEventListener('input', () => onInputChange(nameInput));
+
 phoneInput.addEventListener('input', () => {
   formatPhoneNumber(phoneInput);
   onInputChange(phoneInput);
 });
+
 phoneInput.addEventListener('focus', () => onPhoneFocus(phoneInput));
 phoneInput.addEventListener('blur', () => onPhoneBlur(phoneInput));
 
