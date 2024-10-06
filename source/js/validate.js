@@ -191,4 +191,4 @@ const removeModalError = () => {
   }
 };
 
-export { removeModalError, formatPhoneNumber ,onFormSubmit, onInputChange, onPhoneFocus, onPhoneBlur, onCheckboxFocus };
+export { removeModalError, formatPhoneNumber, onFormSubmit, onInputChange, onPhoneFocus, onPhoneBlur, onCheckboxFocus };
