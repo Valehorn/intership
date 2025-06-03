@@ -11,7 +11,7 @@ const onSelectClickToggle = () => {
     formFields.classList.remove('form-group__fields--open');
     formSelect.setAttribute('aria-expanded', 'false');
     formItems.forEach((item) => {
-      item.setAttribute('tabindex', -1);
+      item.tabIndex = '-1';
     });
     formFields.removeEventListener('keydown', onOpenSelectKeydownEsc);
     formItemContainer.removeEventListener('click', onSelectItemClick);
@@ -20,7 +20,7 @@ const onSelectClickToggle = () => {
     formFields.classList.add('form-group__fields--open');
     formSelect.setAttribute('aria-expanded', 'true');
     formItems.forEach((item) => {
-      item.setAttribute('tabindex', 0);
+      item.tabIndex = '0';
     });
     formFields.addEventListener('keydown', onOpenSelectKeydownEsc);
     formItemContainer.addEventListener('click', onSelectItemClick);
