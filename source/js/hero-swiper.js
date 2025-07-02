@@ -47,16 +47,14 @@ const initSwiperHero = () => {
 
     slides.forEach((slide, index) => {
       const slideButtons = slide.querySelectorAll('.hero__card-button');
-      if (slideButtons.length > 0) {
-        if (index === activeIndex) {
-          slideButtons.forEach((button) => {
-            button.removeAttribute('tabindex');
-          });
-        } else {
-          slideButtons.forEach((button) => {
-            button.setAttribute('tabindex', '-1');
-          });
-        }
+      if (slideButtons.length > 0 && index === activeIndex) {
+        slideButtons.forEach((button) => {
+          button.removeAttribute('tabindex');
+        });
+      } else {
+        slideButtons.forEach((button) => {
+          button.setAttribute('tabindex', '-1');
+        });
       }
     });
   }
